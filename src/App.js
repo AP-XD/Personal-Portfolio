@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -37,11 +37,11 @@ function App() {
           innerScale={0.5}
           outerScale={1.25}
         />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/project" component={Projects} />
-        </Switch>
+        <Routes>
+          <Route path="/" exact element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/project" element={<Projects/>} />
+        </Routes>
         <Footer />
       </div>
     </Router>
