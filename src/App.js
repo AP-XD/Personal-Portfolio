@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
+import Resume from "./components/Resume/ResumeNew";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./style.css";
@@ -25,22 +26,25 @@ function App() {
 
   return (
     <Router>
+      <AnimatedCursor
+        zIndex={9999}
+        innerSize={15}
+        outerSize={35}
+        color="33, 248, 255"
+        outerAlpha={0.25}
+        innerScale={0.5}
+        outerScale={1.5}
+
+      />
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
         <ScrollToTop />
-        <AnimatedCursor
-          innerSize={8}
-          outerSize={40}
-          color="33, 248, 255"
-          outerAlpha={0.25}
-          innerScale={0.5}
-          outerScale={1.25}
-        />
         <Routes>
-          <Route path="/" exact element={<Home/>} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/project" element={<Projects/>} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/project" element={<Projects />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
         <Footer />
       </div>
