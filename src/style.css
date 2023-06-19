@@ -419,15 +419,18 @@ html {
 }
 
 .btn-primary {
+  max-width:max-content !important;
   color: #fff !important;
   background-color: #2055c5 !important;
   border-color: #2055c5 !important;
 }
 
 .btn-primary:hover {
+  max-width:max-content !important;
   color: #fff !important;
-  background-color: #204abbd7 !important;
-  border-color: #204abbd7 !important;
+  background-color: #1c58ffd7!important;
+  border-color: #1c58ffd7 !important;
+  box-shadow: 2px 2px 30px #1c58ffd7;
 }
 .btn:focus {
   outline: none !important;
@@ -596,7 +599,7 @@ html {
 .resume .resume-item {
   padding: 0 0 10px 25px;
   margin-top: -2px;
-  border-left: 2px solid #8a49a8;
+  border-left: 2px solid #20adff;
   position: relative;
 }
 
@@ -633,5 +636,5 @@ html {
   left: -9px;
   top: 0;
   background: #fff;
-  border: 2px solid #8a49a8;
+  border: 2px solid #20adff;
 }
