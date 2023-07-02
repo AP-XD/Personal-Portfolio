@@ -88,7 +88,7 @@ function NavBar() {
             
             <Nav.Item>
               <Nav.Link
-                href="https://apxd.ml/"
+                href="https://apxd.tech/"
                 target="_blank"
                 rel="noreferrer"
               >
