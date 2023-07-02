@@ -12,7 +12,7 @@ function Footer() {
       <Row>
         <Col md="4" className="footer-copywright">
           <h3>
-            Copyright <BiCopyright /> {year} AP
+            Copyright <BiCopyright /> {year} APXD
           </h3>
         </Col>
         <Col md="4" className="footer-copywright">
@@ -32,7 +32,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://t.me/AP_XD"
+                href="https://tx.me/AP_XD"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noreferrer"
@@ -52,7 +52,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/_._._apxd_._._/"
+                href="https://www.instagram.com/apxd.kek"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"

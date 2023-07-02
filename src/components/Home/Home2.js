@@ -66,7 +66,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://t.me/AP_XD"
+                  href="https://tx.me/AP_XD"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -86,7 +86,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com/_._._apxd_._._/"
+                  href="https://www.instagram.com/apxd.kek"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
