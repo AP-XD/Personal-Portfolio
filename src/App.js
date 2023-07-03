@@ -29,10 +29,10 @@ function App() {
       <AnimatedCursor
         zIndex={9999}
         innerSize={15}
-        outerSize={35}
+        outerSize={30}
         color="33, 248, 255"
-        outerAlpha={0.25}
-        innerScale={0.5}
+        outerAlpha={0.5}
+        innerScale={1.75}
         outerScale={1.5}
 
       />
