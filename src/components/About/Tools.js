@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import vs from "./svg/vscode.svg";
-import git from "./svg/github.svg";
-import gitlab from "./svg/gitlab.svg";
+import git from "./svg/github.png";
+import kube from "./svg/Kubernetes_logo_without_workmark.svg.png";
 import linux from "./svg/linux.svg";
 
 function Tools() {
@@ -28,8 +28,8 @@ function Tools() {
         ></a>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={gitlab} alt="gitlab" />
-        <h3>Gitlab</h3>
+        <img src={kube} alt="Kubernetes" />
+        <h3>Kubernetes</h3>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <img src={linux} alt="linux" />

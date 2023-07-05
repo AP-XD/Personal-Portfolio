@@ -12,10 +12,10 @@ function Languages() {
       <img src={cpp} alt="c++"  /><h3>C++</h3>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-      <img src={java} alt="java"  /><h3>Java</h3>
+      <img src={py} alt="python" /><h3>Python</h3>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-      <img src={py} alt="python" /><h3>Python</h3>
+      <img src={java} alt="java"  /><h3>Java</h3>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
       <img src={js} alt="js" /><h3>Javascript</h3>

@@ -526,8 +526,8 @@ html {
 }
 
 .tech-icons>img {
-  width: 8rem;
-  height: 8rem;
+  width: 6.5rem;
+  height: 6.5rem;
   padding: 10px !important;
 }
 
@@ -543,7 +543,7 @@ html {
 }
 
 .tech-icons:hover {
-  transform: scale(1.05) !important;
+  /* transform: scale(1.05) !important; */
   overflow: hidden !important;
   border: 3px solid rgba(255, 255, 255, 0.616) !important;
 }

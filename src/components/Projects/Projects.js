@@ -45,7 +45,7 @@ function Projects() {
             <ProjectCard
               imgPath={arrow}
               title="Device Tree"
-              description="ASUS Max M2 (X01AD) Device Tree Source Code for building Arrow OS Custom ROM. "
+              description="ASUS Max M2 (X01AD) Device Tree Source Code for building Arrow OS Custom ROM for various Android Versions. "
               link="https://github.com/AP-XD/device_asus_X01AD"
             />
           </Col>
