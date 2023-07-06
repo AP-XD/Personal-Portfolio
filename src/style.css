@@ -22,7 +22,7 @@ html {
   width: 100%;
   height: 100%;
   z-index: 999999;
-  background-color: #0c0513;
+  background-color: #0c0513d8;
   background-image: url(./Assets/pre.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -851,10 +851,6 @@ html {
 }
 .blue {
   color: var(--darkreader-text--imp-text-color) !important;
-}
-#preloader {
-  background-color: rgb(10, 4, 15);
-  background-image: url("http://localhost:3000/static/media/pre.1a7b277b72ed67f5d227.svg");
 }
 ::-webkit-scrollbar-track {
   background-image: initial;
