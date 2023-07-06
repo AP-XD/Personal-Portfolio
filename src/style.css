@@ -755,12 +755,6 @@ select:-webkit-autofill {
  --darkreader-selection-text: #e8e6e3;
 }
 
-/* Modified CSS */
-body {
-  background-image: linear-gradient(to top,
-  rgb(0, 0, 0),
-  rgb(13, 23, 91));
-}
 :root {
   --react-pdf-annotation-layer: 1;
   --darkreader-bgimg--annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
@@ -887,22 +881,10 @@ html {
       background-color: rgb(19, 21, 31) !important;
   }
 }
-.navbar-brand {
-  color: rgb(229, 227, 223) !important;
-}
-.navbar-nav .nav-link {
-  color: rgb(232, 230, 227) !important;
-}
-.navbar-nav .nav-item a::after {
-  background-image: initial;
-  background-color: rgb(0, 117, 185);
-}
+
 .home-section {
   background-image: var(--darkreader-bgimg--image-gradient),
-  url(http://localhost:3000/static/media/home-bg.dc52d5d40a40b13154b0.jpg);
-}
-.home-content {
-  color: rgb(226, 223, 219);
+  url(./Assets/home-bg.jpg);
 }
 .main-name {
   color: rgb(48, 179, 255);
@@ -912,12 +894,6 @@ html {
 }
 .Typewriter__cursor {
   color: rgb(48, 135, 255) !important;
-}
-.home-about-description {
-  color: rgb(232, 230, 227) !important;
-}
-.home-about-social {
-  color: rgb(232, 230, 227) !important;
 }
 .home-social-icons {
   background-image: initial !important;
@@ -937,17 +913,14 @@ html {
 .footer {
   background-color: rgb(8, 3, 18);
 }
-.footer h3 {
-  color: rgb(232, 230, 227) !important;
-}
 .btn-primary {
-  color: rgb(232, 230, 227) !important;
+  /* color: rgb(232, 230, 227) !important; */
   background-color: rgb(26, 68, 158) !important;
   border-color: rgb(26, 69, 160) !important;
 }
 .btn-primary:hover {
   box-shadow: rgba(0, 49, 187, 0.84) 2px 2px 30px;
-  color: rgb(232, 230, 227) !important;
+  /* color: rgb(232, 230, 227) !important; */
   background-color: rgba(0, 49, 187, 0.84) !important;
   border-color: rgba(0, 45, 170, 0.84) !important;
 }
@@ -965,12 +938,8 @@ html {
 .project-card-view:hover {
   border-color: rgba(48, 52, 54, 0.62) !important;
 }
-.project-heading {
-  color: rgb(232, 230, 227) !important;
-}
 .about-section {
   background-image: var(--darkreader-bgimg--section-background-color) !important;
-  color: rgb(232, 230, 227) !important;
 }
 .tech-icons {
   background-color: rgba(24, 26, 27, 0.16);
@@ -980,7 +949,6 @@ html {
 }
 .quote-card-view {
   border-color: initial !important;
-  color: rgb(232, 230, 227) !important;
   background-color: transparent !important;
 }
 .about-activity {
@@ -2809,8 +2777,8 @@ fieldset:disabled .btn {
 .card-body {
   color: var(--darkreader-text--bs-card-color);
 }
-.card-title {
-  color: var(--darkreader-text--bs-card-title-color);
+.card-title{
+  color: #ffff !important;
 }
 .card-subtitle {
   color: var(--darkreader-text--bs-card-subtitle-color);
