@@ -115,8 +115,8 @@ html {
 
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
   position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
+  left: 25px !important;
+  top: 8px !important;
   transform: rotate(135deg) !important;
   opacity: 0.85 !important;
 }
@@ -129,21 +129,36 @@ html {
 
 .navbar-toggler:not(.collapsed) span:nth-child(3) {
   position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
+  left: 25px !important;
+  top: 8px !important;
   transform: rotate(-135deg) !important;
   opacity: 0.85 !important;
 }
 
 @media (max-width: 767px) {
   .navbar {
-    padding: 1rem 2rem !important;
-    font-size: 1.4rem !important;
-    background-color: #181a27 !important;
+    background-color: #151334d8 !important;
+    transition: all 0.3s ease-out 0s !important;
+    box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
+    backdrop-filter: blur(15px) !important;
+    max-height: fit-content !important;
+    font-size: 1rem !important;
+
   }
 
   .navbar-nav .nav-item a::after {
     display: none !important;
+  }
+  .nav-item{
+    margin: 0 !important;
+    padding: none !important;
+  }
+  .navbar-nav .nav-link {
+    color: white !important;
+    padding-left: 0rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    text-align: left;
   }
 }
 
@@ -158,8 +173,8 @@ html {
 
 .navbar-nav .nav-link {
   color: white !important;
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
+  padding-right: 1rem ;
+  padding-left: 1rem ;
 }
 
 .nav-link {
@@ -688,7 +703,12 @@ _______|_______/__/ ____ \__\__|___\__\__|___\__\____
 |  |__/  /|  ____/  /__\  \ |  |   )  |  ____|  |__/  /
 |  ____  \|  |__/  ______  \|  |__/  /|  |___|  ____  \
 |__|   \__\____/__/      \__\_______/ |______|__|   \__\
+                https://darkreader.org
 */
+
+/*! Dark reader generated CSS | Licensed under MIT https://github.com/darkreader/darkreader/blob/main/LICENSE */
+
+/* User-Agent Style */
 html {
   background-color: #181a1b !important;
 }
@@ -755,9 +775,15 @@ select:-webkit-autofill {
  --darkreader-selection-text: #e8e6e3;
 }
 
+/* Modified CSS */
+body {
+  background-image: linear-gradient(to top,
+  rgb(0, 0, 0),
+  rgb(13, 23, 91));
+}
 :root {
   --react-pdf-annotation-layer: 1;
-  --darkreader-bgimg--annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --darkreader-bgimg--annotation-unfocused-field-background: url("data:image/svg+xml;  charset=UTF-8,  <svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
   --darkreader-border--input-focus-border-color: #003c7d;
   --darkreader-border--input-focus-outline: 1px solid Canvas;
   --darkreader-border--input-unfocused-border-color: rgba(140, 130, 115, 0);
@@ -840,7 +866,7 @@ html {
   rgba(4, 8, 30, 0.86));
   --darkreader-bgimg--image-gradient: linear-gradient(to bottom left,
   rgba(10, 0, 34, 0.87),
-  rgba(0, 6, 41, 0.86));
+  rgba(1, 7, 38, 0.88));
   --darkreader-text--imp-text-color: #30b3ff;
 }
 .blue {
@@ -878,13 +904,17 @@ html {
 }
 @media (max-width: 767px) {
   .navbar {
-      background-color: rgb(19, 21, 31) !important;
+      background-color: rgba(17, 15, 42, 0.85) !important;
+      box-shadow: rgba(7, 4, 23, 0.17) 0px 10px 10px 0px !important;
   }
 }
 
 .home-section {
   background-image: var(--darkreader-bgimg--image-gradient),
   url(./Assets/home-bg.jpg);
+}
+.home-content {
+  color: rgb(226, 223, 219);
 }
 .main-name {
   color: rgb(48, 179, 255);
