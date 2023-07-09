@@ -487,8 +487,8 @@ html {
 .project-card {
   padding-top: 50px !important;
   padding-bottom: 50px !important;
-  padding-left: 72px !important;
-  padding-right: 25px !important;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
   height: auto !important;
 
 }
@@ -498,7 +498,8 @@ html {
   background-color: rgba(255, 255, 255, 0.74) !important;
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
-  height: 100% !important;
+  /* height: 100% !important; */
+  
 }
 
 .project-card-view:hover {
