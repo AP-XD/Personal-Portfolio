@@ -25,7 +25,7 @@ function Projects() {
         </p>
         <Row style={{ justifyContent: "space-around", paddingBottom: "10px" }}>
 
-          <Col md={4} className="project-card">
+          <Col  md={6}xs={12} sm={10}  lg={4}  className="project-card">
             <ProjectCard
               imgPath={HPE}
               title="HPC Security Dashboard"
@@ -33,7 +33,7 @@ function Projects() {
               link="https://github.com/AP-XD/HPE-CTY-HPC-Security-Dashboard"
             />
           </Col>
-          <Col md={4} className="project-card">
+          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
             <ProjectCard
               imgPath={tuition}
               title="Online Tuition Management System"
@@ -41,7 +41,7 @@ function Projects() {
               link="https://github.com/AP-XD/SWE-J-Component"
             />
           </Col>
-          <Col md={4} className="project-card">
+          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
             <ProjectCard
               imgPath={arrow}
               title="Device Tree"
@@ -52,7 +52,7 @@ function Projects() {
         </Row>
         <Row style={{ justifyContent: "space-around", paddingBottom: "10px" }}>
 
-          <Col md={4} className="project-card">
+          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
             <ProjectCard
               imgPath={habify}
               title="Habify"
@@ -60,7 +60,7 @@ function Projects() {
               link="https://github.com/AP-XD/Habify"
             />
           </Col>
-          <Col md={4} className="project-card">
+          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
             <ProjectCard
               imgPath={enconnect}
               title="Enconnect"
@@ -68,7 +68,7 @@ function Projects() {
               link="https://github.com/AP-XD/EnConnect"
             />
           </Col>
-          <Col md={4} className="project-card">
+          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
             <ProjectCard
               imgPath={nlp}
               title="Youtube Analyser"
@@ -78,7 +78,7 @@ function Projects() {
           </Col>
         </Row>
         <Row style={{ justifyContent: "space-around", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
             <ProjectCard
               imgPath={weather}
               title="Weather App"
@@ -86,7 +86,7 @@ function Projects() {
               link="https://github.com/AP-XD/EnConnect"
             />
           </Col>
-          <Col md={4} className="project-card">
+          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
             <ProjectCard
               imgPath={Netflix}
               title="Netflix Clone"
@@ -94,7 +94,7 @@ function Projects() {
               link="https://github.com/AP-XD/Netflix-clone"
             />
           </Col>
-          {/* <Col md={4} className="project-card">
+          {/* <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
             <ProjectCard
               imgPath={habify}
               title="Habify"
