@@ -11,24 +11,25 @@ import srmLogo from "../../Assets/srm-logo.svg";
 import freelanceLogo from "../../Assets/freelance-logo.svg";
 
 // Import tech stack icons
-import htmlIcon from "../About/svg/html.svg";
-import cssIcon from "../About/svg/css.svg";
-import jsIcon from "../About/svg/js.svg";
-import reactIcon from "../About/svg/react.svg";
-import nodeIcon from "../About/svg/nodejs.svg";
-import pythonIcon from "../About/svg/py.svg";
-import javaIcon from "../About/svg/java.svg";
-import cppIcon from "../About/svg/cpp.svg";
-import gitIcon from "../About/svg/git.svg";
-import githubIcon from "../About/svg/github.svg";
-import nextIcon from "../About/svg/next.svg";
-import tsIcon from "../About/svg/ts.svg";
-import firebaseIcon from "../About/svg/firebase.svg";
-import expressIcon from "../About/svg/express.svg";
-import tailwindIcon from "../About/svg/tailwind.svg";
-import vsCodeIcon from "../About/svg/vscode.svg";
+// Skill icons imports from organized Assets folder
+import htmlIcon from "../../Assets/Skills/frontend/html.svg";
+import cssIcon from "../../Assets/Skills/frontend/css.svg";
+import jsIcon from "../../Assets/Skills/programming-languages/js.svg";
+import reactIcon from "../../Assets/Skills/frontend/react.png";
+import nodeIcon from "../../Assets/Skills/backend/nodejs.svg";
+import pythonIcon from "../../Assets/Skills/programming-languages/py.svg";
+import javaIcon from "../../Assets/Skills/programming-languages/java.svg";
+import cppIcon from "../../Assets/Skills/programming-languages/cpp.svg";
+import gitIcon from "../../Assets/Skills/tools/git.svg";
+import githubIcon from "../../Assets/Skills/tools/github.svg";
+import nextIcon from "../../Assets/Skills/frontend/next.svg";
+import tsIcon from "../../Assets/Skills/programming-languages/ts.svg";
+import firebaseIcon from "../../Assets/Skills/backend/firebase.svg";
+import expressIcon from "../../Assets/Skills/backend/express.svg";
+import tailwindIcon from "../../Assets/Skills/frontend/tailwind.svg";
+import vsCodeIcon from "../../Assets/Skills/tools/vscode.svg";
 
-// Experience data based on Arka Pramanik's resume
+// Experience data based on Arka Pramanik's experience
 const experienceData = [
   {
     id: 1,
@@ -78,7 +79,7 @@ const experienceData = [
   }
 ];
 
-// Education data based on Arka Pramanik's resume
+// Education data based on Arka Pramanik's experience
 const educationData = [
   {
     id: 1,
@@ -105,7 +106,7 @@ const educationData = [
   }
 ];
 
-function ResumeNew() {
+function ExperienceNew() {
   const [activeTab, setActiveTab] = useState("experience");
   const [activeExperience, setActiveExperience] = useState(0);
   const [activeEducation, setActiveEducation] = useState(0);
@@ -268,13 +269,13 @@ function ResumeNew() {
 
   return (
     <div>
-      <Container fluid className="resume-section">
+      <Container fluid className="experience-section">
         <Particle />
         <Container>
           <Row style={{ justifyContent: "center", position: "relative" }}>
             <Col md={12} className="text-center">
               <h1 className="project-heading">
-                MY <strong className="blue">RESUME</strong>
+                MY <strong className="blue">EXPERIENCE</strong>
               </h1>
               <p style={{ color: "rgba(255, 255, 255, 0.7)", fontSize: "1.1rem", marginBottom: "2rem" }}>
                 A glimpse into my academic and professional experience, shaping my growth in the tech world.
@@ -334,4 +335,4 @@ function ResumeNew() {
   );
 }
 
-export default ResumeNew;
+export default ExperienceNew;
