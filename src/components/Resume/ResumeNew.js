@@ -1,51 +1,270 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import pdf from "../../Assets/Arka_Pramanik_s_Latest_Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
-// Configure PDF.js worker for better Netlify compatibility
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+// Import company logos
+import tcsLogo from "../../Assets/tcs-logo.svg";
+import srmLogo from "../../Assets/srm-logo.svg";
+import freelanceLogo from "../../Assets/freelance-logo.svg";
+
+// Import tech stack icons
+import htmlIcon from "../About/svg/html.svg";
+import cssIcon from "../About/svg/css.svg";
+import jsIcon from "../About/svg/js.svg";
+import reactIcon from "../About/svg/react.svg";
+import nodeIcon from "../About/svg/nodejs.svg";
+import pythonIcon from "../About/svg/py.svg";
+import javaIcon from "../About/svg/java.svg";
+import cppIcon from "../About/svg/cpp.svg";
+import gitIcon from "../About/svg/git.svg";
+import githubIcon from "../About/svg/github.svg";
+import nextIcon from "../About/svg/next.svg";
+import tsIcon from "../About/svg/ts.svg";
+import firebaseIcon from "../About/svg/firebase.svg";
+import expressIcon from "../About/svg/express.svg";
+import tailwindIcon from "../About/svg/tailwind.svg";
+import vsCodeIcon from "../About/svg/vscode.svg";
+
+// Experience data based on Arka Pramanik's resume
+const experienceData = [
+  {
+    id: 1,
+    company: "Tata Consultancy Services",
+    position: "Systems Engineer",
+    duration: "Jul 2022 - Present",
+    logo: tcsLogo,
+    descriptions: [
+      "Worked as a full-stack developer on enterprise-level applications using modern web technologies.",
+      "Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      "Participated in agile development processes and contributed to code reviews and technical discussions.",
+      "Developed and maintained web applications with focus on performance and user experience."
+    ],
+    techStack: [
+      { name: "React", icon: reactIcon },
+      { name: "Node.js", icon: nodeIcon },
+      { name: "JavaScript", icon: jsIcon },
+      { name: "HTML", icon: htmlIcon },
+      { name: "CSS", icon: cssIcon },
+      { name: "Git", icon: gitIcon },
+      { name: "Python", icon: pythonIcon },
+      { name: "Java", icon: javaIcon }
+    ]
+  },
+  {
+    id: 2,
+    company: "Freelance Projects",
+    position: "Full-Stack Developer",
+    duration: "2021 - Present",
+    logo: freelanceLogo,
+    descriptions: [
+      "Developed multiple full-stack web applications using React, Node.js, and modern JavaScript frameworks.",
+      "Created responsive and user-friendly interfaces with attention to design and user experience.",
+      "Built RESTful APIs and integrated third-party services for various client projects.",
+      "Worked with databases and implemented secure authentication systems."
+    ],
+    techStack: [
+      { name: "React", icon: reactIcon },
+      { name: "Next.js", icon: nextIcon },
+      { name: "Node.js", icon: nodeIcon },
+      { name: "Express", icon: expressIcon },
+      { name: "TypeScript", icon: tsIcon },
+      { name: "Firebase", icon: firebaseIcon },
+      { name: "Tailwind", icon: tailwindIcon },
+      { name: "Git", icon: gitIcon }
+    ]
+  }
+];
+
+// Education data based on Arka Pramanik's resume
+const educationData = [
+  {
+    id: 1,
+    institution: "SRM Institute of Science & Technology",
+    degree: "Bachelor of Technology in Computer Science",
+    duration: "2018 - 2022",
+    logo: srmLogo,
+    descriptions: [
+      "Completed Bachelor's degree in Computer Science and Engineering with strong foundation in programming and software development.",
+      "Gained expertise in data structures, algorithms, and software engineering principles.",
+      "Participated in various coding competitions and technical projects.",
+      "Developed strong problem-solving skills and collaborative teamwork abilities."
+    ],
+    courses: [
+      { name: "Data Structures", icon: cppIcon },
+      { name: "Algorithms", icon: pythonIcon },
+      { name: "Database Systems", icon: javaIcon },
+      { name: "Web Development", icon: jsIcon },
+      { name: "Software Engineering", icon: htmlIcon },
+      { name: "Computer Networks", icon: cssIcon },
+      { name: "Operating Systems", icon: gitIcon },
+      { name: "Programming", icon: vsCodeIcon }
+    ]
+  }
+];
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState("experience");
+  const [activeExperience, setActiveExperience] = useState(0);
+  const [activeEducation, setActiveEducation] = useState(0);
+  const experienceRefs = useRef([]);
+  const educationRefs = useRef([]);
 
   useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+    const handleScroll = () => {
+      if (activeTab === "experience") {
+        experienceRefs.current.forEach((ref, index) => {
+          if (ref) {
+            const rect = ref.getBoundingClientRect();
+            const isVisible = rect.top >= 0 && rect.top <= window.innerHeight / 2;
+            if (isVisible && activeExperience !== index) {
+              setActiveExperience(index);
+            }
+          }
+        });
+      } else {
+        educationRefs.current.forEach((ref, index) => {
+          if (ref) {
+            const rect = ref.getBoundingClientRect();
+            const isVisible = rect.top >= 0 && rect.top <= window.innerHeight / 2;
+            if (isVisible && activeEducation !== index) {
+              setActiveEducation(index);
+            }
+          }
+        });
+      }
+    };
 
-  const onDocumentLoadSuccess = useCallback(({ numPages }) => {
-    setNumPages(numPages);
-    setLoading(false);
-    setError(null);
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeTab, activeExperience, activeEducation]);
 
-  const onDocumentLoadError = useCallback((error) => {
-    console.error("Error loading PDF:", error);
-    setError("Failed to load PDF. Please try downloading it directly.");
-    setLoading(false);
-  }, []);
+  const renderExperienceItem = (item, index) => (
+    <div
+      key={item.id}
+      ref={el => experienceRefs.current[index] = el}
+      className={`experience-group ${activeExperience === index ? 'active' : 'dimmed'}`}
+      style={{ marginBottom: '4rem' }}
+    >
+      <div className="timeline-container">
+        {/* Company Logo Circle and Header */}
+        <div className="timeline-header">
+          <div className="timeline-logo-circle">
+            <img src={item.logo} alt={`${item.company} logo`} />
+          </div>
+          <div className="timeline-header-content">
+            <h3 className="company-name">{item.company}</h3>
+            <p className="position-duration">{item.position} | {item.duration}</p>
+          </div>
+        </div>
+        
+        {/* Description Points with Small White Circles */}
+        <div className="timeline-descriptions">
+          {item.descriptions.map((desc, i) => (
+            <div key={i} className="timeline-point">
+              <div className="timeline-small-circle"></div>
+              <div className="timeline-point-content">
+                <p>{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
-  // Memoize PDF options to prevent unnecessary reloads
-  const pdfOptions = useMemo(
-    () => ({
-      cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
-      cMapPacked: true,
-      standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts/`,
-    }),
-    []
+        {/* Mobile-only Tech Stack */}
+        <div className="mobile-tech-stack">
+          <h4 className="mobile-tech-stack-title">Tech Stack</h4>
+          <div className="mobile-tech-stack-grid">
+            {item.techStack.map((tech, techIndex) => (
+              <div key={techIndex} className="mobile-tech-item">
+                <div className="tech-icon">
+                  <img src={tech.icon} alt={tech.name} />
+                </div>
+                <span className="tech-name">{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+  const renderEducationItem = (item, index) => (
+    <div
+      key={item.id}
+      ref={el => educationRefs.current[index] = el}
+      className={`experience-group ${activeEducation === index ? 'active' : 'dimmed'}`}
+      style={{ marginBottom: '4rem' }}
+    >
+      <div className="timeline-container">
+        {/* Institution Logo Circle and Header */}
+        <div className="timeline-header">
+          <div className="timeline-logo-circle">
+            <img src={item.logo} alt={`${item.institution} logo`} />
+          </div>
+          <div className="timeline-header-content">
+            <h3 className="company-name">{item.institution}</h3>
+            <p className="position-duration">{item.degree} | {item.duration}</p>
+          </div>
+        </div>
+        
+        {/* Description Points with Small White Circles */}
+        <div className="timeline-descriptions">
+          {item.descriptions.map((desc, i) => (
+            <div key={i} className="timeline-point">
+              <div className="timeline-small-circle"></div>
+              <div className="timeline-point-content">
+                <p>{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Courses & Skills Section */}
+        <div className="mobile-tech-stack">
+          <h4 className="mobile-tech-stack-title">Courses & Skills</h4>
+          <div className="mobile-tech-stack-grid">
+            {item.courses.map((course, courseIndex) => (
+              <div key={courseIndex} className="mobile-tech-item">
+                <div className="tech-icon">
+                  <img src={course.icon} alt={course.name} />
+                </div>
+                <span className="tech-name">{course.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderTechStack = () => {
+    const currentData = activeTab === "experience" ? experienceData : educationData;
+    const activeIndex = activeTab === "experience" ? activeExperience : activeEducation;
+    const currentItem = currentData[activeIndex];
+
+    if (!currentItem) return null;
+
+    const stackItems = activeTab === "experience" ? currentItem.techStack : currentItem.courses;
+    const title = activeTab === "experience" ? "Tech Stack" : "Courses & Skills";
+
+    return (
+      <div className="tech-stack-section">
+        <h4 className="tech-stack-title">{title}</h4>
+        <div className="tech-stack-grid">
+          {stackItems.map((item, index) => (
+            <div key={index} className="tech-item">
+              <div className="tech-icon">
+                <img src={item.icon} alt={item.name} />
+              </div>
+              <span className="tech-name">{item.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -57,9 +276,14 @@ function ResumeNew() {
               <h1 className="project-heading">
                 MY <strong className="blue">RESUME</strong>
               </h1>
+              <p style={{ color: "rgba(255, 255, 255, 0.7)", fontSize: "1.1rem", marginBottom: "2rem" }}>
+                A glimpse into my academic and professional experience, shaping my growth in the tech world.
+              </p>
             </Col>
           </Row>
-          <Row style={{ justifyContent: "center", position: "relative" }}>
+          
+          {/* Download Resume Button */}
+          <Row style={{ justifyContent: "center", position: "relative", marginBottom: "3rem" }}>
             <Button
               variant="primary"
               href={pdf}
@@ -70,49 +294,41 @@ function ResumeNew() {
               &nbsp;Download Resume
             </Button>
           </Row>
+
+          {/* Tab Buttons */}
+          <Row style={{ justifyContent: "center", marginBottom: "3rem" }}>
+            <Col md={8} className="text-center">
+              <div className="tab-buttons">
+                <button
+                  className={`tab-btn ${activeTab === "experience" ? "active" : ""}`}
+                  onClick={() => setActiveTab("experience")}
+                >
+                  Experience
+                </button>
+                <button
+                  className={`tab-btn ${activeTab === "education" ? "active" : ""}`}
+                  onClick={() => setActiveTab("education")}
+                >
+                  Education
+                </button>
+              </div>
+            </Col>
+          </Row>
+
+          {/* Content Area */}
+          <Row>
+            <Col lg={7} md={12} className="experience-timeline">
+              {activeTab === "experience" 
+                ? experienceData.map((item, index) => renderExperienceItem(item, index))
+                : educationData.map((item, index) => renderEducationItem(item, index))
+              }
+            </Col>
+            {/* Desktop Tech Stack Column - only visible on desktop */}
+            <Col lg={5} className="tech-stack-container d-none d-lg-block">
+              {renderTechStack()}
+            </Col>
+          </Row>
         </Container>
-
-        <Row className="resume">
-          {loading && (
-            <div className="text-center">
-              <p>Loading PDF...</p>
-            </div>
-          )}
-          {error && (
-            <div className="text-center">
-              <p style={{ color: "red" }}>{error}</p>
-            </div>
-          )}
-          {!error && (
-            <Document
-              file={pdf}
-              className="d-flex justify-content-center"
-              onLoadSuccess={onDocumentLoadSuccess}
-              onLoadError={onDocumentLoadError}
-              loading={<div>Loading PDF...</div>}
-              error={<div>Failed to load PDF</div>}
-              options={pdfOptions}
-            >
-              <Page
-                pageNumber={1}
-                renderTextLayer={false}
-                scale={width > 786 ? 1.7 : 0.6}
-              />
-            </Document>
-          )}
-        </Row>
-
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
       </Container>
     </div>
   );
