@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from "react";
 
 // Custom hook for performance optimization
 export const usePerformanceOptimization = () => {
@@ -7,44 +7,47 @@ export const usePerformanceOptimization = () => {
 
   useEffect(() => {
     // Check for reduced motion preference
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setIsReducedMotion(mediaQuery.matches);
 
     const handleChange = (e) => setIsReducedMotion(e.matches);
-    mediaQuery.addEventListener('change', handleChange);
+    mediaQuery.addEventListener("change", handleChange);
 
     // Check device performance
     const checkDevicePerformance = () => {
       // Use device memory and hardware concurrency as performance indicators
       const deviceMemory = navigator.deviceMemory || 4; // Default to 4GB
       const hardwareConcurrency = navigator.hardwareConcurrency || 2; // Default to 2 cores
-      
+
       // Consider device slow if less than 4GB RAM or less than 4 cores
       setIsSlowDevice(deviceMemory < 4 || hardwareConcurrency < 4);
     };
 
     checkDevicePerformance();
 
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   // Throttle function for performance-heavy operations
   const throttle = useCallback((func, delay) => {
     let timeoutId;
     let lastExecTime = 0;
-    
+
     return function (...args) {
       const currentTime = Date.now();
-      
+
       if (currentTime - lastExecTime > delay) {
         func.apply(this, args);
         lastExecTime = currentTime;
       } else {
         clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => {
-          func.apply(this, args);
-          lastExecTime = Date.now();
-        }, delay - (currentTime - lastExecTime));
+        timeoutId = setTimeout(
+          () => {
+            func.apply(this, args);
+            lastExecTime = Date.now();
+          },
+          delay - (currentTime - lastExecTime)
+        );
       }
     };
   }, []);
@@ -75,7 +78,7 @@ export const usePerformanceOptimization = () => {
     isSlowDevice,
     throttle,
     debounce,
-    rafThrottle
+    rafThrottle,
   };
 };
 
@@ -95,9 +98,9 @@ export const useIntersectionObserver = (callback, options = {}) => {
         });
       },
       {
-        rootMargin: '50px',
+        rootMargin: "50px",
         threshold: 0.1,
-        ...options
+        ...options,
       }
     );
 

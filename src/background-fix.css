@@ -2,9 +2,11 @@
 
 /* Global background for entire page */
 body {
-  background: linear-gradient(to bottom left,
-      rgba(0, 0, 0, 0.719),
-      rgba(5, 10, 38, 0.856)) !important;
+  background: linear-gradient(
+    to bottom left,
+    rgba(0, 0, 0, 0.719),
+    rgba(5, 10, 38, 0.856)
+  ) !important;
   min-height: 100vh !important;
   background-attachment: fixed !important;
 }
@@ -43,4 +45,3 @@ body {
 .resume-section {
   color: white !important;
 }
-;

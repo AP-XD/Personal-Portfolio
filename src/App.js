@@ -25,13 +25,16 @@ function App() {
   const { isReducedMotion, isSlowDevice } = usePerformanceOptimization();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      updateLoad(false);
-      // Delay cursor animation to reduce initial load, skip on slow devices
-      if (!isSlowDevice) {
-        setTimeout(() => setShowCursor(true), 500);
-      }
-    }, isSlowDevice ? 800 : 1200); // Faster loading on slow devices
+    const timer = setTimeout(
+      () => {
+        updateLoad(false);
+        // Delay cursor animation to reduce initial load, skip on slow devices
+        if (!isSlowDevice) {
+          setTimeout(() => setShowCursor(true), 500);
+        }
+      },
+      isSlowDevice ? 800 : 1200
+    ); // Faster loading on slow devices
 
     return () => clearTimeout(timer);
   }, [isSlowDevice]);
@@ -56,20 +59,13 @@ function App() {
             innerScale={1.75}
             outerScale={1.5}
             showSystemCursor={false}
-            clickables={[
-              'a',
-              'button',
-              '.card',
-              '.btn',
-              'input',
-              'textarea',
-            ]}
+            clickables={["a", "button", ".card", ".btn", "input", "textarea"]}
           />
         </Suspense>
       )}
       <Preloader load={load} />
-      <div 
-        className={`App ${isReducedMotion ? 'reduced-motion' : ''} ${isSlowDevice ? 'slow-device' : ''}`} 
+      <div
+        className={`App ${isReducedMotion ? "reduced-motion" : ""} ${isSlowDevice ? "slow-device" : ""}`}
         id={load ? "no-scroll" : "scroll"}
       >
         <Navbar />

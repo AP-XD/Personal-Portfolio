@@ -19,9 +19,10 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
   color: white !important;
   /* Optimized transition - use transform and opacity only */
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              box-shadow 0.3s ease,
-              border-color 0.3s ease !important;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease !important;
   position: relative !important;
   overflow: hidden !important;
   margin-bottom: 2rem !important;
@@ -97,7 +98,9 @@
   border-radius: 25px !important;
   padding: 0.6rem 1.5rem !important;
   font-weight: 500 !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important; /* Faster transitions */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important; /* Faster transitions */
   box-shadow: 0 4px 15px rgba(33, 248, 255, 0.3) !important;
   will-change: transform; /* GPU acceleration */
 }
@@ -124,7 +127,10 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
   margin: 5px !important;
   padding: 12px 8px !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important; /* Optimized transitions */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease !important; /* Optimized transitions */
   position: relative !important;
   overflow: hidden !important;
   height: 100px !important;
@@ -178,7 +184,9 @@
   height: 40px !important;
   padding: 3px !important;
   filter: brightness(0.9) contrast(1.1);
-  transition: filter 0.2s ease, transform 0.2s ease !important; /* Optimized transitions */
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease !important; /* Optimized transitions */
   margin-bottom: 6px !important;
   will-change: filter, transform; /* GPU acceleration */
 }
@@ -195,7 +203,9 @@
   color: rgba(255, 255, 255, 0.9) !important;
   margin: 0 !important;
   text-align: center !important;
-  transition: color 0.2s ease, text-shadow 0.2s ease !important; /* Optimized transitions */
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease !important; /* Optimized transitions */
   line-height: 1.1 !important;
 }
 

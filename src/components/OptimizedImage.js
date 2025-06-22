@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useLazyImage } from '../hooks/usePerformanceOptimization';
+import React, { useState, useEffect } from "react";
+import { useLazyImage } from "../hooks/usePerformanceOptimization";
 
-const OptimizedImage = ({ 
-  src, 
-  alt, 
-  className = '', 
+const OptimizedImage = ({
+  src,
+  alt,
+  className = "",
   placeholder = null,
   onLoad = () => {},
-  ...props 
+  ...props
 }) => {
   const { ref, src: lazySrc, isLoaded } = useLazyImage(src);
   const [hasError, setHasError] = useState(false);
@@ -23,16 +23,14 @@ const OptimizedImage = ({
   return (
     <div ref={ref} className={`optimized-image-container ${className}`}>
       {!lazySrc && placeholder && (
-        <div className="image-placeholder">
-          {placeholder}
-        </div>
+        <div className="image-placeholder">{placeholder}</div>
       )}
-      
+
       {lazySrc && !hasError && (
         <img
           src={lazySrc}
           alt={alt}
-          className={`optimized-image ${isLoaded ? 'loaded' : 'loading'}`}
+          className={`optimized-image ${isLoaded ? "loaded" : "loading"}`}
           onLoad={handleLoad}
           onError={handleError}
           loading="lazy"
@@ -40,7 +38,7 @@ const OptimizedImage = ({
           {...props}
         />
       )}
-      
+
       {hasError && (
         <div className="image-error">
           <span>Failed to load image</span>

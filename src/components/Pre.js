@@ -2,12 +2,12 @@ import React from "react";
 
 function Pre(props) {
   return (
-    <div 
+    <div
       id={props.load ? "preloader" : "preloader-none"}
       style={{
-        willChange: props.load ? 'opacity' : 'auto',
-        backfaceVisibility: 'hidden',
-        WebkitBackfaceVisibility: 'hidden'
+        willChange: props.load ? "opacity" : "auto",
+        backfaceVisibility: "hidden",
+        WebkitBackfaceVisibility: "hidden",
       }}
     >
       {props.load && (
