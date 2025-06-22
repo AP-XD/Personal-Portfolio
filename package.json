@@ -21,7 +21,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node scripts/inject-preloads.js",
+    "build:base": "react-scripts build",
     "eject": "react-scripts eject",
     "format": "prettier --write ."
   },

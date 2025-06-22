@@ -33,7 +33,13 @@ function Home() {
 
             <Col md={5} style={{ paddingBottom: 20 }}>
               <Tilt>
-                <img src={homeLogo} alt="home pic" className="img-fluid" />
+                <img 
+                  src={homeLogo} 
+                  alt="home pic" 
+                  className="img-fluid"
+                  fetchPriority="high"
+                  loading="eager"
+                />
               </Tilt>
             </Col>
           </Row>

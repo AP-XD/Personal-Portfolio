@@ -9,9 +9,13 @@ import "./cards.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ScrollToTop from "./components/ScrollToTop";
 import { usePerformanceOptimization } from "./hooks/usePerformanceOptimization";
+import { resourcePreloader } from "./utils/preloader";
+import { useProgressiveImageLoading } from "./hooks/useProgressiveLoading";
+// Import the LCP image to get webpack path immediately
+import homeLogo from "./Assets/Programming.svg";
 
-// Lazy load components for better performance
-const Home = lazy(() => import("./components/Home/Home"));
+// Lazy load components for better performance - EXCEPT Home (contains LCP image)
+import Home from "./components/Home/Home"; // Not lazy - contains LCP image
 const About = lazy(() => import("./components/About/About"));
 const Projects = lazy(() => import("./components/Projects/Projects"));
 const Resume = lazy(() => import("./components/Resume/ResumeNew"));
@@ -23,8 +27,27 @@ function App() {
   const [load, updateLoad] = useState(true);
   const [showCursor, setShowCursor] = useState(false);
   const { isReducedMotion, isSlowDevice } = usePerformanceOptimization();
+  
+  // Use progressive loading for better performance
+  useProgressiveImageLoading();
 
   useEffect(() => {
+    // IMMEDIATELY preload the LCP image with highest priority
+    const preloadLCPImage = () => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = homeLogo; // This is the actual webpack path
+      link.fetchPriority = 'high';
+      link.type = 'image/svg+xml';
+      document.head.appendChild(link);
+    };
+    
+    preloadLCPImage();
+    
+    // Preload other critical resources
+    resourcePreloader.preloadCriticalImages();
+
     const timer = setTimeout(
       () => {
         updateLoad(false);
@@ -32,6 +55,10 @@ function App() {
         if (!isSlowDevice) {
           setTimeout(() => setShowCursor(true), 500);
         }
+        // Start prefetching next section resources after initial load
+        setTimeout(() => {
+          resourcePreloader.prefetchNextSectionResources();
+        }, 1000);
       },
       isSlowDevice ? 800 : 1200
     ); // Faster loading on slow devices
@@ -70,11 +97,10 @@ function App() {
       >
         <Navbar />
         <ScrollToTop />
-        <Suspense fallback={<LoadingFallback />}>
-          <div id="home">
-            <Home />
-          </div>
-        </Suspense>
+        {/* Home component NOT lazy-loaded - contains LCP image */}
+        <div id="home">
+          <Home />
+        </div>
         <Suspense fallback={<LoadingFallback />}>
           <div id="about">
             <About />
