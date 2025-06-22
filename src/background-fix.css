@@ -33,7 +33,7 @@ body {
   background-image: none !important;
 }
 
-.resume-section {
+.experience-section {
   background: transparent !important;
   background-image: none !important;
 }
@@ -42,6 +42,6 @@ body {
 .home-section,
 .about-section,
 .project-section,
-.resume-section {
+.experience-section {
   color: white !important;
 }

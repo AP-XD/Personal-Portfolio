@@ -27,7 +27,7 @@ function NavBar() {
   // Update active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "projects", "resume", "connect"];
+      const sections = ["home", "about", "projects", "experience", "connect"];
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -129,14 +129,14 @@ function NavBar() {
             </Nav.Item>{" "}
             <Nav.Item>
               <Nav.Link
-                href="#resume"
+                href="#experience"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection("resume");
+                  scrollToSection("experience");
                 }}
-                className={activeSection === "resume" ? "active" : ""}
+                className={activeSection === "experience" ? "active" : ""}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Experience
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>

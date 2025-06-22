@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
-import Resume from "./components/Resume/ResumeNew";
+import Experience from "./components/Experience/Experience";
 import Connect from "./components/Connect/Connect";
 import Footer from "./components/Footer";
 import "./style.css";
@@ -66,8 +66,8 @@ function App() {
         <div id="projects">
           <Projects />
         </div>
-        <div id="resume">
-          <Resume />
+        <div id="experience">
+          <Experience />
         </div>
         <div id="connect">
           <Connect />
