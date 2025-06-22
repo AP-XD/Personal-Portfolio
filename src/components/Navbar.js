@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
 import { ImBlog } from "react-icons/im";
 import { CgFileDocument } from "react-icons/cg";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiFillGithub,
 } from "react-icons/ai";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -22,6 +23,37 @@ function NavBar() {
       updateNavbar(false);
     }
   }
+
+  // Update active section based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "projects", "resume", "connect"];
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Smooth scroll function
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    updateExpanded(false);
+  };
 
   window.addEventListener("scroll", scrollHandler);
 
@@ -33,7 +65,13 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("home");
+          }}
+        >
           <h2 className="AP">
             AP<span className="blue AP">.</span>
           </h2>
@@ -47,55 +85,70 @@ function NavBar() {
           <span></span>
           <span></span>
           <span></span>
-        </Navbar.Toggle>
+        </Navbar.Toggle>{" "}
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("home");
+                }}
+                className={activeSection === "home" ? "active" : ""}
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("about");
+                }}
+                className={activeSection === "about" ? "active" : ""}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
+                href="#projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("projects");
+                }}
+                className={activeSection === "projects" ? "active" : ""}
               >
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects
               </Nav.Link>
-            </Nav.Item>
-
+            </Nav.Item>{" "}
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
+                href="#resume"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("resume");
+                }}
+                className={activeSection === "resume" ? "active" : ""}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
-            
             <Nav.Item>
               <Nav.Link
-                href="https://apxd.tech/"
-                target="_blank"
-                rel="noreferrer"
+                href="#connect"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("connect");
+                }}
+                className={activeSection === "connect" ? "active" : ""}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
+                <AiFillGithub style={{ marginBottom: "2px" }} /> Connect
               </Nav.Link>
             </Nav.Item>
           </Nav>

@@ -7,13 +7,8 @@ import hack from "./svg/hackerrank.svg";
 
 function CP() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col
-        xs={4}
-        md={2}
-        className="tech-icons"
-        style={{ transform: "rotate(0)" }}
-      >
+    <Row className="justify-content-center">
+      <Col xs={6} md={4} className="tech-icons">
         <img src={lt} alt="leetcode" />
         <h3>Leetcode</h3>
         <a
@@ -21,30 +16,21 @@ function CP() {
           target="_blank"
           rel="noreferrer"
           className="stretched-link"
+          aria-label="Visit Leetcode profile"
         ></a>
       </Col>
-      <Col
-        xs={4}
-        md={2}
-        className="tech-icons"
-        style={{ transform: "rotate(0)" }}
-      >
-        <img src={cf} alt="cf" />
+      <Col xs={6} md={4} className="tech-icons">
+        <img src={cf} alt="codeforces" />
         <h3>Codeforces</h3>
         <a
           href="https://codeforces.com/profile/AP_XD"
           target="_blank"
           rel="noreferrer"
           className="stretched-link"
+          aria-label="Visit Codeforces profile"
         ></a>
       </Col>
-
-      <Col
-        xs={4}
-        md={2}
-        className="tech-icons"
-        style={{ transform: "rotate(0)" }}
-      >
+      <Col xs={6} md={4} className="tech-icons">
         <img src={codechef} alt="codechef" />
         <h3>Codechef</h3>
         <a
@@ -52,15 +38,10 @@ function CP() {
           target="_blank"
           rel="noreferrer"
           className="stretched-link"
+          aria-label="Visit Codechef profile"
         ></a>
       </Col>
-
-      <Col
-        xs={4}
-        md={2}
-        className="tech-icons"
-        style={{ transform: "rotate(0)" }}
-      >
+      <Col xs={6} md={4} className="tech-icons">
         <img src={hack} alt="hackerrank" />
         <h3>Hackerrank</h3>
         <a
@@ -68,6 +49,7 @@ function CP() {
           target="_blank"
           rel="noreferrer"
           className="stretched-link"
+          aria-label="Visit Hackerrank profile"
         ></a>
       </Col>
     </Row>

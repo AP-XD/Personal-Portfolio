@@ -17,15 +17,18 @@ function Projects() {
     <Container fluid className="project-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="blue">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "space-around", paddingBottom: "10px" }}>
-
-          <Col  md={6}xs={12} sm={10}  lg={4}  className="project-card">
+        <Row>
+          <Col md={12} className="text-center">
+            <h1 className="project-heading">
+              MY RECENT <span className="blue">WORKS</span>
+            </h1>
+            <p style={{ color: "white" }}>
+              Here are a few projects I've worked on recently.
+            </p>
+          </Col>
+        </Row>
+        <Row style={{ justifyContent: "center", paddingBottom: "20px" }}>
+          <Col xs={12} sm={6} lg={4} className="project-card">
             <ProjectCard
               imgPath={HPE}
               title="HPC Security Dashboard"
@@ -33,7 +36,7 @@ function Projects() {
               link="https://github.com/AP-XD/HPE-CTY-HPC-Security-Dashboard"
             />
           </Col>
-          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
+          <Col xs={12} sm={6} lg={4} className="project-card">
             <ProjectCard
               imgPath={tuition}
               title="Online Tuition Management System"
@@ -41,18 +44,17 @@ function Projects() {
               link="https://github.com/AP-XD/SWE-J-Component"
             />
           </Col>
-          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
+          <Col xs={12} sm={6} lg={4} className="project-card">
             <ProjectCard
               imgPath={arrow}
               title="Device Tree"
-              description="ASUS Max M2 (X01AD) Device Tree Source Code for building Arrow OS Custom ROM for various Android Versions. "
+              description="ASUS Max M2 (X01AD) Device Tree Source Code for building Arrow OS Custom ROM for various Android Versions."
               link="https://github.com/AP-XD/device_asus_X01AD"
             />
           </Col>
         </Row>
-        <Row style={{ justifyContent: "space-around", paddingBottom: "10px" }}>
-
-          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
+        <Row style={{ justifyContent: "center", paddingBottom: "20px" }}>
+          <Col xs={12} sm={6} lg={4} className="project-card">
             <ProjectCard
               imgPath={habify}
               title="Habify"
@@ -60,7 +62,7 @@ function Projects() {
               link="https://github.com/AP-XD/Habify"
             />
           </Col>
-          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
+          <Col xs={12} sm={6} lg={4} className="project-card">
             <ProjectCard
               imgPath={enconnect}
               title="Enconnect"
@@ -68,7 +70,7 @@ function Projects() {
               link="https://github.com/AP-XD/EnConnect"
             />
           </Col>
-          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
+          <Col xs={12} sm={6} lg={4} className="project-card">
             <ProjectCard
               imgPath={nlp}
               title="Youtube Analyser"
@@ -77,8 +79,8 @@ function Projects() {
             />
           </Col>
         </Row>
-        <Row style={{ justifyContent: "space-around", paddingBottom: "10px" }}>
-          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
+        <Row style={{ justifyContent: "center", paddingBottom: "20px" }}>
+          <Col md={6} xs={12} sm={10} lg={4} className="project-card">
             <ProjectCard
               imgPath={weather}
               title="Weather App"
@@ -86,7 +88,7 @@ function Projects() {
               link="https://github.com/AP-XD/EnConnect"
             />
           </Col>
-          <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
+          <Col md={6} xs={12} sm={10} lg={4} className="project-card">
             <ProjectCard
               imgPath={Netflix}
               title="Netflix Clone"
@@ -102,7 +104,6 @@ function Projects() {
               link="https://github.com/AP-XD/Habify"
             />
           </Col> */}
-
         </Row>
       </Container>
     </Container>

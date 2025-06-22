@@ -1,0 +1,46 @@
+/* Background fix for consistent SPA styling */
+
+/* Global background for entire page */
+body {
+  background: linear-gradient(to bottom left,
+      rgba(0, 0, 0, 0.719),
+      rgba(5, 10, 38, 0.856)) !important;
+  min-height: 100vh !important;
+  background-attachment: fixed !important;
+}
+
+/* Ensure App container doesn't override background */
+.App {
+  background: transparent !important;
+  min-height: 100vh;
+}
+
+/* Remove section-specific backgrounds to use global background */
+.home-section {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+.about-section {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+.project-section {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+.resume-section {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Ensure all sections have consistent text color */
+.home-section,
+.about-section,
+.project-section,
+.resume-section {
+  color: white !important;
+}
+;
