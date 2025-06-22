@@ -14,7 +14,8 @@ function Connect() {
         <Row className="social-media-row">
           <Col md={12} className="text-center">
             <h1 className="project-heading">
-              🫱🏻‍🫲🏼 <span className="blue">CONNECT</span> WITH ME
+              <span className="wave">🫱🏻‍🫲🏼</span>{" "}
+              <span className="blue">CONNECT</span> WITH ME
             </h1>
             <ul className="home-about-social-links">
               <li className="social-icons">
@@ -57,6 +58,15 @@ function Connect() {
                   <AiFillInstagram />
                 </a>
               </li>
+              <li className="social-icons">
+                <a
+                  href="mailto:arkamtg.pramanik@gmail.com"
+                  className="icon-colour home-social-icons"
+                >
+                  <MdEmail />
+                </a>
+              </li>
+              
             </ul>
           </Col>
         </Row>

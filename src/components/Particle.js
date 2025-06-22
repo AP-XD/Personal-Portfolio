@@ -1,118 +1,118 @@
-import { useCallback, useMemo } from "react";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim"; // Use slim version for better performance
+import { useEffect, useMemo, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 const Particle = () => {
-  const particlesInit = useCallback(async (engine) => {
-    // Load only the slim version to reduce bundle size
-    await loadSlim(engine);
+  const [init, setInit] = useState(false);
+
+  // Initialize particles engine only once per application lifetime
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    // Remove console.log for production performance
-  }, []);
+  const particlesLoaded = (container) => {
+    console.log("Particles loaded:", container);
+  };
 
-  // Memoize particle options to prevent unnecessary re-renders
-  const particleOptions = useMemo(() => ({
-    background: {
-      color: {
-        value: "transparent",
+  // Your custom particle configuration
+  const options = useMemo(
+    () => ({
+      background: {
+        color: {
+          value: "transparent",
+        },
       },
-    },
-    fpsLimit: 60, // Reduced from 120 for better performance
-    interactivity: {
-      events: {
-        onClick: {
-          enable: true,
-          mode: "push",
+      fpsLimit: 60,
+      interactivity: {
+        events: {
+          onClick: {
+            enable: true,
+            mode: "push",
+          },
+          onHover: {
+            enable: true,
+            mode: "connect",
+          },
+          resize: true,
         },
-        onHover: {
-          enable: true,
-          mode: "connect",
-        },
-        resize: true,
-      },
-      modes: {
-        push: {
-          quantity: 2, // Reduced quantity
-        },
-        connect: {
-          distance: 80, // Reduced connection distance
-          links: {
-            opacity: 0.3,
+        modes: {
+          push: {
+            quantity: 2,
+          },
+          connect: {
+            distance: 80,
+            links: {
+              opacity: 0.3,
+            },
           },
         },
       },
-    },
-    particles: {
-      color: {
-        value: "#ffffff",
-      },
-      links: {
-        color: "#ffffff",
-        distance: 120, // Reduced from 150
-        enable: false,
-        opacity: 0.3, // Reduced opacity
-        width: 1,
-      },
-      collisions: {
-        enable: false, // Disabled for better performance
-      },
-      move: {
-        direction: "none",
-        enable: true,
-        outModes: {
-          default: "bounce",
+      particles: {
+        color: {
+          value: "#ffffff",
         },
-        random: false,
-        speed: 0.3, // Reduced speed
-        straight: false,
-      },
-      number: {
-        density: {
+        links: {
+          color: "#ffffff",
+          distance: 120,
+          enable: false,
+          opacity: 0.5,
+          width: 1,
+        },
+        move: {
+          direction: "none",
           enable: true,
-          area: 1000, // Increased area to reduce particle density
+          outModes: {
+            default: "bounce",
+          },
+          random: false,
+          speed: 0.3,
+          straight: false,
         },
-        value: 60, // Reduced from 100 particles
-      },
-      opacity: {
-        value: 0.25, // Reduced opacity
-        animation: {
-          enable: false, // Disabled animation for performance
+        number: {
+          density: {
+            enable: true,
+          },
+          value: 60,
+        },
+        opacity: {
+          value: 0.25,
+        },
+        shape: {
+          type: "circle",
+        },
+        size: {
+          value: { min: 1, max: 3 },
         },
       },
-      shape: {
-        type: "circle",
-      },
-      size: {
-        value: { min: 0.5, max: 2 }, // Reduced max size
-        animation: {
-          enable: false, // Disabled animation for performance
-        },
-      },
-    },
-    detectRetina: true,
-    smooth: true, // Enable smooth rendering
-    reduceDuplicates: true, // Reduce duplicate particles
-  }), []);
-
-  return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={particleOptions}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: -1,
-        pointerEvents: "none", // Improve performance
-      }}
-    />
+      detectRetina: true,
+    }),
+    []
   );
+
+  // Only render particles after initialization is complete
+  if (init) {
+    return (
+      <Particles
+        id="tsparticles"
+        particlesLoaded={particlesLoaded}
+        options={options}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+        }}
+      />
+    );
+  }
+
+  return <></>;
 };
 
 export default Particle;
