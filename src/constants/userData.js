@@ -51,6 +51,12 @@ import amazonwebservices from "../Assets/Skills/cloud/amazonwebservices.svg";
 import azure from "../Assets/Skills/cloud/azure.svg";
 import googlecloud from "../Assets/Skills/cloud/googlecloud.svg";
 
+// Coding Profiles
+import leetcode from "../Assets/Skills/coding-profiles/LeetCode_logo_black.png";
+import codeforces from "../Assets/Skills/coding-profiles/Codeforces.colored.svg";
+import codechef from "../Assets/Skills/coding-profiles/codechef.png";
+import hackerrank from "../Assets/Skills/coding-profiles/hackerrank.svg";
+
 export const userData = {
   projectsData: {
     title: "My Recent Works",
