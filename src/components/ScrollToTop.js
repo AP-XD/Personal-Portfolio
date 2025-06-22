@@ -13,7 +13,6 @@ function ScrollToTop() {
   };
   // Scroll to top smoothly
   const scrollToTop = () => {
-    console.log("ScrollToTop button clicked!"); // Debug log
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -42,7 +41,7 @@ function ScrollToTop() {
             style={{
               backgroundColor: "#20adff",
               color: "white",
-              border: "2px solid white",
+              border: "none",
               borderRadius: "50%",
               width: "55px",
               height: "55px",

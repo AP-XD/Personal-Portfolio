@@ -14,10 +14,6 @@ const Particle = () => {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log("Particles loaded:", container);
-  };
-
   // Your custom particle configuration
   const options = useMemo(
     () => ({
@@ -98,7 +94,6 @@ const Particle = () => {
     return (
       <Particles
         id="tsparticles"
-        particlesLoaded={particlesLoaded}
         options={options}
         style={{
           position: "absolute",
