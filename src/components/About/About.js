@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Skills from "./Skills";
+import CodingProfiles from "./CodingProfiles";
 import "./Skills.css";
 
 function About() {
@@ -9,6 +10,7 @@ function About() {
     <Container fluid className="about-section">
       <Particle />
       <Skills />
+      <CodingProfiles />
     </Container>
   );
 }

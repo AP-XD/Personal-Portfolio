@@ -86,6 +86,27 @@
   line-height: 1;
 }
 
+/* Coding Profiles Section */
+.coding-profiles-section {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  color: white !important;
+}
+
+.coding-profile-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.coding-profile-card:hover {
+  transform: translateY(-8px);
+  border: 1px solid #16a0e0c3;
+}
+
+.coding-profile-card:active {
+  transform: translateY(-5px);
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .skills-content-items {
