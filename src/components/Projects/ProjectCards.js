@@ -1,47 +1,60 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import { BiLinkExternal } from "react-icons/bi";
-function ProjectCards(props) {
+import CodeIcon from "@mui/icons-material/Code";
+import LanguageIcon from "@mui/icons-material/Language";
+import { motion } from "framer-motion";
+import "./Projects.css";
+
+function ProjectCards({ item }) {
   return (
-    <Card className="project-card-view" style={{ height: "100%" }}>
-      <Card.Img
-        variant="top"
-        src={props.imgPath}
-        alt="card-img"
-        style={{
-          padding: "1.5rem",
-          height: "200px",
-          objectFit: "contain",
-        }}
-      />
-      <Card.Body
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          height: "100%",
-        }}
-      >
-        <div>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text style={{ textAlign: "justify", fontSize: "0.95rem" }}>
-            {props.description}
-          </Card.Text>
+    <motion.div
+      className="project-item"
+      initial={{ opacity: 0, y: 75 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      viewport={{ once: true }}
+    >
+      <div className="project-image">
+        <img src={item.image} alt={item.name} />
+      </div>
+      <div className="project-details">
+        <div className="project-title">
+          <h3>{item.name}</h3>
+          <p>{item.description}</p>
         </div>
-        <div className="mt-auto">
-          <Button
-            variant="primary"
-            href={props.link}
-            target="_blank"
-            className="w-100"
-          >
-            <BiLinkExternal /> &nbsp;
-            {"View Project"}
-          </Button>
+        <div className="project-stacks">
+          <div className="stacks">
+            {item.techStack.map((tech) => {
+              return (
+                <p key={tech} className="tech-stack">
+                  {tech}
+                </p>
+              );
+            })}
+          </div>
+          <div className="project-btns">
+            <a
+              href={item.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="code-btn"
+            >
+              <CodeIcon className="code-icon" />
+            </a>
+            <a
+              href={item.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="view-btn"
+            >
+              <LanguageIcon className="live-icon" />
+            </a>
+          </div>
         </div>
-      </Card.Body>
-    </Card>
+      </div>
+    </motion.div>
   );
 }
+
 export default ProjectCards;

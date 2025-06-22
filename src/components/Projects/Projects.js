@@ -1,112 +1,40 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { userData } from "../../constants/userData";
 import ProjectCard from "./ProjectCards";
+import { motion } from "framer-motion";
 import Particle from "../Particle";
-
-import HPE from "../../Assets/Projects/HPE.png";
-import arrow from "../../Assets/Projects/arrow.jpg";
-import enconnect from "../../Assets/Projects/enconnect.jpg";
-import tuition from "../../Assets/Projects/tuition.jpg";
-import habify from "../../Assets/Projects/habify.jpg";
-import nlp from "../../Assets/Projects/nlp.png";
-import weather from "../../Assets/Projects/weather.png";
-import Netflix from "../../Assets/Projects/Netflix.svg";
+import "./Projects.css";
 
 function Projects() {
   return (
-    <Container fluid className="project-section">
+    <div className="projects" id="projects">
       <Particle />
-      <Container>
-        <Row>
-          <Col md={12} className="text-center">
-            <h1 className="project-heading">
-              MY RECENT <span className="blue">WORKS</span>
-            </h1>
-            <p style={{ color: "white" }}>
-              Here are a few projects I've worked on recently.
-            </p>
-          </Col>
-        </Row>
-        <Row style={{ justifyContent: "center", paddingBottom: "20px" }}>
-          <Col xs={12} sm={6} lg={4} className="project-card">
-            <ProjectCard
-              imgPath={HPE}
-              title="HPC Security Dashboard"
-              description="Enhance Kubernetes security monitoring with integrated Kube Bench and Trivy, enabling visualization of metrics in Prometheus and Grafana for actionable insights and improved security posture."
-              link="https://github.com/AP-XD/HPE-CTY-HPC-Security-Dashboard"
-            />
-          </Col>
-          <Col xs={12} sm={6} lg={4} className="project-card">
-            <ProjectCard
-              imgPath={tuition}
-              title="Online Tuition Management System"
-              description="A web app that helps the student and teachers to find, manage and organize local tuition centers."
-              link="https://github.com/AP-XD/SWE-J-Component"
-            />
-          </Col>
-          <Col xs={12} sm={6} lg={4} className="project-card">
-            <ProjectCard
-              imgPath={arrow}
-              title="Device Tree"
-              description="ASUS Max M2 (X01AD) Device Tree Source Code for building Arrow OS Custom ROM for various Android Versions."
-              link="https://github.com/AP-XD/device_asus_X01AD"
-            />
-          </Col>
-        </Row>
-        <Row style={{ justifyContent: "center", paddingBottom: "20px" }}>
-          <Col xs={12} sm={6} lg={4} className="project-card">
-            <ProjectCard
-              imgPath={habify}
-              title="Habify"
-              description="Our Habit Tracker App that helps you to be more disciplined and form good habits to be more productive."
-              link="https://github.com/AP-XD/Habify"
-            />
-          </Col>
-          <Col xs={12} sm={6} lg={4} className="project-card">
-            <ProjectCard
-              imgPath={enconnect}
-              title="Enconnect"
-              description="Our project aims in helping make chats the private way by encrypting and decrypting with standard algorithms and using multiple algorithms in same process which provides security and attack free."
-              link="https://github.com/AP-XD/EnConnect"
-            />
-          </Col>
-          <Col xs={12} sm={6} lg={4} className="project-card">
-            <ProjectCard
-              imgPath={nlp}
-              title="Youtube Analyser"
-              description="Our app provides you with a crisp description for your youtube video by using various algorithms."
-              link="https://github.com/AP-XD/CSE4022-Project"
-            />
-          </Col>
-        </Row>
-        <Row style={{ justifyContent: "center", paddingBottom: "20px" }}>
-          <Col md={6} xs={12} sm={10} lg={4} className="project-card">
-            <ProjectCard
-              imgPath={weather}
-              title="Weather App"
-              description="Beginner Project: Displays weather of a city using OPEN WEATHER API."
-              link="https://github.com/AP-XD/EnConnect"
-            />
-          </Col>
-          <Col md={6} xs={12} sm={10} lg={4} className="project-card">
-            <ProjectCard
-              imgPath={Netflix}
-              title="Netflix Clone"
-              description="Beginner Project: Netflix Clone built using React.js, and Firebase. Fetches latest trending movies from TMDB API."
-              link="https://github.com/AP-XD/Netflix-clone"
-            />
-          </Col>
-          {/* <Col  md={6}xs={12} sm={10}  lg={4} className="project-card">
-            <ProjectCard
-              imgPath={habify}
-              title="Habify"
-              description="Our Habit Tracker App that helps you to be more disciplined and form good habits to be more productive."
-              link="https://github.com/AP-XD/Habify"
-            />
-          </Col> */}
-        </Row>
-      </Container>
-    </Container>
+      <div className="projects-content">
+        <motion.div
+          className="projects-content-title"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <h1 className="section-title">{userData.projectsData.title}</h1>
+        </motion.div>
+        <motion.div
+          className="projects-content-description"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <p className="section-desc">{userData.projectsData.desc}</p>
+        </motion.div>
+        <div className="projects-content-items">
+          {userData?.projectsData?.projects.map((item) => {
+            return <ProjectCard key={item.id} item={item} />;
+          })}
+        </div>
+      </div>
+    </div>
   );
 }
 

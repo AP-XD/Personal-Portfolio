@@ -11,7 +11,7 @@ import "./style.css";
 import "./App.css";
 import "./background-fix.css";
 import "./cursor-fix.css";
-import "./cards.css";
+// import "./cards.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ScrollToTop from "./components/ScrollToTop";
 import AnimatedCursor from "react-animated-cursor";
