@@ -67,7 +67,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 15px;
+  gap: 10px;
   padding: 25px;
   width: 100%;
   position: relative;
@@ -111,10 +111,8 @@
 
 .project-image {
   width: 100%;
-  height: 200px;
   display: flex;
   justify-content: center;
-  align-items: center;
   border-radius: 12px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
@@ -130,6 +128,7 @@
   transition: all 0.3s ease;
   filter: brightness(0.9) contrast(1.1);
   display: block;
+  aspect-ratio: 16 / 9;
 }
 
 .project-item:hover .project-image img {
@@ -139,18 +138,17 @@
 
 .project-details {
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 5px 0;
+  padding: 2px;
 }
 
 .project-title {
   text-align: left;
   width: 100%;
-  margin-bottom: 15px;
 }
 
 .project-title h3 {
@@ -166,6 +164,7 @@
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   margin: 0;
+  max-width: 90%;
 }
 
 .project-stacks {
@@ -173,8 +172,8 @@
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 15px 0 0 0;
-  margin-top: auto;
+  padding: 10px 0;
+  margin-top: 10px;
   gap: 15px;
 }
 
@@ -183,6 +182,7 @@
   flex-wrap: wrap;
   gap: 8px;
   flex: 1;
+  margin-top: 10px;
 }
 
 .tech-stack {
@@ -199,6 +199,8 @@
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   white-space: nowrap;
+  margin: 0;
+  width: auto;
 }
 
 .tech-stack:hover {
@@ -215,17 +217,18 @@
 .project-btns {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 12px;
+  align-items: end;
+  gap: 10px;
   flex-shrink: 0;
+  margin-top: 10px;
 }
 
 .project-btns a {
-  padding: 12px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 8px;
   transition: all 0.3s ease;
   text-decoration: none;
   backdrop-filter: blur(10px);
@@ -281,36 +284,47 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .projects-content-items {
-    width: 95%;
-    gap: 20px;
+    width: 90%;
+    display: grid;
+    gap: 15px;
   }
-  
   .project-stacks {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 5px;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 0px;
   }
-  
   .tech-stack {
-    padding: 5px 10px;
+    padding: 5px 7px;
     font-size: 0.7rem;
   }
-  
-  .project-btns {
-    align-self: flex-end;
-    margin-top: 10px;
-  }
-  
   .project-btns a {
-    padding: 10px;
+    padding: 13px;
   }
 }
 
 @media (max-width: 768px) {
   .projects-content-items {
-    grid-template-columns: 1fr;
     width: 95%;
-    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .project-stacks {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 10px;
+  }
+  .tech-stack {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+  .project-btns a {
+    padding: 12px;
   }
   
   .projects-content-title .section-title {
@@ -325,25 +339,6 @@
   .project-item {
     padding: 20px;
   }
-  
-  .project-image {
-    height: 180px;
-  }
-  
-  .project-image img {
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  .project-stacks {
-    flex-direction: row;
-    align-items: flex-end;
-  }
-  
-  .tech-stack {
-    padding: 6px 10px;
-    font-size: 0.75rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -356,36 +351,28 @@
   }
   
   .projects-content-items {
-    gap: 15px;
+    gap: 10px;
     margin-top: 30px;
+  }
+  .project-stacks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 0px;
+  }
+  .tech-stack {
+    padding: 5px 7px;
+    font-size: 0.7rem;
+  }
+  .project-btns a {
+    padding: 10px;
   }
   
   .project-item {
     padding: 15px;
-  }
-  
-  .project-image {
-    height: 160px;
-  }
-  
-  .project-image img {
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  .project-stacks {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  
-  .tech-stack {
-    padding: 4px 8px;
-    font-size: 0.7rem;
-  }
-  
-  .project-btns a {
-    padding: 8px;
   }
   
   .code-icon,

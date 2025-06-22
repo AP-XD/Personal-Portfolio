@@ -111,7 +111,19 @@ function NavBar() {
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
+            </Nav.Item><Nav.Item>
+              <Nav.Link
+                href="#experience"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("experience");
+                }}
+                className={activeSection === "experience" ? "active" : ""}
+              >
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Experience
+              </Nav.Link>
             </Nav.Item>
+
             <Nav.Item>
               <Nav.Link
                 href="#projects"
@@ -127,18 +139,7 @@ function NavBar() {
                 Projects
               </Nav.Link>
             </Nav.Item>{" "}
-            <Nav.Item>
-              <Nav.Link
-                href="#experience"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("experience");
-                }}
-                className={activeSection === "experience" ? "active" : ""}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Experience
-              </Nav.Link>
-            </Nav.Item>
+            
             <Nav.Item>
               <Nav.Link
                 href="#connect"

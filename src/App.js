@@ -63,11 +63,11 @@ function App() {
         <div id="about">
           <About />
         </div>
-        <div id="projects">
-          <Projects />
-        </div>
         <div id="experience">
           <Experience />
+        </div>
+        <div id="projects">
+          <Projects />
         </div>
         <div id="connect">
           <Connect />
