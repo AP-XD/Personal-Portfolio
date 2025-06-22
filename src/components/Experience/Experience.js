@@ -6,9 +6,10 @@ import pdf from "../../Assets/Arka_Pramanik_s_Latest_Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 
 // Import company logos
-import tcsLogo from "../../Assets/tcs-logo.svg";
-import srmLogo from "../../Assets/srm-logo.svg";
-import freelanceLogo from "../../Assets/freelance-logo.svg";
+import hpeLogo from "../../Assets/logos/companies/HPE-logo-black.png";
+import arrowLogo from "../../Assets/logos/companies/arrowos-logo.png";
+import vitLogo from "../../Assets/logos/education/Vellore_Institute_of_Technology_logo.png";
+import stStephensLogo from "../../Assets/logos/education/ststephens-logo.png";
 
 // Import tech stack icons
 // Skill icons imports from organized Assets folder
@@ -28,80 +29,177 @@ import firebaseIcon from "../../Assets/Skills/backend/firebase.svg";
 import expressIcon from "../../Assets/Skills/backend/express.svg";
 import tailwindIcon from "../../Assets/Skills/frontend/tailwind.svg";
 import vsCodeIcon from "../../Assets/Skills/tools/vscode.svg";
-
-// Experience data based on Arka Pramanik's experience
+import sqlIcon from "../../Assets/Skills/backend/sql.png";
+import kubernetesIcon from "../../Assets/Skills/devops/kubernetes.png";
+import prometheusIcon from "../../Assets/Skills/devops/prometheus.svg";
+import grafanaIcon from "../../Assets/Skills/devops/grafana.svg";
+import helmIcon from "../../Assets/Skills/devops/helm.svg";
+import azureIcon from "../../Assets/Skills/cloud/azure.svg";
+import linuxIcon from "../../Assets/Skills/tools/linux.svg";
+import kubebenchIcon from "../../Assets/Skills/devops/kube-bench.png";
+import trivyIcon from "../../Assets/Skills/devops/trivy.png";
+import androidIcon from "../../Assets/icons/tools/Android-Logo.png";
+import makefileIcon from "../../Assets/icons/tools/makefile.webp";
+import bashIcon from "../../Assets/icons/tools/bash.png";
+import networkIcon from "../../Assets/icons/tools/computer-networking.png";
+import osIcon from "../../Assets/icons/tools/os.webp";
+import mathIcon from "../../Assets/icons/subjects/maths.avif";
+import physicsIcon from "../../Assets/icons/subjects/phys.jpg";
+import chemistryIcon from "../../Assets/icons/subjects/chem.jpg";
+import englishIcon from "../../Assets/icons/subjects/eng.jpg";
+import problemSolvingIcon from "../../Assets/icons/subjects/problem-solving.jpg";
+import istioIcon from "../../Assets/Skills/devops/istio.svg";
+import kialiIcon from "../../Assets/Skills/devops/kiali.png";
+// Experience data based on Arka Pramanik's resume
 const experienceData = [
   {
     id: 1,
-    company: "Tata Consultancy Services",
-    position: "Systems Engineer",
-    duration: "Jul 2022 - Present",
-    logo: tcsLogo,
+    company: "Hewlett Packard Enterprise",
+    position: "Systems/Software Engineer 1",
+    duration: "Sep 2024 - Present",
+    logo: hpeLogo,
     descriptions: [
-      "Worked as a full-stack developer on enterprise-level applications using modern web technologies.",
-      "Collaborated with cross-functional teams to deliver high-quality software solutions.",
-      "Participated in agile development processes and contributed to code reviews and technical discussions.",
-      "Developed and maintained web applications with focus on performance and user experience."
+      "Developing rack-level resiliency features in Cray System Management stack for predictive fault handling and automated recovery in large-scale HPC environments.",
+      "Contributing to Rack Resiliency Service (RRS) — a system-critical platform ensuring high availability through health monitoring, zone-level state transitions, and event-driven recovery.",
+      "Led secure production upgrade of Istio service mesh from v1.19.10 to v1.26.0, resolving CVEs and enabling ambient mesh, proxyless telemetry, and enhanced sidecar performance.",
+      "Upgraded Kiali observability dashboard ensuring compatibility with new Istio control plane and improving mesh visualization for developers and SREs.",
+      "Collaborating with global teams on cloud-native orchestration, CI/CD automation, and DevSecOps adoption in containerized supercomputing environments."
     ],
     techStack: [
-      { name: "React", icon: reactIcon },
+      { name: "Kubernetes", icon: kubernetesIcon },
+      { name: "Istio", icon: istioIcon },
+      { name: "Kiali", icon: kialiIcon },
+      { name: "Helm", icon: helmIcon },
+      { name: "Prometheus", icon: prometheusIcon },
+      { name: "Grafana", icon: grafanaIcon },
+      { name: "Python", icon: pythonIcon },
+      { name: "Git", icon: gitIcon },
       { name: "Node.js", icon: nodeIcon },
       { name: "JavaScript", icon: jsIcon },
-      { name: "HTML", icon: htmlIcon },
-      { name: "CSS", icon: cssIcon },
-      { name: "Git", icon: gitIcon },
-      { name: "Python", icon: pythonIcon },
-      { name: "Java", icon: javaIcon }
+      { name: "Linux", icon: linuxIcon }
     ]
   },
   {
     id: 2,
-    company: "Freelance Projects",
-    position: "Full-Stack Developer",
-    duration: "2021 - Present",
-    logo: freelanceLogo,
+    company: "Hewlett Packard Enterprise",
+    position: "HPC Software Engineer Intern",
+    duration: "Feb 2024 - Aug 2024",
+    logo: hpeLogo,
     descriptions: [
-      "Developed multiple full-stack web applications using React, Node.js, and modern JavaScript frameworks.",
-      "Created responsive and user-friendly interfaces with attention to design and user experience.",
-      "Built RESTful APIs and integrated third-party services for various client projects.",
-      "Worked with databases and implemented secure authentication systems."
+      "Worked as HPC Software Engineer Intern at HPE Bengaluru, Karnataka, India.",
+      "Part of the Platforms Team under the Cray System Management Product.",
+      "Successfully upgraded Istio (Kubernetes Service Mesh) from version 1.11.8 to 1.19.10.",
+      "This upgrade addressed multiple security vulnerabilities, ensuring a more secure environment.",
+      "Enabled new features to enhance customer capabilities and operational efficiency."
     ],
     techStack: [
-      { name: "React", icon: reactIcon },
-      { name: "Next.js", icon: nextIcon },
+      { name: "Kubernetes", icon: kubernetesIcon },
+      { name: "Istio", icon: istioIcon },
+      { name: "Kiali", icon: kialiIcon },
+      { name: "Trivy Operator", icon: trivyIcon },
+      { name: "Prometheus", icon: prometheusIcon },
+      { name: "Helm", icon: helmIcon },
+      { name: "Grafana", icon: grafanaIcon },
       { name: "Node.js", icon: nodeIcon },
-      { name: "Express", icon: expressIcon },
-      { name: "TypeScript", icon: tsIcon },
-      { name: "Firebase", icon: firebaseIcon },
-      { name: "Tailwind", icon: tailwindIcon },
-      { name: "Git", icon: gitIcon }
+      { name: "Git", icon: gitIcon },
     ]
-  }
+  },
+  
+  {
+    id: 3,
+    company: "Hewlett Packard Enterprise",
+    position: "HPE CTY Summer Intern",
+    duration: "Jan 2023 - Jun 2023",
+    logo: hpeLogo,
+    descriptions: [
+      "Developed centralized security dashboard for monitoring Kubernetes security aspects in HPC environments.",
+      "Implemented exporter service to export security metrics to Grafana for real-time monitoring and alerting.",
+      "Created detailed remediation steps for various security tests, enabling efficient resolution of security vulnerabilities.",
+      "Gained hands-on experience with cloud-native technologies and security monitoring solutions in enterprise environments.",
+      "Collaborated with cross-functional teams to enhance security posture of containerized workloads."
+    ],
+    techStack: [
+      { name: "Kubernetes", icon: kubernetesIcon },
+      { name: "Kube Bench", icon: kubebenchIcon },
+      { name: "Trivy Operator", icon: trivyIcon },
+      { name: "Prometheus", icon: prometheusIcon },
+      { name: "Helm", icon: helmIcon },
+      { name: "Grafana", icon: grafanaIcon },
+      { name: "Node.js", icon: nodeIcon },
+      { name: "JavaScript", icon: jsIcon }
+    ]
+  },
+  {
+    id: 4,
+    company: "Arrow OS",
+    position: "Device Maintainer",
+    duration: "Feb 2021 - Aug 2022",
+    logo: arrowLogo,
+    descriptions: [
+      "Working on supporting the Asus Max M2 (SDM632 Platform) for Android 12.",
+      "Improved overall user experience by working on device side semantics and performance improvements.",
+      "Collaborated with the open-source community to maintain and develop custom Android ROMs.",
+      "Gained expertise in Android development, Linux kernel modifications, and build systems."
+    ],
+    techStack: [
+      { name: "Linux", icon: linuxIcon },
+      { name: "C++", icon: cppIcon },
+      { name: "Git", icon: gitIcon },
+      { name: "GitHub", icon: githubIcon },
+      { name: "Azure", icon: azureIcon },
+      { name: "Android", icon: androidIcon },
+      { name: "Makefile", icon: makefileIcon },
+      { name: "Bash", icon: bashIcon }
+    ]
+  },
 ];
 
-// Education data based on Arka Pramanik's experience
+// Education data based on Arka Pramanik's resume
 const educationData = [
   {
     id: 1,
-    institution: "SRM Institute of Science & Technology",
+    institution: "Vellore Institute of Technology",
     degree: "Bachelor of Technology in Computer Science",
-    duration: "2018 - 2022",
-    logo: srmLogo,
+    duration: "2020 - 2024",
+    logo: vitLogo,
     descriptions: [
-      "Completed Bachelor's degree in Computer Science and Engineering with strong foundation in programming and software development.",
-      "Gained expertise in data structures, algorithms, and software engineering principles.",
-      "Participated in various coding competitions and technical projects.",
-      "Developed strong problem-solving skills and collaborative teamwork abilities."
+      "Completed Bachelor's degree in Computer Science and Engineering with CGPA: 9.03/10.0.",
+      "Gained strong foundation in programming, data structures, algorithms, and software engineering principles.",
+      "Participated in various coding competitions including Google Hash Code where secured AIR 1403.",
+      "Selected for Amazon ML Summer School Program as top 200 from India.",
+      "Active member of CodeChef VIT and IEEE-CS VIT, mentoring junior members in DSA and competitive coding."
     ],
     courses: [
       { name: "Data Structures", icon: cppIcon },
       { name: "Algorithms", icon: pythonIcon },
-      { name: "Database Systems", icon: javaIcon },
+      { name: "Database Systems", icon: sqlIcon },
       { name: "Web Development", icon: jsIcon },
-      { name: "Software Engineering", icon: htmlIcon },
-      { name: "Computer Networks", icon: cssIcon },
-      { name: "Operating Systems", icon: gitIcon },
-      { name: "Programming", icon: vsCodeIcon }
+      { name: "Software Engineering", icon: reactIcon },
+      { name: "Computer Networks", icon: networkIcon },
+      { name: "Operating Systems", icon: osIcon },
+      { name: "Machine Learning", icon: pythonIcon }
+    ]
+  },
+  {
+    id: 2,
+    institution: "St. Stephen's School",
+    degree: "Higher Secondary Education",
+    duration: "2018 - 2020",
+    logo: stStephensLogo,
+    descriptions: [
+      "Completed Class XII with 96.5% aggregate in 2020.",
+      "Completed Class X with 89.6% aggregate in 2018.",
+      "Secured 96.67 percentile (AIR 36503) in JEE Main 2020 among 1.174M participants.",
+      "Strong foundation in Mathematics, Physics, and Chemistry.",
+      "Developed analytical thinking and problem-solving skills."
+    ],
+    courses: [
+      { name: "Mathematics", icon: mathIcon },
+      { name: "Physics", icon: physicsIcon },
+      { name: "Chemistry", icon: chemistryIcon },
+      { name: "Computer Science", icon: jsIcon },
+      { name: "English", icon: englishIcon },
+      { name: "Problem Solving", icon: problemSolvingIcon }
     ]
   }
 ];
@@ -318,7 +416,7 @@ function ExperienceNew() {
 
           {/* Content Area */}
           <Row>
-            <Col lg={7} md={12} className="experience-timeline">
+            <Col lg={6} className="experience-timeline">
               {activeTab === "experience" 
                 ? experienceData.map((item, index) => renderExperienceItem(item, index))
                 : educationData.map((item, index) => renderEducationItem(item, index))

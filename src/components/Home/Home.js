@@ -37,7 +37,7 @@ function Home() {
                   src={homeLogo}
                   alt="home pic"
                   className="img-fluid"
-                  fetchPriority="high"
+                  fetchpriority="high"
                   loading="eager"
                 />
               </Tilt>

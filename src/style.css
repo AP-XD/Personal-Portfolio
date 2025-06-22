@@ -369,7 +369,7 @@ html {
 
 .home-section {
   position: relative;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
+  background-image: var(--image-gradient), url(./Assets/backgrounds/home-bg.jpg);
   background-position: top center;
   background-repeat: no-repeat;
   padding-bottom: 30px !important;
@@ -1033,19 +1033,21 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: transparent;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   z-index: 2;
+  padding: 8px;
 }
 
 .timeline-logo-circle img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: transparent;
 }
 
 .timeline-header-content {
@@ -1119,6 +1121,8 @@ body {
   border: none;
   border-radius: 15px;
   padding: 2rem;
+  padding-left: 4rem;
+  margin-top: 1.5rem;
   backdrop-filter: none;
   box-shadow: none;
 }
@@ -1133,7 +1137,7 @@ body {
 
 .tech-stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
@@ -1274,7 +1278,7 @@ html {
 
 .home-section {
   background-image:
-    var(--darkreader-bgimg--image-gradient), url(./Assets/home-bg.jpg);
+    var(--darkreader-bgimg--image-gradient), url(./Assets/backgrounds/home-bg.jpg);
 }
 .home-content {
   color: rgb(226, 223, 219);
