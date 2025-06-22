@@ -33,9 +33,9 @@ function Home() {
 
             <Col md={5} style={{ paddingBottom: 20 }}>
               <Tilt>
-                <img 
-                  src={homeLogo} 
-                  alt="home pic" 
+                <img
+                  src={homeLogo}
+                  alt="home pic"
                   className="img-fluid"
                   fetchPriority="high"
                   loading="eager"
