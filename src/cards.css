@@ -1,26 +1,34 @@
 /* ====================================
-   CLEAN CARD STYLES - NO DUPLICATES
+   OPTIMIZED CARD STYLES FOR PERFORMANCE
    ==================================== */
 
-/* Project Cards - Futuristic Design */
+/* Project Cards - Optimized Futuristic Design */
 .project-card-view {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
     rgba(255, 255, 255, 0.05)
   ) !important;
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
+  /* Optimized backdrop-filter for better performance */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 20px !important;
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.37),
     inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
   color: white !important;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  /* Optimized transition - use transform and opacity only */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s ease,
+              border-color 0.3s ease !important;
   position: relative !important;
   overflow: hidden !important;
   margin-bottom: 2rem !important;
+  /* GPU acceleration */
+  will-change: transform;
+  /* Reduce repaints */
+  transform: translateZ(0);
 }
 
 .project-card-view::before {
@@ -36,30 +44,33 @@
     rgba(255, 255, 255, 0.1),
     transparent
   );
-  transition: left 0.8s;
+  transition: transform 0.6s ease; /* Changed from left to transform */
+  transform: translateX(0);
 }
 
 .project-card-view:hover::before {
-  left: 100%;
+  transform: translateX(200%); /* Use transform instead of left */
 }
 
 .project-card-view:hover {
-  transform: translateY(-10px) scale(1.02) !important;
+  transform: translateY(-8px) translateZ(0) !important; /* Reduced transform */
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(33, 248, 255, 0.3),
+    0 16px 32px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(33, 248, 255, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
   border: 1px solid rgba(33, 248, 255, 0.4) !important;
 }
 
 .project-card-view .card-img-top {
   border-radius: 15px 15px 0 0 !important;
-  transition: all 0.3s ease !important;
+  transition: filter 0.3s ease !important;
   filter: brightness(0.9) contrast(1.1);
+  /* GPU acceleration */
+  will-change: filter;
 }
 
 .project-card-view:hover .card-img-top {
-  filter: brightness(1.1) contrast(1.2) saturate(1.1);
+  filter: brightness(1.05) contrast(1.1) saturate(1.05); /* Reduced intensity */
 }
 
 .project-card-view .card-body {
@@ -71,7 +82,7 @@
   font-weight: 600 !important;
   font-size: 1.3rem !important;
   margin-bottom: 1rem !important;
-  text-shadow: 0 0 10px rgba(33, 248, 255, 0.3);
+  text-shadow: 0 0 8px rgba(33, 248, 255, 0.2); /* Reduced glow */
 }
 
 .project-card-view .card-text {
@@ -86,25 +97,26 @@
   border-radius: 25px !important;
   padding: 0.6rem 1.5rem !important;
   font-weight: 500 !important;
-  transition: all 0.3s ease !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important; /* Faster transitions */
   box-shadow: 0 4px 15px rgba(33, 248, 255, 0.3) !important;
+  will-change: transform; /* GPU acceleration */
 }
 
 .project-card-view .btn:hover {
-  transform: translateY(-2px) !important;
+  transform: translateY(-1px) translateZ(0) !important; /* Reduced movement */
   box-shadow: 0 6px 20px rgba(33, 248, 255, 0.4) !important;
   background: linear-gradient(135deg, #1a8cd8, #21f8ff) !important;
 }
 
-/* About Section Cards - Single Row Layout */
+/* About Section Cards - Optimized Performance */
 .tech-icons {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.08),
     rgba(255, 255, 255, 0.03)
   ) !important;
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(10px) !important; /* Reduced blur */
+  -webkit-backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   border-radius: 12px !important;
   box-shadow:
@@ -112,7 +124,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
   margin: 5px !important;
   padding: 12px 8px !important;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important; /* Optimized transitions */
   position: relative !important;
   overflow: hidden !important;
   height: 100px !important;
@@ -127,6 +139,9 @@
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
+  /* GPU acceleration */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .tech-icons::before {
@@ -142,7 +157,7 @@
     transparent 70%
   );
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease; /* Faster transition */
 }
 
 .tech-icons:hover::before {
@@ -150,10 +165,10 @@
 }
 
 .tech-icons:hover {
-  transform: translateY(-3px) scale(1.03) !important;
+  transform: translateY(-2px) translateZ(0) !important; /* Reduced movement */
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.4),
-    0 0 12px rgba(33, 248, 255, 0.2),
+    0 6px 20px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(33, 248, 255, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
   border: 1px solid rgba(33, 248, 255, 0.3) !important;
 }
@@ -163,14 +178,15 @@
   height: 40px !important;
   padding: 3px !important;
   filter: brightness(0.9) contrast(1.1);
-  transition: all 0.3s ease !important;
+  transition: filter 0.2s ease, transform 0.2s ease !important; /* Optimized transitions */
   margin-bottom: 6px !important;
+  will-change: filter, transform; /* GPU acceleration */
 }
 
 .tech-icons:hover > img {
-  filter: brightness(1.2) contrast(1.2) saturate(1.2)
-    drop-shadow(0 0 8px rgba(33, 248, 255, 0.4));
-  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1) saturate(1.1)
+    drop-shadow(0 0 6px rgba(33, 248, 255, 0.3)); /* Reduced intensity */
+  transform: scale(1.03) translateZ(0); /* Reduced scale */
 }
 
 .tech-icons > h3 {
@@ -179,13 +195,13 @@
   color: rgba(255, 255, 255, 0.9) !important;
   margin: 0 !important;
   text-align: center !important;
-  transition: all 0.3s ease !important;
+  transition: color 0.2s ease, text-shadow 0.2s ease !important; /* Optimized transitions */
   line-height: 1.1 !important;
 }
 
 .tech-icons:hover > h3 {
   color: #21f8ff !important;
-  text-shadow: 0 0 6px rgba(33, 248, 255, 0.4);
+  text-shadow: 0 0 4px rgba(33, 248, 255, 0.3); /* Reduced glow */
 }
 
 /* About Section Layout - Reduced Spacing */
