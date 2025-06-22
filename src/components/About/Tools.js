@@ -7,16 +7,16 @@ import linux from "./svg/linux.svg";
 
 function Tools() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
+    <Row className="justify-content-center">
+      <Col xs={6} md={3} className="tech-icons">
         <img src={vs} alt="vs" />
         <h3>VS Code</h3>
       </Col>
       <Col
-        xs={4}
-        md={2}
+        xs={6}
+        md={3}
         className="tech-icons"
-        style={{ transform: "rotate(0)" }}
+        style={{ position: "relative" }}
       >
         <img src={git} alt="git" />
         <h3>Github</h3>
@@ -25,13 +25,14 @@ function Tools() {
           target="_blank"
           rel="noreferrer"
           className="stretched-link"
+          aria-label="Visit GitHub profile"
         ></a>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
+      <Col xs={6} md={3} className="tech-icons">
         <img src={kube} alt="Kubernetes" />
         <h3>Kubernetes</h3>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
+      <Col xs={6} md={3} className="tech-icons">
         <img src={linux} alt="linux" />
         <h3>Linux</h3>
       </Col>

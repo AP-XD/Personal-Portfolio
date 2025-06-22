@@ -1,0 +1,24 @@
+/* Fix for animated cursor to ensure it appears on top of all elements */
+/* React Animated Cursor classes */
+.react-animated-cursor,
+.react-animated-cursor-inner,
+.react-animated-cursor-outer,
+.__cursor,
+.__cursor-inner,
+.__cursor-outer,
+[data-cursor],
+[data-cursor] > * {
+  z-index: 999999999 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure any cursor-related divs are always on top */
+div[style*="position: fixed"][style*="pointer-events: none"] {
+  z-index: 999999999 !important;
+}
+
+/* Additional override for any cursor elements */
+* [class*="cursor"],
+* [id*="cursor"] {
+  z-index: 999999999 !important;
+}

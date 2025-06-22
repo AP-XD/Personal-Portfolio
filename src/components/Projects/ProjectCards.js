@@ -2,26 +2,46 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { BiLinkExternal } from "react-icons/bi";
-import CardGroup from 'react-bootstrap/CardGroup';
 function ProjectCards(props) {
   return (
-    <CardGroup>
-    <Card className="project-card-view" style={{ height: '30rem' }}>
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" style={{ padding:'2rem' }} />
-      <Card.Body style={{display:"flex",flexDirection:"column",justifyContent:"space-around"}}>
-        <Card.Title style={{ fontSize:"1.25rem", fontWeight:"700"}}>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "center"}}>
-          {props.description}
-        </Card.Text>
-        <Card.Footer>
-        <Button variant="primary" href={props.link} target="_blank">
-          <BiLinkExternal /> &nbsp;
-          {"View Project"}
-        </Button></Card.Footer>
+    <Card className="project-card-view" style={{ height: "100%" }}>
+      <Card.Img
+        variant="top"
+        src={props.imgPath}
+        alt="card-img"
+        style={{
+          padding: "1.5rem",
+          height: "200px",
+          objectFit: "contain",
+        }}
+      />
+      <Card.Body
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          height: "100%",
+        }}
+      >
+        <div>
+          <Card.Title>{props.title}</Card.Title>
+          <Card.Text style={{ textAlign: "justify", fontSize: "0.95rem" }}>
+            {props.description}
+          </Card.Text>
+        </div>
+        <div className="mt-auto">
+          <Button
+            variant="primary"
+            href={props.link}
+            target="_blank"
+            className="w-100"
+          >
+            <BiLinkExternal /> &nbsp;
+            {"View Project"}
+          </Button>
+        </div>
       </Card.Body>
     </Card>
-    </CardGroup>
-
   );
 }
 export default ProjectCards;

@@ -7,20 +7,20 @@ import bs from "./svg/bs.svg";
 
 function Frontend() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
+    <Row className="justify-content-center">
+      <Col xs={6} md={3} className="tech-icons">
         <img src={html} alt="html" />
         <h3>HTML</h3>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
+      <Col xs={6} md={3} className="tech-icons">
         <img src={css} alt="css" />
         <h3>CSS</h3>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
+      <Col xs={6} md={3} className="tech-icons">
         <img src={react} alt="react" />
         <h3>React</h3>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
+      <Col xs={6} md={3} className="tech-icons">
         <img src={bs} alt="bootstrap" />
         <h3>Bootstrap</h3>
       </Col>
