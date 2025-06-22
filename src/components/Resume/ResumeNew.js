@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
@@ -21,17 +21,27 @@ function ResumeNew() {
     setWidth(window.innerWidth);
   }, []);
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
+  const onDocumentLoadSuccess = useCallback(({ numPages }) => {
     setNumPages(numPages);
     setLoading(false);
     setError(null);
-  };
+  }, []);
 
-  const onDocumentLoadError = (error) => {
+  const onDocumentLoadError = useCallback((error) => {
     console.error("Error loading PDF:", error);
     setError("Failed to load PDF. Please try downloading it directly.");
     setLoading(false);
-  };
+  }, []);
+
+  // Memoize PDF options to prevent unnecessary reloads
+  const pdfOptions = useMemo(
+    () => ({
+      cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
+      cMapPacked: true,
+      standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts/`,
+    }),
+    []
+  );
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -74,18 +84,14 @@ function ResumeNew() {
             </div>
           )}
           {!error && (
-            <Document 
-              file={pdf} 
+            <Document
+              file={pdf}
               className="d-flex justify-content-center"
               onLoadSuccess={onDocumentLoadSuccess}
               onLoadError={onDocumentLoadError}
               loading={<div>Loading PDF...</div>}
               error={<div>Failed to load PDF</div>}
-              options={{
-                cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
-                cMapPacked: true,
-                standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts/`,
-              }}
+              options={pdfOptions}
             >
               <Page
                 pageNumber={1}

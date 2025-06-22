@@ -66,7 +66,6 @@ function Connect() {
                   <MdEmail />
                 </a>
               </li>
-              
             </ul>
           </Col>
         </Row>
