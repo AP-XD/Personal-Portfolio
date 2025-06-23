@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { userData } from "../../constants/userData";
 import ProjectCard from "./ProjectCards";
 import { motion } from "framer-motion";
 import "./Projects.css";
 
 function Projects() {
+  
+  const projects = useMemo(() => userData?.projectsData?.projects || [], []);
+
   return (
     <div className="projects" id="projects">
       <div className="projects-content">
@@ -29,9 +32,9 @@ function Projects() {
           <p className="section-desc">{userData.projectsData.desc}</p>
         </motion.div>
         <div className="projects-content-items">
-          {userData?.projectsData?.projects.map((item) => {
-            return <ProjectCard key={item.id} item={item} />;
-          })}
+          {projects.map((item) => (
+            <ProjectCard key={item.id} item={item} />
+          ))}
         </div>
       </div>
     </div>

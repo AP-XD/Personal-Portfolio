@@ -8,15 +8,23 @@ function ProjectCards({ item }) {
   return (
     <motion.div
       className="project-item"
-      initial={{ opacity: 0, y: 75 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 }}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      viewport={{ once: true }}
+      transition={{ 
+        duration: 0.3, 
+        delay: 0.1,
+        ease: "easeOut"
+      }}
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.99 }}
+      viewport={{ once: true, margin: "-50px" }}
     >
       <div className="project-image">
-        <img src={item.image} alt={item.name} />
+        <img src={item.image} alt={item.name} style={{
+            width: '100%',
+            height: '200px',
+            objectFit: 'cover'
+          }}/>
       </div>
       <div className="project-details">
         <div className="project-title">

@@ -41,6 +41,26 @@ export default defineConfig({
       }
     },
     // Increase chunk size warning limit to 1000kb
-    chunkSizeWarningLimit: 1000
-  }
+    chunkSizeWarningLimit: 1000,
+    // Enable minification
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+  },
+  // Add performance optimizations
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'framer-motion',
+      '@mui/material',
+      '@mui/icons-material'
+    ],
+  },
+  // Image optimization
+  assetsInclude: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif', '**/*.svg'],
 })
