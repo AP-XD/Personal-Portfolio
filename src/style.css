@@ -52,69 +52,6 @@ html {
   backface-visibility: hidden;
 }
 
-/* Optimized Loading Spinner */
-.section-loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  background: transparent;
-}
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgb(33 248 255 / 10%);
-  border-top: 3px solid #21f8ff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  /* GPU acceleration */
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg) translateZ(0);
-  }
-
-  100% {
-    transform: rotate(360deg) translateZ(0);
-  }
-}
-
-/* Reduce Motion for Users Who Prefer It */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .loading-spinner {
-    animation: none;
-    border: 3px solid #21f8ff;
-    border-top: 3px solid rgb(33 248 255 / 30%);
-  }
-}
-
-/* Intersection Observer Optimization */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.6s ease-out,
-    transform 0.6s ease-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
@@ -142,27 +79,9 @@ html {
   background-color: #484e51;
 }
 
-/* Performance-focused hover states */
-.btn-hover-optimized {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  will-change: transform;
-}
-
-.btn-hover-optimized:hover {
-  transform: translateY(-1px) translateZ(0);
-}
-
 /* --------- */
 /* Navbar Section  */
 /* --------- */
-.AP {
-  font-size: 2rem;
-  font-weight: 600;
-  font-family: cursive;
-}
-
 .sticky {
   background-color: #212038d8 !important;
   transition: all 0.3s ease-out 0s !important;
@@ -258,6 +177,12 @@ html {
 
 .navbar-brand {
   color: rgb(250 250 250) !important;
+}
+
+.navbar-profile-image {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
 }
 
 .logo {
@@ -450,64 +375,90 @@ html {
   text-align: left;
 }
 
-.home-about-social {
-  text-align: center !important;
-  padding-top: 25px;
-  color: white !important;
-}
-
-.home-about-social-links {
-  justify-content: center !important;
-  padding-top: 15px !important;
-  display: inline-block !important;
-  position: relative !important;
-  padding-inline-start: 0 !important;
-}
-
-.home-social-icons {
-  position: relative !important;
-  display: inline-block !important;
-  width: 40px !important;
-  height: 40px !important;
-  text-align: center !important;
-  font-size: 1.1em !important;
-  line-height: 2em !important;
-  background: rgb(255 255 255 / 85.7%) !important;
-  border-radius: 50% !important;
-  transition: 0.5s !important;
-}
-
-.home-social-icons::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  transition: 0.5s;
-  transform: scale(0.85);
-}
-
-.home-social-icons:hover::before {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #090ba1;
-}
-
-.home-social-icons:hover {
-  color: #1524ac;
-  box-shadow: 0 0 20px #1524ac;
-  text-shadow: 0 0 2px #1524ac;
-}
-
 .social-icons {
   display: inline-block !important;
   padding-right: 15px;
   padding-left: 15px;
 }
 
-.icon-colour {
-  color: #1524ac !important;
+/* --------- */
+/* Connect Section Profile and Social Icons */
+/* --------- */
+.connect-profile-section {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.connect-profile-image {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.connect-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.connect-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  color: white !important;
+  text-decoration: none !important;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+
+.connect-social-icon:hover {
+  transform: scale(1.1);
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.connect-social-icon:focus {
+  outline: none;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.connect-social-icon:visited {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.connect-social-icon.linkedin:hover {
+  background-color: #0077b5;
+  color: white !important;
+}
+
+.connect-social-icon.github:hover {
+  background-color: #21262d;
+  color: white !important;
+}
+
+.connect-social-icon.telegram:hover {
+  background-color: #0088cc;
+  color: white !important;
+}
+
+.connect-social-icon.instagram:hover {
+  background-color: #e4405f;
+  color: white !important;
+}
+
+.connect-social-icon.email:hover {
+  background-color: #ea4335;
+  color: white !important;
 }
 
 /* --------- */
@@ -573,38 +524,6 @@ html {
   box-shadow: none !important;
 }
 
-/* --------- */
-/* Projects */
-/* --------- */
-.project-section {
-  position: relative !important;
-  padding-top: 80px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-}
-
-.project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 50px !important;
-  padding-right: 50px !important;
-  height: auto !important;
-}
-
-.project-card-view {
-  color: white !important;
-  background-color: rgb(255 255 255 / 74%) !important;
-  opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
-  /* height: 100% !important; */
-}
-
-.project-card-view:hover {
-  transform: scale(1.05) !important;
-  overflow: hidden !important;
-  border: 3px solid rgb(255 255 255 / 61.6%) !important;
-}
-
 .project-heading {
   color: white !important;
   font-size: 2.3em !important;
@@ -666,24 +585,6 @@ html {
 .tech-icon-images {
   padding: 20px !important;
   line-height: 1.6 !important;
-}
-
-.quote-card-view {
-  border: none !important;
-  color: white !important;
-  background-color: transparent !important;
-}
-
-.about-activity {
-  list-style: none !important;
-  text-align: left !important;
-  padding-left: 1px !important;
-}
-
-@media (width <= 767px) {
-  .about-img {
-    padding-top: 0 !important;
-  }
 }
 
 .Avtar {
@@ -835,92 +736,6 @@ select:-webkit-autofill {
   --darkreader-border--input-disabled-border-color: rgb(140 130 115 / 0%);
   --darkreader-border--input-hover-border-color: #8c8273;
   --darkreader-border--link-outline: none;
-}
-
-/* Modified CSS */
-body {
-  background-image: linear-gradient(to top, rgb(0 0 0), rgb(13 23 91));
-}
-
-@media screen and (forced-colors: active) {
-  :root {
-    --darkreader-border--input-focus-border-color: CanvasText;
-    --darkreader-border--input-unfocused-border-color: ActiveText;
-    --darkreader-border--input-disabled-border-color: #625b51;
-    --darkreader-border--input-hover-border-color: #003c7d;
-    --darkreader-border--link-outline: 1.5px solid LinkText;
-  }
-}
-.annotationLayer .linkAnnotation {
-  outline: var(--darkreader-border--link-outline);
-}
-.annotationLayer
-  :is(.linkAnnotation, .buttonWidgetAnnotation.pushButton)
-  > a:hover {
-  background-image: initial;
-  background-color: rgb(153 153 0);
-  box-shadow: rgb(153 153 0) 0 2px 10px;
-}
-.annotationLayer .textWidgetAnnotation :is(input, textarea),
-.annotationLayer .choiceWidgetAnnotation select,
-.annotationLayer .buttonWidgetAnnotation:is(.checkBox, .radioButton) input {
-  background-image: var(
-    --darkreader-bgimg--annotation-unfocused-field-background
-  );
-  border: 2px solid var(--darkreader-border--input-unfocused-border-color);
-}
-.annotationLayer .textWidgetAnnotation :is(input, textarea):required,
-.annotationLayer .choiceWidgetAnnotation select:required,
-.annotationLayer
-  .buttonWidgetAnnotation:is(.checkBox, .radioButton)
-  input:required {
-  outline-color: rgb(179 0 0);
-}
-.annotationLayer .textWidgetAnnotation :is(input, textarea)[disabled],
-.annotationLayer .choiceWidgetAnnotation select[disabled],
-.annotationLayer
-  .buttonWidgetAnnotation:is(.checkBox, .radioButton)
-  input[disabled] {
-  background-image: none;
-  background-color: initial;
-  border: 2px solid var(--darkreader-border--input-disabled-border-color);
-}
-.annotationLayer .textWidgetAnnotation :is(input, textarea):hover,
-.annotationLayer .choiceWidgetAnnotation select:hover,
-.annotationLayer
-  .buttonWidgetAnnotation:is(.checkBox, .radioButton)
-  input:hover {
-  border: 2px solid var(--darkreader-border--input-hover-border-color);
-}
-.annotationLayer .textWidgetAnnotation :is(input, textarea):focus,
-.annotationLayer .choiceWidgetAnnotation select:focus {
-  background-image: none;
-  background-color: initial;
-  border: 2px solid var(--darkreader-border--input-focus-border-color);
-  outline: var(--darkreader-border--input-focus-outline);
-}
-.annotationLayer .buttonWidgetAnnotation:is(.checkBox, .radioButton) :focus {
-  background-image: none;
-  background-color: transparent;
-}
-.annotationLayer .buttonWidgetAnnotation.checkBox :focus {
-  border: 2px solid var(--darkreader-border--input-focus-border-color);
-  outline: var(--darkreader-border--input-focus-outline);
-}
-.annotationLayer .buttonWidgetAnnotation.radioButton :focus {
-  border: 2px solid var(--darkreader-border--input-focus-border-color);
-  outline: var(--darkreader-border--input-focus-outline);
-}
-.annotationLayer .popup {
-  background-color: rgb(84 84 0);
-  box-shadow: 0 calc(2px * var(--darkreader-bg--scale-factor))
-    calc(5px * var(--darkreader-bg--scale-factor)) #5b6367;
-}
-.annotationLayer .popupContent {
-  border-top-color: rgb(123 114 101);
-}
-.annotationLayer .annotationTextContent {
-  color: transparent;
 }
 
 /* Experience New Styles */

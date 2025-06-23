@@ -9,6 +9,7 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
+import arkaImage from "../Assets/Arka.png";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -71,9 +72,11 @@ function NavBar() {
             scrollToSection("home");
           }}
         >
-          <h2 className="AP">
-            AP<span className="blue AP">.</span>
-          </h2>
+          <img
+            src={arkaImage}
+            alt="Arka"
+            className="navbar-profile-image"
+          />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
