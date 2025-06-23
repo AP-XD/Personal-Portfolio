@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
 import pdf from "../../Assets/Arka_Pramanik_s_Latest_Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 
@@ -369,7 +368,6 @@ function ExperienceNew() {
   return (
     <div>
       <Container fluid className="experience-section">
-        <Particle />
         <Container>
           <Row style={{ justifyContent: "center", position: "relative" }}>
             <Col md={12} className="text-center">

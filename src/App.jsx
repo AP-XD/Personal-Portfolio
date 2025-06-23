@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ScrollToTop from "./components/ScrollToTop";
-import CustomCursor from "./components/CustomCursor";
+import Particle from "./components/Particle";
 
 function App() {
   const [load, updateLoad] = useState(true);
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <CustomCursor />
+      <Particle />
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
