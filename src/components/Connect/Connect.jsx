@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { AiOutlineGithub, AiOutlineInstagram } from "react-icons/ai";
 import { FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
-import Particle from "../Particle";
 import ContactForm from "./ContactForm";
 import "./ContactForm.css";
 import arkaImage from "../../Assets/Arka.png";
@@ -11,7 +10,6 @@ import arkaImage from "../../Assets/Arka.png";
 function Connect() {
   return (
     <Container fluid className="connect-section" id="connect">
-      <Particle />
       <Container>
         {/* Connect Heading */}
         <Row className="connect-heading-row">

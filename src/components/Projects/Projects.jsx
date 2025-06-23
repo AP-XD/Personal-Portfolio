@@ -2,13 +2,11 @@ import React from "react";
 import { userData } from "../../constants/userData";
 import ProjectCard from "./ProjectCards";
 import { motion } from "framer-motion";
-import Particle from "../Particle";
 import "./Projects.css";
 
 function Projects() {
   return (
     <div className="projects" id="projects">
-      <Particle />
       <div className="projects-content">
         <motion.div
           className="projects-content-title"

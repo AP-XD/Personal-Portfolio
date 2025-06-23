@@ -22,7 +22,7 @@ const Particle = () => {
           value: "transparent",
         },
       },
-      fpsLimit: 60,
+      fpsLimit: 120,
       interactivity: {
         events: {
           onClick: {
@@ -37,12 +37,12 @@ const Particle = () => {
         },
         modes: {
           push: {
-            quantity: 2,
+            quantity: 3,
           },
           connect: {
-            distance: 80,
+            distance: 100,
             links: {
-              opacity: 0.3,
+              opacity: 0.5,
             },
           },
         },
