@@ -10,7 +10,8 @@ import Footer from "./components/Footer";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ScrollToTop from "./components/ScrollToTop";
-import AnimatedCursor from "react-animated-cursor";
+import CustomCursor from "./components/CustomCursor";
+// import AnimatedCursor from "react-animated-cursor"; // Removed
 // Import the LCP image to get webpack path immediately
 import homeLogo from "./Assets/Programming.svg";
 
@@ -40,15 +41,7 @@ function App() {
 
   return (
     <>
-      <AnimatedCursor
-        zIndex={999999999}
-        innerSize={15}
-        outerSize={30}
-        color="33, 248, 255"
-        outerAlpha={0.5}
-        innerScale={1.75}
-        outerScale={1.5}
-      />
+      <CustomCursor />
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
