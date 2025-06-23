@@ -20,9 +20,17 @@ function ContactForm() {
     setIsLoading(true);
 
     if (name && email && message) {
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-      const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+      const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+      const userId = import.meta.env.VITE_APP_EMAILJS_USER_ID;
+
+      // Check if environment variables are properly configured
+      if (!serviceId || !templateId || !userId) {
+        console.error('EmailJS environment variables are not properly configured');
+        alert('Email service is not properly configured. Please contact the administrator.');
+        setIsLoading(false);
+        return;
+      }
 
       const templateParams = {
         name,
