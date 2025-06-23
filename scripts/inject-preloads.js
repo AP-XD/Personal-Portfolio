@@ -1,28 +1,32 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-// This script extracts the actual webpack asset paths and injects them into index.html
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// This script extracts the actual Vite asset paths and injects them into index.html
 // Run this after build to get the real hashed filenames
 
 function findAssetPath(buildDir, originalFilename) {
-  const staticDir = path.join(buildDir, "static", "media");
+  const assetsDir = path.join(buildDir, "assets");
 
-  if (!fs.existsSync(staticDir)) {
+  if (!fs.existsSync(assetsDir)) {
     return null;
   }
 
-  const files = fs.readdirSync(staticDir);
+  const files = fs.readdirSync(assetsDir);
   const targetFile = files.find(
     (file) =>
       file.includes(originalFilename.replace(".svg", "")) &&
       file.endsWith(".svg")
   );
 
-  return targetFile ? `/static/media/${targetFile}` : null;
+  return targetFile ? `/assets/${targetFile}` : null;
 }
 
 function injectCriticalResourcePreloads() {
-  const buildDir = path.join(__dirname, "..", "build");
+  const buildDir = path.join(__dirname, "..", "dist");
   const indexPath = path.join(buildDir, "index.html");
 
   if (!fs.existsSync(indexPath)) {
@@ -57,9 +61,9 @@ function injectCriticalResourcePreloads() {
   console.log(`   - ${programmingSvgPath}`);
 }
 
-module.exports = { injectCriticalResourcePreloads };
+export { injectCriticalResourcePreloads };
 
 // Run if called directly
-if (require.main === module) {
+if (import.meta.url === `file://${__filename}`) {
   injectCriticalResourcePreloads();
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
@@ -11,27 +11,11 @@ import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ScrollToTop from "./components/ScrollToTop";
 import CustomCursor from "./components/CustomCursor";
-// import AnimatedCursor from "react-animated-cursor"; // Removed
-// Import the LCP image to get webpack path immediately
-import homeLogo from "./Assets/Programming.svg";
 
 function App() {
   const [load, updateLoad] = useState(true);
 
   useEffect(() => {
-    // IMMEDIATELY preload the LCP image with highest priority
-    const preloadLCPImage = () => {
-      const link = document.createElement("link");
-      link.rel = "preload";
-      link.as = "image";
-      link.href = homeLogo; // This is the actual webpack path
-      link.fetchPriority = "high";
-      link.type = "image/svg+xml";
-      document.head.appendChild(link);
-    };
-
-    preloadLCPImage();
-
     const timer = setTimeout(() => {
       updateLoad(false);
     }, 1000);
