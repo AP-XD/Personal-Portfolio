@@ -44,14 +44,14 @@ const Skills = () => {
                 <motion.div
                   key={item.id}
                   className="skill-card-wrapper"
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-50px" }}
                   transition={{
-                    duration: 0.3,
-                    delay: 0.8 + index * 0.1,
-                    type: "spring",
-                    stiffness: 100,
+                    duration: 0.2,
+                    delay: Math.min(0.8 + index * 0.05, 1.5),
+                    type: "tween",
+                    ease: "easeOut",
                   }}
                 >
                   <SkillCard item={item} />
