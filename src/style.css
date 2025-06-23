@@ -246,13 +246,17 @@ div[style*="position: fixed"][style*="pointer-events: none"] {
   z-index: 99999 !important;
   top: 0 !important;
   width: 100% !important;
+  background-color: rgb(2 2 25 / 60%) !important;
+  backdrop-filter: blur(15px) !important;
+  box-shadow: 0 10px 10px 0 rgb(9 5 29 / 17.1%) !important;
 }
 
 .navbar-toggler {
   padding: 0.25rem 1.5rem !important;
   position: relative !important;
   background-color: transparent !important;
-  border-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .navbar-toggler span {
@@ -268,8 +272,11 @@ div[style*="position: fixed"][style*="pointer-events: none"] {
 }
 
 .navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: 0 !important;
+.navbar-toggler:active,
+.navbar-toggler:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .navbar-toggler span:nth-child(1),
@@ -301,7 +308,7 @@ div[style*="position: fixed"][style*="pointer-events: none"] {
 
 @media (width <= 767px) {
   .navbar {
-    background-color: #151334d8 !important;
+    background-color: #02021996 !important;
     transition: all 0.3s ease-out 0s !important;
     box-shadow: 0 10px 10px 0 rgb(9 5 29 / 17.1%) !important;
     backdrop-filter: blur(15px) !important;
@@ -686,7 +693,7 @@ div[style*="position: fixed"][style*="pointer-events: none"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(32, 173, 255, 0.4);
+  box-shadow: 0 4px 15px rgb(32 173 255 / 40%);
   transition: all 0.3s ease;
   outline: none;
 }
@@ -1196,9 +1203,49 @@ select:-webkit-autofill {
 
 /* Mobile Tech Stack Styles */
 .mobile-tech-stack {
-  display: none; /* Hidden on desktop */
+  display: block; /* Show on mobile */
   margin-top: 2rem;
   margin-left: 20px; /* Align with timeline content */
+}
+
+/* Hide mobile tech stack on desktop (lg and above) */
+@media (width >= 992px) {
+  .mobile-tech-stack {
+    display: none;
+  }
+}
+
+/* Responsive adjustments for tech stack */
+@media (width <= 991px) {
+  .tech-stack-container {
+    position: static;
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+
+  .tech-stack-section {
+    padding: 1rem;
+    padding-left: 1rem;
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (width <= 768px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .tech-item {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .mobile-tech-stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
 }
 
 .mobile-tech-stack-title {
