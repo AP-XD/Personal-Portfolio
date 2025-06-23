@@ -72,11 +72,7 @@ function NavBar() {
             scrollToSection("home");
           }}
         >
-          <img
-            src={arkaImage}
-            alt="Arka"
-            className="navbar-profile-image"
-          />
+          <img src={arkaImage} alt="Arka" className="navbar-profile-image" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"

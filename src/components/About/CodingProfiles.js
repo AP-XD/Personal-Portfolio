@@ -53,7 +53,8 @@ const CodingProfiles = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <h1 className="project-heading">
-                MY <span className="blue"> CODING PROFILES </span>
+                <span className="first-word">MY</span>{" "}
+                <span className="blue"> CODING PROFILES </span>
               </h1>
             </motion.div>
             <motion.p

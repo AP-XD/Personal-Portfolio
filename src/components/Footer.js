@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
-import { FaLinkedinIn, FaTelegram } from "react-icons/fa";
+import { AiOutlineGithub, AiOutlineInstagram } from "react-icons/ai";
+import { FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 import { BiCopyright } from "react-icons/bi";
 
 function Footer() {
@@ -12,7 +12,7 @@ function Footer() {
       <Row>
         <Col md="4" className="footer-copywright">
           <h3>
-            Copyright <BiCopyright /> {year} APXD
+            Copyright <BiCopyright /> {year} ARKA
           </h3>
         </Col>
         <Col md="4" className="footer-copywright">
@@ -27,7 +27,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AiFillGithub />
+                <AiOutlineGithub />
               </a>
             </li>
             <li className="social-icons">
@@ -37,7 +37,7 @@ function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaTelegram />
+                <FaTelegramPlane />
               </a>
             </li>
             <li className="social-icons">
@@ -57,7 +57,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AiFillInstagram />
+                <AiOutlineInstagram />
               </a>
             </li>
           </ul>

@@ -226,7 +226,7 @@ export const userData = {
       {
         id: 6,
         name: "Go",
-        type: "Programming Language", 
+        type: "Programming Language",
         image: go,
       },
       {
@@ -434,7 +434,8 @@ export const userData = {
   contactData: {
     salutation: "Let's Connect",
     title: "Ready to build something impactful?",
-    subTitle: "Always excited to connect with like-minded professionals and collaborate on innovative projects.",
+    subTitle:
+      "Always excited to connect with like-minded professionals and collaborate on innovative projects.",
     emailDesc: "Drop me a message at",
     linkedin: "LinkedIn",
     github: "GitHub",

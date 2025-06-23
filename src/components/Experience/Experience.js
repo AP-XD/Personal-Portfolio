@@ -374,7 +374,8 @@ function ExperienceNew() {
           <Row style={{ justifyContent: "center", position: "relative" }}>
             <Col md={12} className="text-center">
               <h1 className="project-heading">
-                MY <strong className="blue">EXPERIENCE</strong>
+                <span className="first-word">MY</span>{" "}
+                <strong className="blue">EXPERIENCE</strong>
               </h1>
               <p
                 style={{

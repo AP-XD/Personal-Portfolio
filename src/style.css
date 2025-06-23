@@ -3,7 +3,7 @@
 /* ================================================== */
 
 /* --------- */
-/* Global Reset & Base Styles (from index.css) */
+/* Global Reset & Base Styles (from index.css) + Background Fix */
 /* --------- */
 body {
   margin: 0;
@@ -12,7 +12,13 @@ body {
     Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Background will be overridden by background-fix styles below */
+  background: linear-gradient(
+    to bottom left,
+    rgb(0 0 0 / 71.9%),
+    rgb(5 10 38 / 85.6%)
+  ) !important;
+  min-height: 100vh !important;
+  background-attachment: fixed !important;
 }
 
 code {
@@ -21,11 +27,12 @@ code {
 }
 
 /* --------- */
-/* App Component Styles (from App.css) */
+/* App Component Styles (from App.css) + Background Fix */
 /* --------- */
 .App {
   text-align: center;
   min-height: 100vh;
+  background: transparent !important;
 }
 
 .App-logo {
@@ -62,35 +69,26 @@ code {
   }
 }
 
-/* --------- */
-/* Background Fix Styles (from background-fix.css) */
-/* --------- */
-/* Global background for entire page */
-body {
-  background: linear-gradient(
-    to bottom left,
-    rgb(0 0 0 / 71.9%),
-    rgb(5 10 38 / 85.6%)
-  ) !important;
-  min-height: 100vh !important;
-  background-attachment: fixed !important;
-}
-
-/* Ensure App container doesn't override background */
-.App {
-  background: transparent !important;
-  min-height: 100vh;
-}
-
-/* Remove section-specific backgrounds to use global background */
+/* Remove section-specific backgrounds to use global background + positioning */
 .home-section {
   background: transparent !important;
   background-image: none !important;
+  position: relative;
+  background-image: url("./Assets/backgrounds/home-bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-bottom: 30px !important;
+  padding-top: 30px !important;
 }
 
 .about-section {
   background: transparent !important;
   background-image: none !important;
+  position: relative !important;
+  padding-top: 80px !important;
+  padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+  color: white !important;
 }
 
 .project-section {
@@ -101,6 +99,11 @@ body {
 .experience-section {
   background: transparent !important;
   background-image: none !important;
+  position: relative !important;
+  padding-top: 70px !important;
+  padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+  color: white !important;
 }
 
 /* Ensure all sections have consistent text color */
@@ -143,7 +146,7 @@ div[style*="position: fixed"][style*="pointer-events: none"] {
 /*               MAIN PORTFOLIO STYLES                */
 /* ================================================== */
 
-html {
+/* html {
   --section-background-color: linear-gradient(
     to bottom left,
     rgb(0 0 0 / 71.9%),
@@ -158,10 +161,10 @@ html {
 
   background-color: #181a1b !important;
   color-scheme: dark !important;
-}
+} */
 
 .blue {
-  color: var(--imp-text-color) !important;
+  color: #20adff !important;
 }
 
 /*  Preloader */
@@ -228,19 +231,21 @@ html {
 /* Navbar Section  */
 /* --------- */
 .sticky {
-  background-color: #212038d8 !important;
+  background-color: #02021996 !important;
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0 10px 10px 0 rgb(9 5 29 / 17.1%) !important;
   backdrop-filter: blur(15px) !important;
-  z-index: 1 !important;
+  z-index: 100 !important;
 }
 
 .navbar {
-  position: fixed;
+  position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
-  z-index: 1 !important;
+  z-index: 99999 !important;
+  top: 0 !important;
+  width: 100% !important;
 }
 
 .navbar-toggler {
@@ -448,16 +453,6 @@ html {
   padding-top: 80px !important;
 }
 
-.home-section {
-  position: relative;
-  background-image:
-    var(--image-gradient), url("./Assets/backgrounds/home-bg.jpg");
-  background-position: top center;
-  background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
-}
-
 .home-content {
   padding: 9rem 0 2rem !important;
   color: whitesmoke;
@@ -475,22 +470,22 @@ html {
 }
 
 .intro-text {
-  color: #ffffff;
+  color: #fff;
   font-weight: 500;
   margin-right: 0.3em;
   opacity: 0.9;
   font-style: italic;
   letter-spacing: 0.02em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgb(0 0 0 / 30%);
 }
 
 .main-name {
   color: #20adff;
   font-weight: 700;
   letter-spacing: 0.05em;
-  text-shadow: 0 0 20px rgba(32, 173, 255, 0.3);
+  text-shadow: 0 0 20px rgb(32 173 255 / 30%);
   background: linear-gradient(135deg, #20adff, #40c9ff);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   transition: all 0.3s ease;
@@ -610,7 +605,7 @@ html {
 }
 
 .connect-social-icon.telegram:hover {
-  background-color: #0088cc;
+  background-color: #08c;
   color: white !important;
 }
 
@@ -628,7 +623,7 @@ html {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(10 4 22);
+  background-color: rgb(0 0 0);
   bottom: 0 !important;
   padding-top: 10px !important;
   padding-bottom: 8px !important;
@@ -688,25 +683,50 @@ html {
 }
 
 .project-heading {
-  color: white !important;
-  font-size: 2.3em !important;
-  font-weight: 500 !important;
-  padding-top: 10px !important;
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #21f8ff, #1a8cd8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgb(33 177 255 / 30%);
   text-align: center !important;
   margin-bottom: 30px !important;
+  padding-top: 10px !important;
+}
+
+/* Special styling for the first word in titles - keep it white */
+.project-heading .first-word {
+  color: white !important;
+  background: none !important;
+  -webkit-text-fill-color: white !important;
+  text-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+}
+
+/* General section title styling - matches projects style */
+.section-title {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #21f8ff, #1a8cd8);
+  background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgb(33 177 255 / 30%);
+  text-align: center !important;
+  margin-bottom: 30px !important;
+  padding-top: 10px !important;
+}
+
+/* Special styling for the first word in section titles - keep it white */
+.section-title .first-word {
+  color: white !important;
+  background: none !important;
+  -webkit-text-fill-color: white !important;
+  text-shadow: 0 2px 4px rgb(0 0 0 / 30%);
 }
 
 /* --------- */
 /* About */
 /* --------- */
-
-.about-section {
-  position: relative !important;
-  padding-top: 80px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-  color: white !important;
-}
 
 .tech-icons {
   background-color: rgb(255 255 255 / 15.8%);
@@ -765,14 +785,6 @@ html {
 /* --------- */
 /* Experience */
 /* --------- */
-
-.experience-section {
-  position: relative !important;
-  padding-top: 70px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-  color: white !important;
-}
 
 .experience {
   padding-top: 50px;
@@ -1076,6 +1088,7 @@ select:-webkit-autofill {
   top: 100px;
   height: fit-content;
   padding-left: 2rem;
+  z-index: 1;
 }
 
 .tech-stack-section {
@@ -1180,4 +1193,3 @@ select:-webkit-autofill {
   border-color: rgb(98 54 134 / 50%);
   transform: translateY(-1px);
 }
-
