@@ -33,6 +33,12 @@ export default [
       ...pluginReact.configs.recommended.rules,
       "react/react-in-jsx-scope": "off", // Not needed in React 17+
       "react/prop-types": "off", // Disable prop-types validation
+      "react/no-unknown-property": [
+        "error",
+        {
+          ignore: ["fetchpriority"], // Allow fetchpriority attribute
+        },
+      ],
     },
     settings: {
       react: {
