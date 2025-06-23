@@ -13,22 +13,13 @@ import stStephensLogo from "../../Assets/logos/education/ststephens-logo.png";
 
 // Import tech stack icons
 // Skill icons imports from organized Assets folder
-import htmlIcon from "../../Assets/Skills/frontend/html.svg";
-import cssIcon from "../../Assets/Skills/frontend/css.svg";
 import jsIcon from "../../Assets/Skills/programming-languages/js.svg";
 import reactIcon from "../../Assets/Skills/frontend/react.png";
 import nodeIcon from "../../Assets/Skills/backend/nodejs.svg";
 import pythonIcon from "../../Assets/Skills/programming-languages/py.svg";
-import javaIcon from "../../Assets/Skills/programming-languages/java.svg";
 import cppIcon from "../../Assets/Skills/programming-languages/cpp.svg";
 import gitIcon from "../../Assets/Skills/tools/git.svg";
 import githubIcon from "../../Assets/Skills/tools/github.svg";
-import nextIcon from "../../Assets/Skills/frontend/next.svg";
-import tsIcon from "../../Assets/Skills/programming-languages/ts.svg";
-import firebaseIcon from "../../Assets/Skills/backend/firebase.svg";
-import expressIcon from "../../Assets/Skills/backend/express.svg";
-import tailwindIcon from "../../Assets/Skills/frontend/tailwind.svg";
-import vsCodeIcon from "../../Assets/Skills/tools/vscode.svg";
 import sqlIcon from "../../Assets/Skills/backend/sql.png";
 import kubernetesIcon from "../../Assets/Skills/devops/kubernetes.png";
 import prometheusIcon from "../../Assets/Skills/devops/prometheus.svg";
@@ -63,7 +54,7 @@ const experienceData = [
       "Contributing to Rack Resiliency Service (RRS) — a system-critical platform ensuring high availability through health monitoring, zone-level state transitions, and event-driven recovery.",
       "Led secure production upgrade of Istio service mesh from v1.19.10 to v1.26.0, resolving CVEs and enabling ambient mesh, proxyless telemetry, and enhanced sidecar performance.",
       "Upgraded Kiali observability dashboard ensuring compatibility with new Istio control plane and improving mesh visualization for developers and SREs.",
-      "Collaborating with global teams on cloud-native orchestration, CI/CD automation, and DevSecOps adoption in containerized supercomputing environments."
+      "Collaborating with global teams on cloud-native orchestration, CI/CD automation, and DevSecOps adoption in containerized supercomputing environments.",
     ],
     techStack: [
       { name: "Kubernetes", icon: kubernetesIcon },
@@ -76,8 +67,8 @@ const experienceData = [
       { name: "Git", icon: gitIcon },
       { name: "Node.js", icon: nodeIcon },
       { name: "JavaScript", icon: jsIcon },
-      { name: "Linux", icon: linuxIcon }
-    ]
+      { name: "Linux", icon: linuxIcon },
+    ],
   },
   {
     id: 2,
@@ -90,7 +81,7 @@ const experienceData = [
       "Part of the Platforms Team under the Cray System Management Product.",
       "Successfully upgraded Istio (Kubernetes Service Mesh) from version 1.11.8 to 1.19.10.",
       "This upgrade addressed multiple security vulnerabilities, ensuring a more secure environment.",
-      "Enabled new features to enhance customer capabilities and operational efficiency."
+      "Enabled new features to enhance customer capabilities and operational efficiency.",
     ],
     techStack: [
       { name: "Kubernetes", icon: kubernetesIcon },
@@ -102,9 +93,9 @@ const experienceData = [
       { name: "Grafana", icon: grafanaIcon },
       { name: "Node.js", icon: nodeIcon },
       { name: "Git", icon: gitIcon },
-    ]
+    ],
   },
-  
+
   {
     id: 3,
     company: "Hewlett Packard Enterprise",
@@ -116,7 +107,7 @@ const experienceData = [
       "Implemented exporter service to export security metrics to Grafana for real-time monitoring and alerting.",
       "Created detailed remediation steps for various security tests, enabling efficient resolution of security vulnerabilities.",
       "Gained hands-on experience with cloud-native technologies and security monitoring solutions in enterprise environments.",
-      "Collaborated with cross-functional teams to enhance security posture of containerized workloads."
+      "Collaborated with cross-functional teams to enhance security posture of containerized workloads.",
     ],
     techStack: [
       { name: "Kubernetes", icon: kubernetesIcon },
@@ -126,8 +117,8 @@ const experienceData = [
       { name: "Helm", icon: helmIcon },
       { name: "Grafana", icon: grafanaIcon },
       { name: "Node.js", icon: nodeIcon },
-      { name: "JavaScript", icon: jsIcon }
-    ]
+      { name: "JavaScript", icon: jsIcon },
+    ],
   },
   {
     id: 4,
@@ -139,7 +130,7 @@ const experienceData = [
       "Working on supporting the Asus Max M2 (SDM632 Platform) for Android 12.",
       "Improved overall user experience by working on device side semantics and performance improvements.",
       "Collaborated with the open-source community to maintain and develop custom Android ROMs.",
-      "Gained expertise in Android development, Linux kernel modifications, and build systems."
+      "Gained expertise in Android development, Linux kernel modifications, and build systems.",
     ],
     techStack: [
       { name: "Linux", icon: linuxIcon },
@@ -149,8 +140,8 @@ const experienceData = [
       { name: "Azure", icon: azureIcon },
       { name: "Android", icon: androidIcon },
       { name: "Makefile", icon: makefileIcon },
-      { name: "Bash", icon: bashIcon }
-    ]
+      { name: "Bash", icon: bashIcon },
+    ],
   },
 ];
 
@@ -167,7 +158,7 @@ const educationData = [
       "Gained strong foundation in programming, data structures, algorithms, and software engineering principles.",
       "Participated in various coding competitions including Google Hash Code where secured AIR 1403.",
       "Selected for Amazon ML Summer School Program as top 200 from India.",
-      "Active member of CodeChef VIT and IEEE-CS VIT, mentoring junior members in DSA and competitive coding."
+      "Active member of CodeChef VIT and IEEE-CS VIT, mentoring junior members in DSA and competitive coding.",
     ],
     courses: [
       { name: "Data Structures", icon: cppIcon },
@@ -177,8 +168,8 @@ const educationData = [
       { name: "Software Engineering", icon: reactIcon },
       { name: "Computer Networks", icon: networkIcon },
       { name: "Operating Systems", icon: osIcon },
-      { name: "Machine Learning", icon: pythonIcon }
-    ]
+      { name: "Machine Learning", icon: pythonIcon },
+    ],
   },
   {
     id: 2,
@@ -191,7 +182,7 @@ const educationData = [
       "Completed Class X with 89.6% aggregate in 2018.",
       "Secured 96.67 percentile (AIR 36503) in JEE Main 2020 among 1.174M participants.",
       "Strong foundation in Mathematics, Physics, and Chemistry.",
-      "Developed analytical thinking and problem-solving skills."
+      "Developed analytical thinking and problem-solving skills.",
     ],
     courses: [
       { name: "Mathematics", icon: mathIcon },
@@ -199,9 +190,9 @@ const educationData = [
       { name: "Chemistry", icon: chemistryIcon },
       { name: "Computer Science", icon: jsIcon },
       { name: "English", icon: englishIcon },
-      { name: "Problem Solving", icon: problemSolvingIcon }
-    ]
-  }
+      { name: "Problem Solving", icon: problemSolvingIcon },
+    ],
+  },
 ];
 
 function ExperienceNew() {
@@ -217,7 +208,8 @@ function ExperienceNew() {
         experienceRefs.current.forEach((ref, index) => {
           if (ref) {
             const rect = ref.getBoundingClientRect();
-            const isVisible = rect.top >= 0 && rect.top <= window.innerHeight / 2;
+            const isVisible =
+              rect.top >= 0 && rect.top <= window.innerHeight / 2;
             if (isVisible && activeExperience !== index) {
               setActiveExperience(index);
             }
@@ -227,7 +219,8 @@ function ExperienceNew() {
         educationRefs.current.forEach((ref, index) => {
           if (ref) {
             const rect = ref.getBoundingClientRect();
-            const isVisible = rect.top >= 0 && rect.top <= window.innerHeight / 2;
+            const isVisible =
+              rect.top >= 0 && rect.top <= window.innerHeight / 2;
             if (isVisible && activeEducation !== index) {
               setActiveEducation(index);
             }
@@ -243,9 +236,9 @@ function ExperienceNew() {
   const renderExperienceItem = (item, index) => (
     <div
       key={item.id}
-      ref={el => experienceRefs.current[index] = el}
-      className={`experience-group ${activeExperience === index ? 'active' : 'dimmed'}`}
-      style={{ marginBottom: '4rem' }}
+      ref={(el) => (experienceRefs.current[index] = el)}
+      className={`experience-group ${activeExperience === index ? "active" : "dimmed"}`}
+      style={{ marginBottom: "4rem" }}
     >
       <div className="timeline-container">
         {/* Company Logo Circle and Header */}
@@ -255,10 +248,12 @@ function ExperienceNew() {
           </div>
           <div className="timeline-header-content">
             <h3 className="company-name">{item.company}</h3>
-            <p className="position-duration">{item.position} | {item.duration}</p>
+            <p className="position-duration">
+              {item.position} | {item.duration}
+            </p>
           </div>
         </div>
-        
+
         {/* Description Points with Small White Circles */}
         <div className="timeline-descriptions">
           {item.descriptions.map((desc, i) => (
@@ -292,9 +287,9 @@ function ExperienceNew() {
   const renderEducationItem = (item, index) => (
     <div
       key={item.id}
-      ref={el => educationRefs.current[index] = el}
-      className={`experience-group ${activeEducation === index ? 'active' : 'dimmed'}`}
-      style={{ marginBottom: '4rem' }}
+      ref={(el) => (educationRefs.current[index] = el)}
+      className={`experience-group ${activeEducation === index ? "active" : "dimmed"}`}
+      style={{ marginBottom: "4rem" }}
     >
       <div className="timeline-container">
         {/* Institution Logo Circle and Header */}
@@ -304,10 +299,12 @@ function ExperienceNew() {
           </div>
           <div className="timeline-header-content">
             <h3 className="company-name">{item.institution}</h3>
-            <p className="position-duration">{item.degree} | {item.duration}</p>
+            <p className="position-duration">
+              {item.degree} | {item.duration}
+            </p>
           </div>
         </div>
-        
+
         {/* Description Points with Small White Circles */}
         <div className="timeline-descriptions">
           {item.descriptions.map((desc, i) => (
@@ -339,14 +336,18 @@ function ExperienceNew() {
   );
 
   const renderTechStack = () => {
-    const currentData = activeTab === "experience" ? experienceData : educationData;
-    const activeIndex = activeTab === "experience" ? activeExperience : activeEducation;
+    const currentData =
+      activeTab === "experience" ? experienceData : educationData;
+    const activeIndex =
+      activeTab === "experience" ? activeExperience : activeEducation;
     const currentItem = currentData[activeIndex];
 
     if (!currentItem) return null;
 
-    const stackItems = activeTab === "experience" ? currentItem.techStack : currentItem.courses;
-    const title = activeTab === "experience" ? "Tech Stack" : "Courses & Skills";
+    const stackItems =
+      activeTab === "experience" ? currentItem.techStack : currentItem.courses;
+    const title =
+      activeTab === "experience" ? "Tech Stack" : "Courses & Skills";
 
     return (
       <div className="tech-stack-section">
@@ -375,14 +376,27 @@ function ExperienceNew() {
               <h1 className="project-heading">
                 MY <strong className="blue">EXPERIENCE</strong>
               </h1>
-              <p style={{ color: "rgba(255, 255, 255, 0.7)", fontSize: "1.1rem", marginBottom: "2rem" }}>
-                A glimpse into my academic and professional experience, shaping my growth in the tech world.
+              <p
+                style={{
+                  color: "rgba(255, 255, 255, 0.7)",
+                  fontSize: "1.1rem",
+                  marginBottom: "2rem",
+                }}
+              >
+                A glimpse into my academic and professional experience, shaping
+                my growth in the tech world.
               </p>
             </Col>
           </Row>
-          
+
           {/* Download Resume Button */}
-          <Row style={{ justifyContent: "center", position: "relative", marginBottom: "3rem" }}>
+          <Row
+            style={{
+              justifyContent: "center",
+              position: "relative",
+              marginBottom: "3rem",
+            }}
+          >
             <Button
               variant="primary"
               href={pdf}
@@ -417,10 +431,13 @@ function ExperienceNew() {
           {/* Content Area */}
           <Row>
             <Col lg={6} className="experience-timeline">
-              {activeTab === "experience" 
-                ? experienceData.map((item, index) => renderExperienceItem(item, index))
-                : educationData.map((item, index) => renderEducationItem(item, index))
-              }
+              {activeTab === "experience"
+                ? experienceData.map((item, index) =>
+                    renderExperienceItem(item, index)
+                  )
+                : educationData.map((item, index) =>
+                    renderEducationItem(item, index)
+                  )}
             </Col>
             {/* Desktop Tech Stack Column - only visible on desktop */}
             <Col lg={5} className="tech-stack-container d-none d-lg-block">

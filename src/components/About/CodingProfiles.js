@@ -16,29 +16,29 @@ const CodingProfiles = () => {
       name: "LeetCode",
       type: "Competitive Programming",
       image: leetcode,
-      url: "https://leetcode.com/Arka_2910"
+      url: "https://leetcode.com/Arka_2910",
     },
     {
       id: 2,
       name: "Codeforces",
       type: "Competitive Programming",
       image: codeforces,
-      url: "https://codeforces.com/profile/AP_XD"
+      url: "https://codeforces.com/profile/AP_XD",
     },
     {
       id: 3,
       name: "CodeChef",
       type: "Competitive Programming",
       image: codechef,
-      url: "https://www.codechef.com/users/ap_2910"
+      url: "https://www.codechef.com/users/ap_2910",
     },
     {
       id: 4,
       name: "HackerRank",
       type: "Competitive Programming",
       image: hackerrank,
-      url: "https://www.hackerrank.com/ARKA_2910"
-    }
+      url: "https://www.hackerrank.com/ARKA_2910",
+    },
   ];
 
   return (
@@ -56,14 +56,15 @@ const CodingProfiles = () => {
                 MY <span className="blue"> CODING PROFILES </span>
               </h1>
             </motion.div>
-            <motion.p 
+            <motion.p
               className="skills-description"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Check out my competitive programming profiles and coding journey across various platforms.
+              Check out my competitive programming profiles and coding journey
+              across various platforms.
             </motion.p>
           </Col>
         </Row>
@@ -82,11 +83,11 @@ const CodingProfiles = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: 0.8 + (index * 0.1),
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.8 + index * 0.1,
                     type: "spring",
-                    stiffness: 100
+                    stiffness: 100,
                   }}
                 >
                   <CodingProfileCard profile={profile} />

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { ImBlog } from "react-icons/im";
 import { CgFileDocument } from "react-icons/cg";
 import { HiOutlineMail } from "react-icons/hi";
 import {
@@ -111,7 +110,8 @@ function NavBar() {
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
-            </Nav.Item><Nav.Item>
+            </Nav.Item>
+            <Nav.Item>
               <Nav.Link
                 href="#experience"
                 onClick={(e) => {
@@ -123,7 +123,6 @@ function NavBar() {
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Experience
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
                 href="#projects"
@@ -139,7 +138,6 @@ function NavBar() {
                 Projects
               </Nav.Link>
             </Nav.Item>{" "}
-            
             <Nav.Item>
               <Nav.Link
                 href="#connect"

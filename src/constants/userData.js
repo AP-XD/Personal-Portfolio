@@ -52,12 +52,6 @@ import amazonwebservices from "../Assets/Skills/cloud/amazonwebservices.svg";
 import azure from "../Assets/Skills/cloud/azure.svg";
 import googlecloud from "../Assets/Skills/cloud/googlecloud.svg";
 
-// Coding Profiles
-import leetcode from "../Assets/Skills/coding-profiles/LeetCode_logo_black.png";
-import codeforces from "../Assets/Skills/coding-profiles/Codeforces.colored.svg";
-import codechef from "../Assets/Skills/coding-profiles/codechef.png";
-import hackerrank from "../Assets/Skills/coding-profiles/hackerrank.svg";
-
 // Additional Skills
 import sqlIcon from "../Assets/Skills/backend/sql.png";
 import kubeBenchIcon from "../Assets/Skills/devops/kube-bench.png";
@@ -71,141 +65,127 @@ export const userData = {
       {
         id: 1,
         name: "HPC Security Dashboard",
-        description: "Developed a centralized security dashboard for the precise representation of Kubernetes security metrics. Implemented a Helm chart and automated installation script for exporter service, improving deployment efficiency and metric export. Provides detailed remediation steps for various tests, enabling efficient resolution of security vulnerabilities.",
+        description:
+          "Developed a centralized security dashboard for the precise representation of Kubernetes security metrics. Implemented a Helm chart and automated installation script for exporter service, improving deployment efficiency and metric export. Provides detailed remediation steps for various tests, enabling efficient resolution of security vulnerabilities.",
         techStack: [
           "Kubernetes",
           "Kube Bench",
-          "Trivy-Operator", 
+          "Trivy-Operator",
           "Prometheus",
           "Helm",
           "Grafana",
-          "Node.js"
+          "Node.js",
         ],
         image: HPE,
         github: "https://github.com/AP-XD/HPE-CTY-HPC-Security-Dashboard",
-        website: "https://github.com/AP-XD/HPE-CTY-HPC-Security-Dashboard"
+        website: "https://github.com/AP-XD/HPE-CTY-HPC-Security-Dashboard",
       },
       {
         id: 2,
         name: "Personal Portfolio",
-        description: "A dynamic personal portfolio website showcasing professional achievements, skills, and projects using modern web technologies. Implemented responsive design, interactive components, and optimized performance to provide a seamless and engaging browsing experience for visitors.",
-        techStack: [
-          "React",
-          "JavaScript",
-          "HTML",
-          "CSS",
-          "Git"
-        ],
+        description:
+          "A dynamic personal portfolio website showcasing professional achievements, skills, and projects using modern web technologies. Implemented responsive design, interactive components, and optimized performance to provide a seamless and engaging browsing experience for visitors.",
+        techStack: ["React", "JavaScript", "HTML", "CSS", "Git"],
         image: portfolio,
         github: "https://github.com/AP-XD/Personal-Portfolio",
-        website: "https://apxd.in/"
+        website: "https://apxd.in/",
       },
       {
         id: 3,
         name: "Online Tuition Management System",
-        description: "A web app that helps the student and teachers to find, manage and organize local tuition centers. This allows tuition teachers to upload marks, attendance and course materials and allows students to access them in their tuition center portals. It also allows parents to keep track of their children's performance.",
+        description:
+          "A web app that helps the student and teachers to find, manage and organize local tuition centers. This allows tuition teachers to upload marks, attendance and course materials and allows students to access them in their tuition center portals. It also allows parents to keep track of their children's performance.",
         techStack: [
           "Django",
           "SQLite3",
           "Bootstrap",
-          "Selenium", 
+          "Selenium",
           "Python",
           "HTML",
-          "CSS"
+          "CSS",
         ],
         image: tuition,
         github: "https://github.com/AP-XD/Online-Tuition-Management-System",
-        website: "https://github.com/AP-XD/Online-Tuition-Management-System"
+        website: "https://github.com/AP-XD/Online-Tuition-Management-System",
       },
       {
         id: 4,
         name: "Device Tree",
-        description: "ASUS Max M2 (X01AD) Device Tree Source Code for building Arrow OS Custom ROM for various Android Versions.",
-        techStack: [
-          "Android",
-          "Custom ROM",
-          "C++",
-          "Linux Kernel"
-        ],
+        description:
+          "ASUS Max M2 (X01AD) Device Tree Source Code for building Arrow OS Custom ROM for various Android Versions.",
+        techStack: ["Android", "Custom ROM", "C++", "Linux Kernel"],
         image: arrow,
         github: "https://github.com/AP-XD/device_asus_X01AD",
-        website: "https://github.com/AP-XD/device_asus_X01AD"
+        website: "https://github.com/AP-XD/device_asus_X01AD",
       },
       {
         id: 5,
         name: "Habify",
-        description: "Our Habit Tracker App that helps you to be more disciplined and form good habits to be more productive.",
+        description:
+          "Our Habit Tracker App that helps you to be more disciplined and form good habits to be more productive.",
         techStack: [
           "React Native",
           "Firebase",
           "JavaScript",
-          "Mobile Development"
+          "Mobile Development",
         ],
         image: habify,
         github: "https://github.com/AP-XD/Habify",
-        website: "https://github.com/AP-XD/Habify"
+        website: "https://github.com/AP-XD/Habify",
       },
       {
         id: 6,
         name: "Enconnect",
-        description: "Our project aims in helping make chats the private way by encrypting and decrypting with standard algorithms and using multiple algorithms in same process which provides security and attack free.",
-        techStack: [
-          "React",
-          "Encryption",
-          "Security",
-          "Node.js",
-          "Socket.io"
-        ],
+        description:
+          "Our project aims in helping make chats the private way by encrypting and decrypting with standard algorithms and using multiple algorithms in same process which provides security and attack free.",
+        techStack: ["React", "Encryption", "Security", "Node.js", "Socket.io"],
         image: enconnect,
         github: "https://github.com/AP-XD/EnConnect",
-        website: "https://github.com/AP-XD/EnConnect"
+        website: "https://github.com/AP-XD/EnConnect",
       },
       {
         id: 7,
         name: "Youtube Analyser",
-        description: "Our app provides you with a crisp description for your youtube video by using various algorithms.",
+        description:
+          "Our app provides you with a crisp description for your youtube video by using various algorithms.",
         techStack: [
           "Python",
           "NLP",
           "Machine Learning",
           "YouTube API",
-          "Flask"
+          "Flask",
         ],
         image: nlp,
         github: "https://github.com/AP-XD/CSE4022-Project",
-        website: "https://github.com/AP-XD/CSE4022-Project"
+        website: "https://github.com/AP-XD/CSE4022-Project",
       },
       {
         id: 8,
         name: "Weather App",
-        description: "Beginner Project: Displays weather of a city using OPEN WEATHER API.",
+        description:
+          "Beginner Project: Displays weather of a city using OPEN WEATHER API.",
         techStack: [
           "JavaScript",
           "HTML",
           "CSS",
           "Weather API",
-          "Responsive Design"
+          "Responsive Design",
         ],
         image: weather,
         github: "https://github.com/AP-XD/WeatherApp",
-        website: "https://github.com/AP-XD/WeatherApp"
+        website: "https://github.com/AP-XD/WeatherApp",
       },
       {
         id: 9,
         name: "Netflix Clone",
-        description: "Beginner Project: Netflix Clone built using React.js, and Firebase. Fetches latest trending movies from TMDB API.",
-        techStack: [
-          "React",
-          "Firebase",
-          "TMDB API",
-          "CSS",
-          "Authentication"
-        ],
+        description:
+          "Beginner Project: Netflix Clone built using React.js, and Firebase. Fetches latest trending movies from TMDB API.",
+        techStack: ["React", "Firebase", "TMDB API", "CSS", "Authentication"],
         image: Netflix,
         github: "https://github.com/AP-XD/Netflix-clone",
-        website: "https://github.com/AP-XD/Netflix-clone"
-      }
-    ]
+        website: "https://github.com/AP-XD/Netflix-clone",
+      },
+    ],
   },
   skillsData: {
     title: "My Tech Stack",
@@ -221,7 +201,7 @@ export const userData = {
       {
         id: 2,
         name: "Python",
-        type: "Programming Language", 
+        type: "Programming Language",
         image: py,
       },
       {

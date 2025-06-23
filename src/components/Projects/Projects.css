@@ -4,7 +4,7 @@
   padding: 20px;
   margin-top: 30px;
   min-height: 100vh;
-  background: rgba(0, 0, 0, 0.02);
+  background: rgb(0 0 0 / 2%);
 }
 
 .projects-content {
@@ -25,15 +25,15 @@
   font-size: 3rem;
   font-weight: 700;
   background: linear-gradient(135deg, #21f8ff, #1a8cd8);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0;
-  text-shadow: 0 0 30px rgba(33, 248, 255, 0.3);
+  text-shadow: 0 0 30px rgb(33 248 255 / 30%);
 }
 
 .projects-content-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(255 255 255 / 80%);
   margin-bottom: 20px;
   font-size: 1.1rem;
   max-width: 600px;
@@ -57,12 +57,12 @@
 .project-item {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.05)
+    rgb(255 255 255 / 10%),
+    rgb(255 255 255 / 5%)
   );
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgb(255 255 255 / 20%);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -73,8 +73,8 @@
   position: relative;
   overflow: hidden;
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.37),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 8px 32px rgb(0 0 0 / 37%),
+    inset 0 1px 0 rgb(255 255 255 / 10%);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   will-change: transform;
 }
@@ -89,7 +89,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.1),
+    rgb(255 255 255 / 10%),
     transparent
   );
   transition: transform 0.6s ease;
@@ -103,10 +103,10 @@
 .project-item:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow:
-    0 16px 32px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(33, 248, 255, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(33, 248, 255, 0.4);
+    0 16px 32px rgb(0 0 0 / 40%),
+    0 0 20px rgb(33 248 255 / 30%),
+    inset 0 1px 0 rgb(255 255 255 / 20%);
+  border: 1px solid rgb(33 248 255 / 40%);
 }
 
 .project-image {
@@ -115,7 +115,7 @@
   justify-content: center;
   border-radius: 12px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(255 255 255 / 5%);
   position: relative;
 }
 
@@ -156,12 +156,12 @@
   font-weight: 600;
   color: white;
   margin-bottom: 8px;
-  text-shadow: 0 0 10px rgba(33, 248, 255, 0.2);
+  text-shadow: 0 0 10px rgb(33 248 255 / 20%);
 }
 
 .project-title p {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(255 255 255 / 80%);
   line-height: 1.6;
   margin: 0;
   max-width: 90%;
@@ -188,13 +188,13 @@
 .tech-stack {
   font-size: 0.75rem;
   padding: 6px 12px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(255 255 255 / 90%);
   background: linear-gradient(
     135deg,
-    rgba(33, 248, 255, 0.1),
-    rgba(26, 140, 216, 0.1)
+    rgb(33 248 255 / 10%),
+    rgb(26 140 216 / 10%)
   );
-  border: 1px solid rgba(33, 248, 255, 0.3);
+  border: 1px solid rgb(33 248 255 / 30%);
   border-radius: 12px;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -206,12 +206,12 @@
 .tech-stack:hover {
   background: linear-gradient(
     135deg,
-    rgba(33, 248, 255, 0.2),
-    rgba(26, 140, 216, 0.2)
+    rgb(33 248 255 / 20%),
+    rgb(26 140 216 / 20%)
   );
-  border-color: rgba(33, 248, 255, 0.5);
+  border-color: rgb(33 248 255 / 50%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(33, 248, 255, 0.2);
+  box-shadow: 0 4px 12px rgb(33 248 255 / 20%);
 }
 
 .project-btns {
@@ -241,7 +241,7 @@
 }
 
 .code-icon {
-  color: rgba(33, 248, 255, 0.9);
+  color: rgb(33 248 255 / 90%);
 }
 
 .live-icon {
@@ -249,14 +249,14 @@
 }
 
 .code-btn {
-  border: 1px solid rgba(33, 248, 255, 0.5);
-  background: rgba(33, 248, 255, 0.1);
+  border: 1px solid rgb(33 248 255 / 50%);
+  background: rgb(33 248 255 / 10%);
 }
 
 .code-btn:hover {
   background: linear-gradient(135deg, #21f8ff, #1a8cd8);
   border-color: #21f8ff;
-  box-shadow: 0 4px 15px rgba(33, 248, 255, 0.3);
+  box-shadow: 0 4px 15px rgb(33 248 255 / 30%);
   transform: translateY(-2px);
 }
 
@@ -267,14 +267,14 @@
 .view-btn {
   background: linear-gradient(135deg, #21f8ff, #1a8cd8);
   border: 1px solid #21f8ff;
-  box-shadow: 0 4px 15px rgba(33, 248, 255, 0.3);
+  box-shadow: 0 4px 15px rgb(33 248 255 / 30%);
 }
 
 .view-btn:hover {
-  background: rgba(33, 248, 255, 0.1);
-  border-color: rgba(33, 248, 255, 0.5);
+  background: rgb(33 248 255 / 10%);
+  border-color: rgb(33 248 255 / 50%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(33, 248, 255, 0.4);
+  box-shadow: 0 6px 20px rgb(33 248 255 / 40%);
 }
 
 .view-btn:hover .live-icon {
@@ -282,7 +282,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .projects-content-items {
     width: 90%;
     display: grid;
@@ -295,7 +295,7 @@
     gap: 5px;
     width: 100%;
     padding: 10px 0;
-    margin-top: 0px;
+    margin-top: 0;
   }
   .tech-stack {
     padding: 5px 7px;
@@ -306,7 +306,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .projects-content-items {
     width: 95%;
     grid-template-columns: repeat(1, 1fr);
@@ -326,30 +326,30 @@
   .project-btns a {
     padding: 12px;
   }
-  
+
   .projects-content-title .section-title {
     font-size: 2.5rem;
   }
-  
+
   .projects-content-description {
     font-size: 1rem;
     padding: 0 10px;
   }
-  
+
   .project-item {
     padding: 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .projects {
     padding: 10px;
   }
-  
+
   .projects-content-title .section-title {
     font-size: 2rem;
   }
-  
+
   .projects-content-items {
     gap: 10px;
     margin-top: 30px;
@@ -361,7 +361,7 @@
     gap: 5px;
     width: 100%;
     padding: 10px 0;
-    margin-top: 0px;
+    margin-top: 0;
   }
   .tech-stack {
     padding: 5px 7px;
@@ -370,11 +370,11 @@
   .project-btns a {
     padding: 10px;
   }
-  
+
   .project-item {
     padding: 15px;
   }
-  
+
   .code-icon,
   .live-icon {
     font-size: 1.1rem;
