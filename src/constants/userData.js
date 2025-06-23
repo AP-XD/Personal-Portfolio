@@ -443,5 +443,13 @@ export const userData = {
         image: trivyIcon,
       },
     ],
-  }
+  },
+  contactData: {
+    salutation: "Hi There",
+    title: "Send me a message",
+    subTitle: "Let's build something amazing together.",
+    emailDesc: "Reach out to me at",
+    linkedin: "LinkedIn",
+    github: "GitHub",
+  },
 };

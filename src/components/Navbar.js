@@ -4,11 +4,11 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { ImBlog } from "react-icons/im";
 import { CgFileDocument } from "react-icons/cg";
+import { HiOutlineMail } from "react-icons/hi";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
-  AiFillGithub,
 } from "react-icons/ai";
 
 function NavBar() {
@@ -149,7 +149,7 @@ function NavBar() {
                 }}
                 className={activeSection === "connect" ? "active" : ""}
               >
-                <AiFillGithub style={{ marginBottom: "2px" }} /> Connect
+                <HiOutlineMail style={{ marginBottom: "2px" }} /> Connect
               </Nav.Link>
             </Nav.Item>
           </Nav>
