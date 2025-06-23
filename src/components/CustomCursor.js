@@ -49,20 +49,39 @@ const CustomCursor = () => {
   }
 
   useEffect(() => {
+    let animationFrameId;
+    let hoverTimeout;
+    
     const updateCursorPosition = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      
+      animationFrameId = requestAnimationFrame(() => {
+        setPosition({ x: e.clientX, y: e.clientY });
+      });
     };
 
     const handleMouseOver = (e) => {
-      const target = e.target;
-      const isInteractive = target.tagName === 'A' || 
-                           target.tagName === 'BUTTON' || 
-                           target.onclick || 
-                           target.style.cursor === 'pointer' ||
-                           target.classList.contains('clickable') ||
-                           getComputedStyle(target).cursor === 'pointer';
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
       
-      setIsHovering(isInteractive);
+      hoverTimeout = setTimeout(() => {
+        const target = e.target;
+        const isInteractive = target.tagName === 'A' || 
+                             target.tagName === 'BUTTON' || 
+                             target.onclick || 
+                             target.style.cursor === 'pointer' ||
+                             target.classList.contains('clickable') ||
+                             target.classList.contains('nav-link') ||
+                             target.closest('.nav-link') ||
+                             target.closest('a') ||
+                             target.closest('button') ||
+                             getComputedStyle(target).cursor === 'pointer';
+        
+        setIsHovering(isInteractive);
+      }, 10);
     };
 
     const handleMouseDown = () => {
@@ -78,14 +97,20 @@ const CustomCursor = () => {
     };
 
     // Add event listeners
-    document.addEventListener('mousemove', updateCursorPosition);
+    document.addEventListener('mousemove', updateCursorPosition, { passive: true });
     document.addEventListener('mouseover', handleMouseOver);
     document.addEventListener('mousedown', handleMouseDown);
     document.addEventListener('mouseup', handleMouseUp);
     document.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      // Cleanup event listeners
+      // Cleanup event listeners, animation frame, and timeouts
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
       document.removeEventListener('mousemove', updateCursorPosition);
       document.removeEventListener('mouseover', handleMouseOver);
       document.removeEventListener('mousedown', handleMouseDown);
@@ -98,8 +123,7 @@ const CustomCursor = () => {
     <div
       className={`custom-cursor ${isHovering ? 'hover' : ''} ${isClicking ? 'click' : ''}`}
       style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
+        transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%)`,
       }}
     />
   );

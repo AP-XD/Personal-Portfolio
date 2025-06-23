@@ -118,12 +118,36 @@ code {
 /* Cursor Fix Styles (from cursor-fix.css) */
 /* --------- */
 /* Custom CSS Cursor */
-* {
-  cursor: none;
+:root {
+  --cursor: none !important;
 }
 
-body {
-  cursor: none;
+*, *::before, *::after {
+  cursor: none !important;
+  cursor: var(--cursor);
+}
+
+html, body {
+  cursor: none !important;
+}
+
+/* Ensure all interactive elements have no cursor */
+a, button, [role="button"], [onclick], input[type="button"], input[type="submit"], input[type="reset"], .clickable,
+.btn, .nav-link, .navbar-nav .nav-link, .navbar-brand, .navbar-toggler,
+input, textarea, select, option, [tabindex], [href], [role="link"], [role="button"] {
+  cursor: none !important;
+}
+
+/* Override any hover states that might show cursor */
+*:hover, *:focus, *:active, *:visited, *:link {
+  cursor: none !important;
+}
+
+/* Bootstrap and framework overrides */
+.btn:hover, .btn:focus, .btn:active,
+.nav-link:hover, .nav-link:focus, .nav-link:active,
+.navbar-brand:hover, .navbar-brand:focus, .navbar-brand:active {
+  cursor: none !important;
 }
 
 .custom-cursor {
@@ -136,9 +160,8 @@ body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 999999999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease, background 0.2s ease;
-  /* Removed mix-blend-mode to prevent color mixing */
+  will-change: transform;
+  /* Removed transitions for smoother movement */
 }
 
 .custom-cursor::before {
@@ -151,24 +174,26 @@ body {
   background: rgb(33, 248, 255);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: transform 0.15s ease-out;
+  will-change: transform, background;
+  transition: transform 0.1s ease-out, background 0.1s ease;
 }
 
 .custom-cursor.hover {
   width: 50px;
   height: 50px;
   background: rgba(33, 248, 255, 0.8);
-  /* More opaque on hover for better visibility */
+  transition: width 0.15s ease, height 0.15s ease, background 0.15s ease;
 }
 
 .custom-cursor.hover::before {
   transform: translate(-50%, -50%) scale(1.5);
-  background: rgb(255, 255, 255);
-  /* White inner dot on hover for contrast */
+  background: rgb(33, 248, 255);
+  /* Keep the same cyan color for consistency */
 }
 
 .custom-cursor.click {
-  transform: translate(-50%, -50%) scale(0.8);
+  transform: scale(0.8);
+  transition: transform 0.1s ease;
 }
 
 /* Hide cursor on touch devices and mobile */
@@ -176,7 +201,7 @@ body {
        (max-width: 768px),
        (orientation: portrait) and (max-width: 1024px) {
   *, body, html {
-    cursor: auto !important;
+    cursor: none !important;
   }
   
   .custom-cursor {
@@ -189,7 +214,7 @@ body {
 /* Additional mobile detection */
 @media only screen and (max-device-width: 812px) {
   *, body, html {
-    cursor: auto !important;
+    cursor: none !important;
   }
   
   .custom-cursor {
@@ -394,6 +419,7 @@ body {
 
 .navbar-brand {
   color: rgb(250 250 250) !important;
+  cursor: none !important;
 }
 
 .navbar-profile-image {
@@ -411,15 +437,18 @@ body {
   color: white !important;
   padding-right: 1rem;
   padding-left: 1rem;
+  cursor: none !important;
 }
 
 .nav-link {
   padding: 0.8rem 1rem !important;
+  cursor: none !important;
 }
 
 @media (width <= 767px) {
   .nav-link {
     padding: 0.7rem 1rem !important;
+    cursor: none !important;
   }
 }
 
@@ -639,7 +668,7 @@ body {
   font-size: 24px;
   transition: all 0.3s ease;
   border: 2px solid transparent;
-  cursor: pointer;
+  cursor: none !important;
   z-index: 10;
   position: relative;
 }
@@ -738,18 +767,20 @@ body {
   right: 20px;
   z-index: 99999;
   pointer-events: auto;
+  cursor: none !important;
 }
 
 .scroll-to-top-button {
   background-color: #20adff;
   color: white;
   border: none;
+  cursor: none !important;
   border-radius: 50%;
   width: 55px;
   height: 55px;
   font-size: 24px;
   font-weight: bold;
-  cursor: pointer;
+  cursor: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1044,7 +1075,7 @@ select:-webkit-autofill {
   color: rgb(255 255 255 / 70%);
   font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
+  cursor: none !important;
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
@@ -1230,7 +1261,7 @@ select:-webkit-autofill {
   border-radius: 10px;
   padding: 0.8rem 1rem;
   transition: all 0.3s ease;
-  cursor: pointer;
+  cursor: none !important;
 }
 
 .tech-item:hover {
@@ -1337,4 +1368,30 @@ select:-webkit-autofill {
   background: rgb(30 30 30 / 90%);
   border-color: rgb(98 54 134 / 50%);
   transform: translateY(-1px);
+}
+
+/* Final cursor override - must be at the end to take precedence */
+* {
+  cursor: none !important;
+}
+
+*:hover, *:focus, *:active, *:visited, *:link, *:target {
+  cursor: none !important;
+}
+
+/* Specific overrides for common elements that might show cursor */
+a:hover, button:hover, input:hover, textarea:hover, select:hover,
+.btn:hover, .nav-link:hover, .navbar-brand:hover, .clickable:hover {
+  cursor: none !important;
+}
+
+/* Bootstrap specific overrides */
+.btn, .btn:hover, .btn:focus, .btn:active, .btn-primary, .btn-secondary,
+.nav-link, .nav-link:hover, .nav-link:focus, .nav-link:active,
+.navbar-nav .nav-link, .navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus,
+.navbar-brand, .navbar-brand:hover, .navbar-brand:focus,
+.navbar-toggler, .navbar-toggler:hover, .navbar-toggler:focus,
+.dropdown-item, .dropdown-item:hover, .dropdown-item:focus,
+.card, .card-body, .card-title, .card-text {
+  cursor: none !important;
 }
