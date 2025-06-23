@@ -238,62 +238,92 @@
   transform: translateX(2px);
 }
 
+/* Notification System - All notifications above navbar */
 .notification {
   position: fixed;
   top: 20px;
   right: 20px;
   padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  z-index: 999999; /* Higher than navbar (99999) */
+  font-weight: 500;
+  min-width: 200px;
+  max-width: 400px;
+  word-wrap: break-word;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  /* Default to success styling (green) for backward compatibility */
   background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
   color: white;
-  border-radius: 8px;
   box-shadow: 0 4px 20px rgb(76 175 80 / 40%);
-  font-size: 1rem;
-  z-index: 1000;
-  font-weight: 500;
 }
 
-/* Grid mask */
-.grid-mask {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  height: 100%;
-  width: 100%;
-  background-image:
-    linear-gradient(to right, rgb(126 124 235 / 10%) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(124 146 235 / 10%) 1px, transparent 1px);
-  background-size: 24px 24px;
-  mask-image: radial-gradient(
-    ellipse 50% 50% at 50% 50%,
-    #000 60%,
-    transparent 100%
-  );
-  mask-image: radial-gradient(
-    ellipse 50% 50% at 50% 50%,
-    #000 60%,
-    transparent 100%
-  );
+.notification-success {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgb(76 175 80 / 40%);
 }
 
-/* Spacing for social media section */
-.social-media-row {
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 1px solid rgb(124 148 235 / 20%);
+.notification-error {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgb(244 67 54 / 40%);
 }
 
-.social-media-row .project-heading {
-  margin-bottom: 2rem;
+.notification-warning {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgb(255 152 0 / 40%);
 }
 
-.home-about-social-links {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 1rem;
-  margin-bottom: 3rem;
+.notification-info {
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgb(33 150 243 / 40%);
+}
+
+/* Loading notification */
+.notification-loading {
+  background: linear-gradient(135deg, #607d8b 0%, #455a64 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgb(96 125 139 / 40%);
+}
+
+/* Multiple notifications stack properly */
+.notification:nth-child(2) {
+  top: 90px;
+}
+
+.notification:nth-child(3) {
+  top: 160px;
+}
+
+.notification:nth-child(4) {
+  top: 230px;
+}
+
+/* Responsive notification positioning */
+@media (width <= 768px) {
+  .notification {
+    left: 20px;
+    right: 20px;
+    top: 80px; /* Below mobile navbar */
+    min-width: auto;
+    max-width: none;
+  }
+  
+  .notification:nth-child(2) {
+    top: 150px;
+  }
+
+  .notification:nth-child(3) {
+    top: 220px;
+  }
+
+  .notification:nth-child(4) {
+    top: 290px;
+  }
 }
 
 /* Responsive Design */
