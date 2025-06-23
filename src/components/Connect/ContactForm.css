@@ -161,7 +161,7 @@
 }
 
 .contact-input {
-  background-color: rgb(47 79 79 / 40%) !important;
+  background-color: rgb(31 48 85 / 40%) !important;
   border: 1px solid rgb(124 135 235 / 50%) !important;
   color: #fff !important;
   border-radius: 8px !important;
@@ -173,9 +173,9 @@
 }
 
 .contact-input:focus {
-  background-color: rgb(47 79 79 / 60%) !important;
+  background-color: rgb(18 60 107 / 44.8%) !important;
   border-color: #15aafb !important;
-  box-shadow: 0 0 0 0.2rem rgb(21 170 251 / 25%) !important;
+  box-shadow: 0 0 0 0.2rem rgb(21 170 251 / 38.1%) !important;
   color: #fff !important;
   outline: none !important;
 }

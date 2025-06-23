@@ -17,7 +17,9 @@ function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <h1 className="section-title">{userData.projectsData.title}</h1>
+          <h1 className="section-title">
+            <span className="first-word">MY</span> RECENT WORKS
+          </h1>
         </motion.div>
         <motion.div
           className="projects-content-description"

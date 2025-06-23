@@ -17,15 +17,15 @@ function Connect() {
         <Row className="connect-heading-row">
           <Col md={12} className="text-center">
             <h1 className="project-heading">
-              <span className="wave">🫱🏻‍🫲🏼</span>{" "}
-              <span className="blue">CONNECT</span> WITH ME
+              <span className="first-word">🫱🏻‍🫲🏼</span>{" "}
+              <span className="first-word">CONNECT</span> WITH ME
             </h1>
           </Col>
         </Row>
 
         {/* Contact Form Section */}
         <ContactForm />
-        
+
         {/* Profile Image and Social Icons */}
         <div className="connect-profile-section">
           <img
@@ -33,7 +33,7 @@ function Connect() {
             alt="Arka Pramanik"
             className="connect-profile-image"
           />
-          
+
           {/* Modern Social Icons */}
           <div className="connect-social-icons">
             <a
@@ -44,7 +44,7 @@ function Connect() {
             >
               <FaLinkedinIn />
             </a>
-            
+
             <a
               href="https://github.com/AP-XD"
               target="_blank"
@@ -53,7 +53,7 @@ function Connect() {
             >
               <AiOutlineGithub />
             </a>
-            
+
             <a
               href="https://tx.me/AP_XD"
               target="_blank"
@@ -62,7 +62,7 @@ function Connect() {
             >
               <FaTelegramPlane />
             </a>
-            
+
             <a
               href="https://www.instagram.com/p__arka"
               target="_blank"
@@ -71,7 +71,7 @@ function Connect() {
             >
               <AiOutlineInstagram />
             </a>
-            
+
             <a
               href="mailto:arkamtg.pramanik@gmail.com"
               className="connect-social-icon email"
