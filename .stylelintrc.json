@@ -8,7 +8,6 @@
     "comment-empty-line-before": null,
     "rule-empty-line-before": null,
     "keyframes-name-pattern": null,
-    "no-duplicate-selectors": null,
     "no-descending-specificity": null,
     "declaration-block-no-duplicate-properties": null,
     "declaration-property-value-no-unknown": null,

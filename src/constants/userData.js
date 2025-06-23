@@ -14,6 +14,7 @@ import js from "../Assets/Skills/programming-languages/js.svg";
 import java from "../Assets/Skills/programming-languages/java.svg";
 import py from "../Assets/Skills/programming-languages/py.svg";
 import ts from "../Assets/Skills/programming-languages/ts.svg";
+import go from "../Assets/Skills/programming-languages/go.png";
 
 // Frontend Technologies
 import html from "../Assets/Skills/frontend/html.svg";
@@ -189,7 +190,7 @@ export const userData = {
   },
   skillsData: {
     title: "My Tech Stack",
-    desc: "I'm proficient in competitive coding, CS fundamentals, DevOps, and web development with expertise in modern technologies spanning full-stack development, cloud infrastructure, containerization, and security monitoring solutions.",
+    desc: "As a Platform Engineer and Systems Architect, I specialize in building resilient cloud-native infrastructure, container orchestration, and high-performance computing solutions. My expertise spans across DevOps practices, competitive programming, and full-stack development with a focus on scalable, secure, and observable systems.",
     technologies: [
       // Programming Languages
       {
@@ -224,6 +225,12 @@ export const userData = {
       },
       {
         id: 6,
+        name: "Go",
+        type: "Programming Language", 
+        image: go,
+      },
+      {
+        id: 7,
         name: "SQL",
         type: "Database Language",
         image: sqlIcon,
@@ -231,37 +238,37 @@ export const userData = {
 
       // Frontend Technologies
       {
-        id: 7,
+        id: 8,
         name: "HTML5",
         type: "Markup Language",
         image: html,
       },
       {
-        id: 8,
+        id: 9,
         name: "CSS3",
         type: "Styling Language",
         image: css,
       },
       {
-        id: 9,
+        id: 10,
         name: "React",
         type: "JavaScript Library",
         image: react,
       },
       {
-        id: 10,
+        id: 11,
         name: "Next.js",
         type: "React Framework",
         image: next,
       },
       {
-        id: 11,
+        id: 12,
         name: "Bootstrap",
         type: "CSS Framework",
         image: bs,
       },
       {
-        id: 12,
+        id: 13,
         name: "Tailwind CSS",
         type: "CSS Framework",
         image: tailwind,
@@ -269,19 +276,19 @@ export const userData = {
 
       // Backend Technologies
       {
-        id: 13,
+        id: 14,
         name: "Node.js",
         type: "JavaScript Runtime",
         image: nodejs,
       },
       {
-        id: 14,
+        id: 15,
         name: "Express.js",
         type: "Web Framework",
         image: express,
       },
       {
-        id: 15,
+        id: 16,
         name: "Firebase",
         type: "Backend Platform",
         image: firebase,
@@ -289,25 +296,25 @@ export const userData = {
 
       // Tools & Version Control
       {
-        id: 16,
+        id: 17,
         name: "Git",
         type: "Version Control",
         image: git,
       },
       {
-        id: 17,
+        id: 18,
         name: "GitHub",
         type: "Code Repository",
         image: github,
       },
       {
-        id: 18,
+        id: 19,
         name: "VS Code",
         type: "Code Editor",
         image: vscode,
       },
       {
-        id: 19,
+        id: 20,
         name: "Linux",
         type: "Operating System",
         image: linux,
@@ -315,7 +322,7 @@ export const userData = {
 
       // Infrastructure as Code
       {
-        id: 20,
+        id: 21,
         name: "Terraform",
         type: "Infrastructure as Code",
         image: terraform,
@@ -323,13 +330,13 @@ export const userData = {
 
       // Containerization & Orchestration
       {
-        id: 21,
+        id: 22,
         name: "Docker",
         type: "Containerization",
         image: docker,
       },
       {
-        id: 22,
+        id: 23,
         name: "Kubernetes",
         type: "Container Orchestration",
         image: kubernetes,
@@ -337,19 +344,19 @@ export const userData = {
 
       // CI/CD Pipelines
       {
-        id: 23,
+        id: 24,
         name: "Jenkins",
         type: "CI/CD Pipeline",
         image: jenkins,
       },
       {
-        id: 24,
+        id: 25,
         name: "GitLab CI/CD",
         type: "CI/CD Pipeline",
         image: gitlab,
       },
       {
-        id: 25,
+        id: 26,
         name: "GitHub Actions",
         type: "CI/CD Pipeline",
         image: githubactions,
@@ -357,13 +364,13 @@ export const userData = {
 
       // Observability
       {
-        id: 26,
+        id: 27,
         name: "Prometheus",
         type: "Monitoring",
         image: prometheus,
       },
       {
-        id: 27,
+        id: 28,
         name: "Grafana",
         type: "Visualization",
         image: grafana,
@@ -371,19 +378,19 @@ export const userData = {
 
       // Cloud Platforms
       {
-        id: 28,
+        id: 29,
         name: "AWS",
         type: "Cloud Platform",
         image: amazonwebservices,
       },
       {
-        id: 29,
+        id: 30,
         name: "Azure",
         type: "Cloud Platform",
         image: azure,
       },
       {
-        id: 30,
+        id: 31,
         name: "Google Cloud",
         type: "Cloud Platform",
         image: googlecloud,
@@ -391,13 +398,13 @@ export const userData = {
 
       // Service Meshes
       {
-        id: 31,
+        id: 32,
         name: "Istio",
         type: "Service Mesh",
         image: istio,
       },
       {
-        id: 32,
+        id: 33,
         name: "Kiali",
         type: "Observability",
         image: kiali,
@@ -405,19 +412,19 @@ export const userData = {
 
       // Package Managers & Deployment
       {
-        id: 33,
+        id: 34,
         name: "Helm",
         type: "Package Manager",
         image: helm,
       },
       {
-        id: 34,
+        id: 35,
         name: "Kube Bench",
         type: "Security Tool",
         image: kubeBenchIcon,
       },
       {
-        id: 35,
+        id: 36,
         name: "Trivy",
         type: "Security Scanner",
         image: trivyIcon,
@@ -425,10 +432,10 @@ export const userData = {
     ],
   },
   contactData: {
-    salutation: "Hi There",
-    title: "Send me a message",
-    subTitle: "Let's build something amazing together.",
-    emailDesc: "Reach out to me at",
+    salutation: "Let's Connect",
+    title: "Ready to build something impactful?",
+    subTitle: "Always excited to connect with like-minded professionals and collaborate on innovative projects.",
+    emailDesc: "Drop me a message at",
     linkedin: "LinkedIn",
     github: "GitHub",
   },

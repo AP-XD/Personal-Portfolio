@@ -17,33 +17,29 @@ function Home2() {
         <Row>
           <Col md={8} className="home-about-description">
             <p className="home-about-body">
-              I love to do Competitive Programming and solve Real-World
-              Problems.
+              Hi, I&apos;m <strong className="blue">Arka</strong> — a Platform & Systems Engineer at 
+              <strong className="blue"> Hewlett Packard Enterprise</strong>, passionate about solving 
+              real-world problems through code.
               <br />
-              <br />I am fluent in Languages like
+              <br />
+              From building robust cloud-native services to pushing limits in competitive programming, 
+              I craft resilient software with purpose. Whether it&apos;s scaling 
+              <strong className="blue"> Kubernetes clusters</strong>, contributing to 
+              <strong className="blue"> open source</strong>, or optimizing microservices with 
+              <strong className="blue"> Istio and Prometheus</strong> — I live for technical challenges 
+              that drive real impact.
+              <br />
+              <br />
+              My expertise spans across <strong className="blue">DevOps, Cloud Infrastructure, 
+              and Systems Programming</strong> with hands-on experience in 
               <i>
-                <b className="blue"> C++, Javascript and Python. </b>
+                <b className="blue"> Kubernetes, Docker, Helm, and Prometheus</b>
               </i>
               <br />
               <br />
-              My field of Interest&apos;s are building new &nbsp;
-              <i>
-                <b className="blue">Web Technologies and Products </b> and I am
-                exploring <b className="blue">Machine Learning.</b>
-              </i>
-              <br />
-              <br />I also develop products using with{" "}
-              <b className="blue">Node.js</b> and
-              <i>
-                <b className="blue">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="blue"> React.js</b>
-              </i>
+              I&apos;m proficient in <i><b className="blue">C++, Python, JavaScript, and Go </b></i> 
+              and love tackling algorithmic challenges on platforms like 
+              <strong className="blue"> Codeforces and LeetCode</strong>.
             </p>
           </Col>{" "}
           <Col md={4} className="Avtar">
