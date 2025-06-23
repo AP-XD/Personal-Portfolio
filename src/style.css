@@ -662,6 +662,44 @@ div[style*="position: fixed"][style*="pointer-events: none"] {
   padding: 0 !important;
 }
 
+/* --------- */
+/* Scroll To Top Button */
+/* --------- */
+.scroll-to-top-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999;
+  pointer-events: auto;
+}
+
+.scroll-to-top-button {
+  background-color: #20adff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(32, 173, 255, 0.4);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.scroll-to-top-button:hover {
+  transform: scale(1.1);
+  background-color: #1a8cd8;
+}
+
+.scroll-to-top-button:active {
+  transform: scale(0.95);
+}
+
 .btn-primary {
   max-width: max-content !important;
   color: #fff !important;
