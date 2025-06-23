@@ -20,7 +20,7 @@ const Skills = () => {
                 MY <span className="blue"> TECH STACK & EXPERTISE </span>
               </h1>
             </motion.div>
-            <motion.p 
+            <motion.p
               className="skills-description"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -46,11 +46,11 @@ const Skills = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: 0.8 + (index * 0.1),
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.8 + index * 0.1,
                     type: "spring",
-                    stiffness: 100
+                    stiffness: 100,
                   }}
                 >
                   <SkillCard item={item} />

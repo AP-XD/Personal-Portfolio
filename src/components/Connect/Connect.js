@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
-import { FaLinkedinIn, FaTelegram, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedinIn, FaTelegram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Particle from "../Particle";
 import ContactForm from "./ContactForm";
@@ -21,10 +21,10 @@ function Connect() {
             </h1>
           </Col>
         </Row>
-        
+
         {/* Contact Form Section */}
         <ContactForm />
-        
+
         {/* Social Media Links */}
         <Row className="social-media-row">
           <Col md={12} className="text-center">

@@ -23,7 +23,7 @@ function ContactForm() {
       const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
       const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
       const userId = process.env.REACT_APP_EMAILJS_USER_ID;
-      
+
       const templateParams = {
         name,
         email,
@@ -71,7 +71,7 @@ function ContactForm() {
               viewport={{ once: true }}
             >
               <div className="grid-mask"></div>
-              
+
               <Row className="align-items-center">
                 <Col lg={6} className="contact-left">
                   <motion.div
@@ -87,7 +87,7 @@ function ContactForm() {
                       </h2>
                       <h2>{userData.contactData.subTitle}</h2>
                     </div>
-                    
+
                     <div className="left-email">
                       <EmailIcon className="email-icon" />
                       <div className="email-text">
@@ -97,7 +97,7 @@ function ContactForm() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div className="left-socials">
                       <p>Socials : </p>
                       <a
@@ -117,7 +117,7 @@ function ContactForm() {
                     </div>
                   </motion.div>
                 </Col>
-                
+
                 <Col lg={6} className="contact-right">
                   <motion.div
                     initial={{ opacity: 0, x: 150 }}
@@ -130,7 +130,7 @@ function ContactForm() {
                         <h2>{userData.contactData.title}</h2>
                         <RocketLaunchIcon className="rocket-icon" />
                       </div>
-                      
+
                       <Form onSubmit={submitForm}>
                         <Form.Group className="mb-3">
                           <Form.Label>Full Name</Form.Label>
@@ -142,7 +142,7 @@ function ContactForm() {
                             className="contact-input"
                           />
                         </Form.Group>
-                        
+
                         <Form.Group className="mb-3">
                           <Form.Label>Email Address</Form.Label>
                           <Form.Control
@@ -153,7 +153,7 @@ function ContactForm() {
                             className="contact-input"
                           />
                         </Form.Group>
-                        
+
                         <Form.Group className="mb-3">
                           <Form.Label>Message</Form.Label>
                           <Form.Control
@@ -165,14 +165,20 @@ function ContactForm() {
                             className="contact-input"
                           />
                         </Form.Group>
-                        
+
                         <Button
                           type="submit"
                           disabled={emailSent || isLoading}
                           className="send-btn"
                         >
-                          {isLoading ? "Sending..." : emailSent ? "Sent!" : "Send"}{" "}
-                          {!emailSent && !isLoading && <SendIcon className="send-icon" />}
+                          {isLoading
+                            ? "Sending..."
+                            : emailSent
+                              ? "Sent!"
+                              : "Send"}{" "}
+                          {!emailSent && !isLoading && (
+                            <SendIcon className="send-icon" />
+                          )}
                         </Button>
                       </Form>
                     </div>
@@ -183,7 +189,7 @@ function ContactForm() {
           </Col>
         </Row>
       </Container>
-      
+
       {emailSent && (
         <motion.div
           className="notification"
