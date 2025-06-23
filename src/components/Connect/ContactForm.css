@@ -1,0 +1,348 @@
+/* Contact Form Styles */
+.contact-form-section {
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+.contact-content {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(124, 170, 235, 0.3);
+  border-radius: 15px;
+  padding: 3rem 4rem;
+  background: rgba(11, 12, 16, 0.872);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(124, 156, 235, 0.1);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-left {
+  padding-right: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.left-details h2:first-child {
+  font-size: 2rem;
+  color: #15aafb;
+  margin-bottom: 0.5rem;
+}
+
+.left-details .hello-icon {
+  color: #15aafb;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.left-details h2:last-child {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #f8f9fa;
+  margin-bottom: 2rem;
+}
+
+.left-email {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(124, 135, 235, 0.3);
+  background: rgba(47, 79, 79, 0.1);
+  width: fit-content;
+  position: relative;
+  z-index: 5;
+}
+
+.email-icon {
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: rgba(124, 174, 235, 0.2);
+  color: #15aafb;
+  font-size: 2rem !important;
+}
+
+.email-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.email-text p {
+  margin: 0;
+  color: #f8f9fa;
+  font-size: 0.9rem;
+}
+
+.email-text a {
+  color: #15aafb;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 6;
+  cursor: pointer;
+}
+
+.email-text a:hover {
+  color: #15aafb;
+  text-decoration: underline;
+}
+
+.left-socials {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #999;
+  position: relative;
+  z-index: 5;
+}
+
+.left-socials p {
+  margin: 0;
+  color: #f8f9fa;
+}
+
+.left-socials a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 6;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.left-socials a:hover {
+  color: #15aafb;
+  background-color: rgba(21, 170, 251, 0.1);
+}
+
+.contact-right {
+  padding-left: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form-container {
+  background: rgba(0, 3, 3, 0.78);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(14, 29, 196, 0.2);
+  position: relative;
+  z-index: 3;
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-title h2 {
+  font-size: 1.8rem;
+  background: linear-gradient(to bottom, #f8f9fa 40%, #15aafb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.rocket-icon {
+  color: #15aafb;
+  font-size: 1.8rem !important;
+}
+
+.contact-input {
+  background-color: rgba(47, 79, 79, 0.4) !important;
+  border: 1px solid rgba(124, 135, 235, 0.5) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 0.8rem 1rem !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.contact-input:focus {
+  background-color: rgba(47, 79, 79, 0.6) !important;
+  border-color: #15aafb !important;
+  box-shadow: 0 0 0 0.2rem rgba(21, 170, 251, 0.25) !important;
+  color: #ffffff !important;
+  outline: none !important;
+}
+
+.contact-input:active,
+.contact-input:hover {
+  color: #ffffff !important;
+}
+
+.contact-input::placeholder {
+  color: #999 !important;
+}
+
+.form-label {
+  color: #999 !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 0.5rem !important;
+  position: relative;
+  z-index: 5;
+}
+
+.send-btn {
+  background: linear-gradient(135deg, #66acea 0%, #1127d1 100%);
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background: linear-gradient(135deg, #5150a5 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.send-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.send-icon {
+  font-size: 1.2rem !important;
+  transition: all 0.3s ease;
+}
+
+.send-btn:hover .send-icon {
+  transform: translateX(2px);
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+  font-size: 1rem;
+  z-index: 1000;
+  font-weight: 500;
+}
+
+/* Grid mask */
+.grid-mask {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(126, 124, 235, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 146, 235, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    #000 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    #000 60%,
+    transparent 100%
+  );
+}
+
+/* Spacing for social media section */
+.social-media-row {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(124, 148, 235, 0.2);
+}
+
+.social-media-row .project-heading {
+  margin-bottom: 2rem;
+}
+
+.home-about-social-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .contact-left {
+    padding-right: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-right {
+    padding-left: 2rem;
+  }
+  
+  .contact-content {
+    padding: 2rem 2rem;
+    max-width: 100%;
+  }
+  
+  .contact-form-container {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-left {
+    display: none;
+  }
+  
+  .contact-right {
+    padding-left: 0;
+  }
+  
+  .contact-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .contact-form-container {
+    padding: 2rem;
+  }
+  
+  .send-btn {
+    padding: 0.8rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+  
+  .send-btn {
+    padding: 0.8rem 1.5rem;
+  }
+}

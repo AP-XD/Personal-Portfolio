@@ -4,19 +4,30 @@ import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn, FaTelegram, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Particle from "../Particle";
+import ContactForm from "./ContactForm";
+import "./ContactForm.css";
 
 function Connect() {
   return (
     <Container fluid className="connect-section" id="connect">
       <Particle />
       <Container>
-        {/* Social Media Links */}
-        <Row className="social-media-row">
+        {/* Connect Heading */}
+        <Row className="connect-heading-row">
           <Col md={12} className="text-center">
             <h1 className="project-heading">
               <span className="wave">🫱🏻‍🫲🏼</span>{" "}
               <span className="blue">CONNECT</span> WITH ME
             </h1>
+          </Col>
+        </Row>
+        
+        {/* Contact Form Section */}
+        <ContactForm />
+        
+        {/* Social Media Links */}
+        <Row className="social-media-row">
+          <Col md={12} className="text-center">
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
