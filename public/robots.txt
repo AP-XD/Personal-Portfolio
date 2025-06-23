@@ -1,3 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
+# Portfolio website - Allow all crawlers
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location (add your actual sitemap URL if you have one)
+# Sitemap: https://your-domain.com/sitemap.xml
