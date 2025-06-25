@@ -11,36 +11,27 @@ import portfolio from "../Assets/Projects/portfolio.svg";
 // Programming Languages
 import cpp from "../Assets/Skills/programming-languages/cpp.svg";
 import js from "../Assets/Skills/programming-languages/js.svg";
-import java from "../Assets/Skills/programming-languages/java.svg";
 import py from "../Assets/Skills/programming-languages/py.svg";
-import ts from "../Assets/Skills/programming-languages/ts.svg";
-import go from "../Assets/Skills/programming-languages/go.png";
 
 // Frontend Technologies
 import html from "../Assets/Skills/frontend/html.svg";
 import css from "../Assets/Skills/frontend/css.svg";
 import react from "../Assets/Skills/frontend/react.png";
-import bs from "../Assets/Skills/frontend/bs.svg";
-import next from "../Assets/Skills/frontend/next.svg";
-import tailwind from "../Assets/Skills/frontend/tailwind.svg";
 
 // Backend Technologies
 import nodejs from "../Assets/Skills/backend/nodejs.svg";
-import express from "../Assets/Skills/backend/express.svg";
+import flask from "../Assets/Skills/backend/flask.svg";
 import firebase from "../Assets/Skills/backend/firebase.svg";
 
 // Development Tools
 import git from "../Assets/Skills/tools/git.svg";
 import github from "../Assets/Skills/tools/github.svg";
-import vscode from "../Assets/Skills/tools/vscode.svg";
 import linux from "../Assets/Skills/tools/linux.svg";
 
 // DevOps/Infrastructure
-import terraform from "../Assets/Skills/devops/terraform.svg";
 import docker from "../Assets/Skills/devops/docker.svg";
 import kubernetes from "../Assets/Skills/devops/kubernetes.png";
 import jenkins from "../Assets/Skills/devops/jenkins.svg";
-import gitlab from "../Assets/Skills/devops/gitlab.svg";
 import githubactions from "../Assets/Skills/devops/githubactions.svg";
 import prometheus from "../Assets/Skills/devops/prometheus.svg";
 import grafana from "../Assets/Skills/devops/grafana.svg";
@@ -49,9 +40,7 @@ import kiali from "../Assets/Skills/devops/kiali.png";
 import helm from "../Assets/Skills/devops/helm.svg";
 
 // Cloud Platforms
-import amazonwebservices from "../Assets/Skills/cloud/amazonwebservices.svg";
 import azure from "../Assets/Skills/cloud/azure.svg";
-import googlecloud from "../Assets/Skills/cloud/googlecloud.svg";
 
 // Additional Skills
 import sqlIcon from "../Assets/Skills/backend/sql.png";
@@ -60,7 +49,6 @@ import trivyIcon from "../Assets/Skills/devops/trivy.png";
 
 export const userData = {
   projectsData: {
-    title: "My Recent Works",
     desc: "Here are a few projects I've worked on recently.",
     projects: [
       {
@@ -93,13 +81,22 @@ export const userData = {
       },
       {
         id: 3,
+        name: "Device Tree",
+        description:
+          "ASUS Max M2 (X01AD) Device Tree Source Code for building Arrow OS Custom ROM for various Android Versions.",
+        techStack: ["Android", "Custom ROM", "C++", "Linux Kernel"],
+        image: arrow,
+        github: "https://github.com/AP-XD/device_asus_X01AD",
+        website: "https://github.com/AP-XD/device_asus_X01AD",
+      },
+      {
+        id: 4,
         name: "Online Tuition Management System",
         description:
           "A web app that helps the student and teachers to find, manage and organize local tuition centers. This allows tuition teachers to upload marks, attendance and course materials and allows students to access them in their tuition center portals. It also allows parents to keep track of their children's performance.",
         techStack: [
           "Django",
           "SQLite3",
-          "Bootstrap",
           "Selenium",
           "Python",
           "HTML",
@@ -108,16 +105,6 @@ export const userData = {
         image: tuition,
         github: "https://github.com/AP-XD/Online-Tuition-Management-System",
         website: "https://github.com/AP-XD/Online-Tuition-Management-System",
-      },
-      {
-        id: 4,
-        name: "Device Tree",
-        description:
-          "ASUS Max M2 (X01AD) Device Tree Source Code for building Arrow OS Custom ROM for various Android Versions.",
-        techStack: ["Android", "Custom ROM", "C++", "Linux Kernel"],
-        image: arrow,
-        github: "https://github.com/AP-XD/device_asus_X01AD",
-        website: "https://github.com/AP-XD/device_asus_X01AD",
       },
       {
         id: 5,
@@ -160,32 +147,6 @@ export const userData = {
         github: "https://github.com/AP-XD/CSE4022-Project",
         website: "https://github.com/AP-XD/CSE4022-Project",
       },
-      {
-        id: 8,
-        name: "Weather App",
-        description:
-          "Beginner Project: Displays weather of a city using OPEN WEATHER API.",
-        techStack: [
-          "JavaScript",
-          "HTML",
-          "CSS",
-          "Weather API",
-          "Responsive Design",
-        ],
-        image: weather,
-        github: "https://github.com/AP-XD/WeatherApp",
-        website: "https://github.com/AP-XD/WeatherApp",
-      },
-      {
-        id: 9,
-        name: "Netflix Clone",
-        description:
-          "Beginner Project: Netflix Clone built using React.js, and Firebase. Fetches latest trending movies from TMDB API.",
-        techStack: ["React", "Firebase", "TMDB API", "CSS", "Authentication"],
-        image: Netflix,
-        github: "https://github.com/AP-XD/Netflix-clone",
-        website: "https://github.com/AP-XD/Netflix-clone",
-      },
     ],
   },
   skillsData: {
@@ -207,30 +168,12 @@ export const userData = {
       },
       {
         id: 3,
-        name: "Java",
-        type: "Programming Language",
-        image: java,
-      },
-      {
-        id: 4,
         name: "JavaScript",
         type: "Programming Language",
         image: js,
       },
       {
-        id: 5,
-        name: "TypeScript",
-        type: "Programming Language",
-        image: ts,
-      },
-      {
-        id: 6,
-        name: "Go",
-        type: "Programming Language",
-        image: go,
-      },
-      {
-        id: 7,
+        id: 4,
         name: "SQL",
         type: "Database Language",
         image: sqlIcon,
@@ -238,57 +181,39 @@ export const userData = {
 
       // Frontend Technologies
       {
-        id: 8,
+        id: 5,
         name: "HTML5",
         type: "Markup Language",
         image: html,
       },
       {
-        id: 9,
+        id: 6,
         name: "CSS3",
         type: "Styling Language",
         image: css,
       },
       {
-        id: 10,
+        id: 7,
         name: "React",
         type: "JavaScript Library",
         image: react,
       },
-      {
-        id: 11,
-        name: "Next.js",
-        type: "React Framework",
-        image: next,
-      },
-      {
-        id: 12,
-        name: "Bootstrap",
-        type: "CSS Framework",
-        image: bs,
-      },
-      {
-        id: 13,
-        name: "Tailwind CSS",
-        type: "CSS Framework",
-        image: tailwind,
-      },
 
       // Backend Technologies
       {
-        id: 14,
+        id: 8,
         name: "Node.js",
         type: "JavaScript Runtime",
         image: nodejs,
       },
       {
-        id: 15,
-        name: "Express.js",
-        type: "Web Framework",
-        image: express,
+        id: 9,
+        name: "Flask",
+        type: "Python Framework",
+        image: flask,
       },
       {
-        id: 16,
+        id: 10,
         name: "Firebase",
         type: "Backend Platform",
         image: firebase,
@@ -296,47 +221,33 @@ export const userData = {
 
       // Tools & Version Control
       {
-        id: 17,
+        id: 11,
         name: "Git",
         type: "Version Control",
         image: git,
       },
       {
-        id: 18,
+        id: 12,
         name: "GitHub",
         type: "Code Repository",
         image: github,
       },
       {
-        id: 19,
-        name: "VS Code",
-        type: "Code Editor",
-        image: vscode,
-      },
-      {
-        id: 20,
+        id: 13,
         name: "Linux",
         type: "Operating System",
         image: linux,
       },
 
-      // Infrastructure as Code
-      {
-        id: 21,
-        name: "Terraform",
-        type: "Infrastructure as Code",
-        image: terraform,
-      },
-
       // Containerization & Orchestration
       {
-        id: 22,
+        id: 14,
         name: "Docker",
         type: "Containerization",
         image: docker,
       },
       {
-        id: 23,
+        id: 15,
         name: "Kubernetes",
         type: "Container Orchestration",
         image: kubernetes,
@@ -344,19 +255,13 @@ export const userData = {
 
       // CI/CD Pipelines
       {
-        id: 24,
+        id: 16,
         name: "Jenkins",
         type: "CI/CD Pipeline",
         image: jenkins,
       },
       {
-        id: 25,
-        name: "GitLab CI/CD",
-        type: "CI/CD Pipeline",
-        image: gitlab,
-      },
-      {
-        id: 26,
+        id: 17,
         name: "GitHub Actions",
         type: "CI/CD Pipeline",
         image: githubactions,
@@ -364,13 +269,13 @@ export const userData = {
 
       // Observability
       {
-        id: 27,
+        id: 18,
         name: "Prometheus",
         type: "Monitoring",
         image: prometheus,
       },
       {
-        id: 28,
+        id: 19,
         name: "Grafana",
         type: "Visualization",
         image: grafana,
@@ -378,33 +283,21 @@ export const userData = {
 
       // Cloud Platforms
       {
-        id: 29,
-        name: "AWS",
-        type: "Cloud Platform",
-        image: amazonwebservices,
-      },
-      {
-        id: 30,
+        id: 20,
         name: "Azure",
         type: "Cloud Platform",
         image: azure,
       },
-      {
-        id: 31,
-        name: "Google Cloud",
-        type: "Cloud Platform",
-        image: googlecloud,
-      },
 
       // Service Meshes
       {
-        id: 32,
+        id: 21,
         name: "Istio",
         type: "Service Mesh",
         image: istio,
       },
       {
-        id: 33,
+        id: 22,
         name: "Kiali",
         type: "Observability",
         image: kiali,
@@ -412,19 +305,19 @@ export const userData = {
 
       // Package Managers & Deployment
       {
-        id: 34,
+        id: 23,
         name: "Helm",
         type: "Package Manager",
         image: helm,
       },
       {
-        id: 35,
+        id: 24,
         name: "Kube Bench",
         type: "Security Tool",
         image: kubeBenchIcon,
       },
       {
-        id: 36,
+        id: 25,
         name: "Trivy",
         type: "Security Scanner",
         image: trivyIcon,
