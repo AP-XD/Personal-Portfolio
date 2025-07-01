@@ -1,0 +1,48 @@
+# Dependabot configuration file
+# This file configures Dependabot to automatically create pull requests for dependency updates
+
+version: 2
+updates:
+  # Enable version updates for npm (JavaScript/Node.js dependencies)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Etc/UTC"
+    # Limit the number of open pull requests for version updates
+    open-pull-requests-limit: 10
+    # Group dependency updates to reduce PR noise
+    groups:
+      # Group all React-related dependencies together
+      react:
+        patterns:
+          - "react*"
+          - "@types/react*"
+      # Group all Material-UI dependencies together
+      mui:
+        patterns:
+          - "@mui/*"
+          - "@emotion/*"
+      # Group all ESLint-related dependencies together
+      eslint:
+        patterns:
+          - "eslint*"
+          - "@eslint/*"
+    # Commit message configuration
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
+      include: "scope"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Etc/UTC"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+      include: "scope"
