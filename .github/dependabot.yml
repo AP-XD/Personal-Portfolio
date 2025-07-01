@@ -33,8 +33,6 @@ updates:
     # Commit message configuration
     commit-message:
       prefix: "deps"
-      prefix-development: "deps-dev"
-      include: "scope"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -45,4 +43,3 @@ updates:
     open-pull-requests-limit: 5
     commit-message:
       prefix: "ci"
-      include: "scope"
