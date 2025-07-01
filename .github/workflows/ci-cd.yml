@@ -7,6 +7,9 @@ on:
   pull_request:
     branches: [ main]
 
+permissions:
+  contents: read
+
 # Define jobs to run
 jobs:
   # Job to check code quality and run tests
@@ -54,6 +57,11 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    # Deploy job needs additional permissions for Netlify deployment
+    permissions:
+      contents: read
+      deployments: write
     
     steps:
       # Checkout the repository code
