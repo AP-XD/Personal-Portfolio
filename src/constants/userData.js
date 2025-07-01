@@ -4,8 +4,6 @@ import enconnect from "../Assets/Projects/enconnect.jpg";
 import tuition from "../Assets/Projects/tuition.jpg";
 import habify from "../Assets/Projects/habify.jpg";
 import nlp from "../Assets/Projects/nlp.png";
-import weather from "../Assets/Projects/weather.png";
-import Netflix from "../Assets/Projects/Netflix.jpg";
 import portfolio from "../Assets/Projects/portfolio.svg";
 // Import skill icons
 // Programming Languages
