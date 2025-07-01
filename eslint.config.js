@@ -9,7 +9,6 @@ export default [
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
-      ecmaVersion: 2020,
       globals: globals.browser,
       parserOptions: {
         ecmaVersion: 'latest',
@@ -26,14 +25,6 @@ export default [
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      'no-unused-vars': [
-        'error', 
-        { 
-          varsIgnorePattern: '^[A-Z_]',
-          argsIgnorePattern: '^_',
-          ignoreRestSiblings: true
-        }
-      ],
       'react/react-in-jsx-scope': 'off', // Not needed in React 17+
       'react/prop-types': 'off', // Turn off prop-types as we're not using them
       'react-refresh/only-export-components': [
