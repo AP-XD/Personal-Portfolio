@@ -40,6 +40,10 @@ jobs:
       # Run build to ensure everything compiles
       - name: Build project
         run: npm run build
+        env:
+          VITE_APP_EMAILJS_SERVICE_ID: ${{ secrets.VITE_APP_EMAILJS_SERVICE_ID }}
+          VITE_APP_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_APP_EMAILJS_TEMPLATE_ID }}
+          VITE_APP_EMAILJS_USER_ID: ${{ secrets.VITE_APP_EMAILJS_USER_ID }}
       
       # Run tests (if you have any test scripts)
       # - name: Run tests
@@ -70,6 +74,10 @@ jobs:
       # Build the project
       - name: Build project
         run: npm run build
+        env:
+          VITE_APP_EMAILJS_SERVICE_ID: ${{ secrets.VITE_APP_EMAILJS_SERVICE_ID }}
+          VITE_APP_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_APP_EMAILJS_TEMPLATE_ID }}
+          VITE_APP_EMAILJS_USER_ID: ${{ secrets.VITE_APP_EMAILJS_USER_ID }}
       
       # Deploy to Netlify
       - name: Deploy to Netlify
